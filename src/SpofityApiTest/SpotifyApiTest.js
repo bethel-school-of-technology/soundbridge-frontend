@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
 
 export default class componentName extends Component {
 
     render() {
         return (
             <div>
-                <button onClick={() => {
+                <button className="spotify-login-btn" onClick={() => {
                     window.location.href = "http://localhost:3001/login";
-                }}>Login</button>
+                }}>LOGIN TO SPOTIFY</button>
             </div>
         )
     }

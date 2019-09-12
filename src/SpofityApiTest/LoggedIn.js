@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
+import Playlists from './Playlists';
 
 export default class LoggedIn extends Component {
 
     state = {
         accessToken: '',
         user: {},
+        playlists: {},
+        playlistsDisplay: { 'display': 'none' },
     }
 
     componentDidMount() {
@@ -22,6 +25,23 @@ export default class LoggedIn extends Component {
         }
     }
 
+    getPlaylist = async () => {
+        try {
+            const res = await fetch("https://api.spotify.com/v1/me/playlists", {
+                headers: {
+                    'Authorization': 'Bearer ' + this.state.accessToken,
+                }
+            });
+            const playlists = await res.json();
+            this.setState({
+                playlists,
+                playlistsDisplay: {'display': 'inherit'}
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     render() {
         const user = this.state.user;
         console.log(user);
@@ -31,11 +51,16 @@ export default class LoggedIn extends Component {
                 <h2>Display Name: {user.display_name}</h2>
                 <p>Email: {user.email}</p>
                 <p>User Id: {user.id}</p>
-                {user.followers ?
+                {user.followers ? (
                     <p>You don't have any followers :(</p>
-                    :
-                    <p>Follows: {user.followers}</p>
+                ) : (
+                        <p>Followers: {user.followers}</p>
+                    )
                 }
+                <button onClick={this.getPlaylist}>get playlists</button>
+                <div style={this.state.playlistsDisplay}>
+                    <Playlists playlists={this.state.playlists} />
+                </div>
             </div>
         )
     }

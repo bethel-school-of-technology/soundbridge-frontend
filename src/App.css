@@ -1,0 +1,46 @@
+.App {
+  background-color: #44494f;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 1em;
+  width: 275px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.soundbridge-title {
+  color: #d4c81b;
+}
+
+.spotify-login-btn {
+  padding: 1em;
+  font-size: 1.25em;
+  font-weight: 500;
+  border-radius: 20px;
+  background: #1DB954;
+  border: none;
+}
+
+.spotify-login-btn:hover {
+  background: rgb(73, 185, 112);
+}
+
+.spotify-login-btn:active {
+  font-size: .98em;
+}
+
+a {
+  color: #b6b6b6;
+  text-decoration: none;
+}
