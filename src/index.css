@@ -6,6 +6,9 @@ body,html{
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+/*   background-image: url("../src/images/SoundBridge.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; */
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

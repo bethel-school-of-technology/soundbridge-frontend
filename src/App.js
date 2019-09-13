@@ -1,14 +1,25 @@
 import React from 'react';
-import background from './images/SoundBridge.jpg';
-import logo from './OfficialsbLogo.svg';
+import logo from './finalLogo2.svg';
 import './App.css';
+import Login from './components/Navbars/login';
 
 function App() {
   return (
     <div className="App">
-      <img className="bg" src={background} alt="bg" ></img>
+      <Login></Login>
+      <div
+        className="page-header section-dark"
+        style={{
+          backgroundImage:
+            "url(" + require("./assets/images/SoundBridge.jpg") + ")"
+        }} >
+        <div className="filter" />
+        <div className="content-center">
+        </div>
+        <div />
+      </div>
       <div>
-        <img className="logo" src={logo} alt="logo"></img>
+        {<img className="logo" src={logo} alt="logo"></img>}
       </div>
     </div>
   );
