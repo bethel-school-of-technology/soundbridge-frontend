@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
 import Playlists from './Playlists';
+import UserInfo from './UserInfo';
 
 export default class LoggedIn extends Component {
 
@@ -47,6 +48,7 @@ export default class LoggedIn extends Component {
         console.log(user);
         return (
             <div>
+                <UserInfo />
                 <h1>Your Spotify Info:</h1>
                 <h2>Display Name: {user.display_name}</h2>
                 <p>Email: {user.email}</p>
