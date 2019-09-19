@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+import './App.css';
+
+import logo from './OfficialsbLogo.svg';
+
 import LoggedIn from './SpofityApiTest/LoggedIn';
 import SpotifyApiTest from './SpofityApiTest/SpotifyApiTest';
-
-import './App.css';
 
 export default class App extends Component {
 
@@ -14,11 +16,9 @@ export default class App extends Component {
         <div className="App">
           <div className="nav">
             <Link to="/" >
-              <h1 className="soundbridge-title">
-                SoundBridge
-              </h1>
+              <img src={logo} alt="SoundBridge" />
             </Link>
-            <Link to ="/login">
+            <Link to="/login">
               <p>
                 login
               </p>

@@ -22,6 +22,7 @@ const Playlists = (props) => {
                     'flexDirection': 'column',
                     'justifyContent': 'flex-start',
                     'alignItems': 'center',
+                    'color': '#fff'
                 }}>
                     <h4>Title: {playlist.name}</h4>
                     <p>Number of Tracks: {playlist.tracks.total}</p>

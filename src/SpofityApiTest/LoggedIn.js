@@ -47,8 +47,7 @@ export default class LoggedIn extends Component {
         console.log(user);
         return (
             <div>
-                <h1>Your Spotify Info:</h1>
-                <h2>Display Name: {user.display_name}</h2>
+                <h2>Hello {user.display_name}</h2>
                 <p>Email: {user.email}</p>
                 <p>User Id: {user.id}</p>
                 {user.followers ? (
