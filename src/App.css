@@ -1,12 +1,11 @@
 .App {
-  background-color: #44494f;
+  background-color: #fafafa;
   width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
 }
 
 .nav {
@@ -19,8 +18,8 @@
   justify-content: space-between;
 }
 
-.soundbridge-title {
-  color: #d4c81b;
+.nav img {
+  height: 75px;
 }
 
 .spotify-login-btn {
@@ -41,6 +40,6 @@
 }
 
 a {
-  color: #b6b6b6;
+  color: #777777;
   text-decoration: none;
 }
