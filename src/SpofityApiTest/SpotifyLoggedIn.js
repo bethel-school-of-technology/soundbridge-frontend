@@ -3,7 +3,7 @@ import queryString from 'query-string';
 import Playlists from './Playlists';
 import UserInfo from './UserInfo';
 
-export default class LoggedIn extends Component {
+export default class SpotifyLoggedIn extends Component {
 
     state = {
         accessToken: '',
@@ -49,8 +49,7 @@ export default class LoggedIn extends Component {
         return (
             <div>
                 <UserInfo />
-                <h1>Your Spotify Info:</h1>
-                <h2>Display Name: {user.display_name}</h2>
+                <h2>Hello {user.display_name}</h2>
                 <p>Email: {user.email}</p>
                 <p>User Id: {user.id}</p>
                 {user.followers ? (
