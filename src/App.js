@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import SpotifyLoggedIn from './SpofityApiTest/SpotifyLoggedIn';
+import SpotifyApiTest from './SpofityApiTest/SpotifyApiTest';
+import Login from './SpofityApiTest/Login';
+import UserPage from './SpofityApiTest/UserPage';
 
 import './App.css';
 
 import logo from './OfficialsbLogo.svg';
-
-import LoggedIn from './SpofityApiTest/LoggedIn';
-import SpotifyApiTest from './SpofityApiTest/SpotifyApiTest';
 
 export default class App extends Component {
 
@@ -24,8 +25,10 @@ export default class App extends Component {
               </p>
             </Link>
           </div>
-          <Route exact path="/login" component={SpotifyApiTest} />
-          <Route exact path="/logged-in" component={LoggedIn} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/user/:name/:hasSpotify/:spotifyId" component={UserPage} />
+          <Route exact path="/spotify-login" component={SpotifyApiTest} />
+          <Route exact path="/spotify-logged-in" component={SpotifyLoggedIn} />
         </div>
       </Router>
     );
