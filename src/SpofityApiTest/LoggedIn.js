@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
 import Playlists from './Playlists';
+import UserInfo from './UserInfo';
 
 export default class LoggedIn extends Component {
 
