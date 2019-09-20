@@ -1,45 +1,137 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
+import editProfile from './screens/editProfile';
+import profile from './screens/profile';
 
-function App() {
-  return (
-    <div className="App">
-    
-      <h1>Account Overview</h1>
-    <br></br>
 
-    <h5>Profile</h5>
-    <br></br>
+export default class App extends React.Component {
+  render() {
+    return (
 
-    <div class="container">
-        <form>
-            <div class="form-group row">
-                <label for="input1">Username</label>
-                <input type="text" class="form-control" id="input1" placeholder="Username">
-            </div>
-            <div class="form-group row">
-                <label for="input2">Email</label>
-                <input type="text" class="form-control" id="input2" placeholder="Email">
-            </div>
-            <div class="form-group row">
-                <label for="input2">Date of birth</label>
-                <input type="text" class="form-control" id="input2" placeholder="Date of birth">
-            </div>
-            <div class="form-group row">
-                <label for="input2">Country</label>
-                <input type="text" class="form-control" id="input2" placeholder="Country">
-            </div>
-        </form>
-    </div>
 
-    <br></br>
-
-    <button class="btn btn-outline-dark"style="background-color: #d4c81b;">Edit Profile</button>  <button class="btn btn-outline-dark"style="background-color: #d4c81b;">My Plan</button> <button class="btn btn-outline-dark"style="background-color: #d4c81b;">My Account</button> 
-    
-    
-    </div>
-  );
+      <div>
+        <Router>
+              <Route exact path="/profile" component={profile} />
+              <Route exact path="/editProfile" component={editProfile} />
+            </Router>
+        
+      </div>
+    );
+  }
 }
+//  const Child = () => (
+//     <div>
+//       <h2>Edit My Profile</h2>
+//      </div>
+//   );
+// class editProfile extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <h2></h2>
+//       </div>
+//     )
+//   }
+// }
 
-export default App;
+// class myPlan extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <h2>My Plan</h2>
+//       </div>
+//     )
+//   }
+// }
+// export default class App extends React.Component {
+//   render() {
+//     return (
+      // <div>
+
+//         <div>
+//         <h1>Account Overview</h1>
+//         <h2>Profile</h2>
+//       </div>
+//       <div>
+//         <Table bordered>
+//           <thead>
+//             <tr>
+//               <th>Username</th>
+//               <br></br>
+//               <td>Mike</td>
+//             </tr>
+//           </thead>
+
+//             <tr>
+//               <th scope="row">Email</th>
+//               <br></br>
+//               <td>Something@gmail.com</td>
+
+//             </tr>
+//             <tr>
+//               <th scope="row">Date of birth</th>
+//               <br></br>
+//               <td>1/11/1982</td>
+//             </tr>
+//             <tr>
+//               <th scope="row">Country</th>
+
+//               <br></br>
+//               <td>U.S.A.</td>
+//             </tr>
+//          </Table>
+//          </div>
+//          <div>
+//          <Button outline color="secondary">Edit Profile</Button>{' '}
+//          {/* <Nav>
+//           <NavLink href="#">Edit </NavLink> <NavLink href="#">Link</NavLink> <NavLink href="#">Another Link</NavLink> <NavLink disabled href="#">Disabled Link</NavLink>
+//         </Nav> */}
+//          </div>
+
+        
+//       </div>
+   
+//     )
+//   }
+// }
+
+
+
+
+
+//  export default class App extends Component {}
+//   render() {
+//      return (
+
+//       )
+//   }
+//  }
+
+// const Child = () => (
+//   <div>
+//     <h2>Edit My Profile</h2>
+//   </div>
+// )
+// class EditProfile extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <h2>Edit</h2>
+//       </div>
+//     )
+//   }
+// }
+
+// class myPlan extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <h2>My Plan</h2>
+//       </div>
+//     )
+//   }
+// }
+
+// ReactDOM.render(<App />, document.getElementById('root'));
