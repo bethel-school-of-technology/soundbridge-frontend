@@ -1,0 +1,70 @@
+/*============ Contact Section ============*/
+
+footer {
+    background: url('../assets/images/ContactBg.jpg') no-repeat;
+    /*background-color: #40474e;*/
+    background-size: cover;
+    color: white;
+    
+    height: 100%;
+  }
+  footer .row {
+    background-color: rgba(57, 63, 70, 0.85);
+    padding: 1rem 2rem 3rem;
+  }
+  footer img {
+    height: 2rem;
+    margin: 1.5rem 0;
+  }
+  footer a{
+    color: white;
+  }
+  footer .svg-inline--fa {
+    font-size: 1.6rem;
+    margin: 1.2rem .5rem 0 0;
+  }
+  footer .svg-inline--fa:hover{
+    color: #1F7A8C!important;
+  } 
+  footer h3 {
+    text-transform: uppercase;
+    margin: 1.5rem 0;
+  }
+  .contact-info{
+    margin-top: 1.5rem; 
+  }
+  
+  #rowbg{
+    height: 100vh;
+  }
+  
+  /*---- Start Contact Form ----*/
+  .form-group{
+    margin-bottom: 1.3rem;
+  }
+  .form-control{
+    background-color: #53595f;
+    border: .15rem solid #666b71;
+    color: white!important;
+    font-size: 1.1rem;
+    width: 80%;
+  }
+  .form-control:focus {
+    background-color: #53595f;
+    border: .15rem solid #666b71;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder{
+    color: #b2b5b8!important;
+  } 
+  input .btn {
+    cursor: pointer;
+  }
+  .btn-outline-light{
+    border-color: #ffda15;
+  }
+  hr.socket{
+    border-top: .2rem solid #666b71;
+    width: 100%;
+  }
+  

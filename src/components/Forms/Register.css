@@ -1,0 +1,71 @@
+div.mx-auto.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+}
+
+div.container {
+    position: relative;
+    max-width: 300px;
+    padding:0;
+    border-radius: 2em;
+    background-color: white;
+    z-index: 2;
+}
+
+input[type=text],input#email,input#password{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+}
+
+.container input,
+input#email,
+input#password,
+.container input:focus {
+  background-color: transparent;
+  box-shadow: none !important;
+  border: none;
+  border-bottom: 2px solid lightgray;
+}
+
+#formbtn {
+  border-radius: 2.5em;
+  color: black;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  opacity: 0.9;
+  background: rgb(60,61,65);
+  background: linear-gradient(7deg, rgba(60,61,65,0.45702030812324934) 0%, rgba(255,218,25,0.927608543417367) 100%);
+}
+
+#formbtn:hover {
+  opacity: 1;
+  color:black;
+  background: rgb(68,61,189);
+  background: linear-gradient(31deg, rgba(51, 227, 255 ,0.5690651260504201) 0%, rgba(255,218,25,0.8827906162464986) 100%);
+}
+
+#option{
+  font-weight: 600;
+  font-size: 13px;
+}
+.rounded-pill {
+  background-color: white;
+  color: #33CCFF;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.rounded-pill:hover {
+  background-color: #33CCFF;
+  box-shadow: 0px 15px 20px ;
+  color: #ffffff;
+  transform: translateY(-7px);
+}
