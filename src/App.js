@@ -1,29 +1,33 @@
-import React from 'react';
-import logo from './finalLogo2.svg';
+import React, {Component}  from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import Login from './components/Navbars/login';
+import Navbar from './components/Navbars/Navbar';
 
-function App() {
+import Home from './screens/Home';
+import About from './screens/About';
+import Contact from './screens/Contact';
+import Login from './screens/Login';
+import SignUp from './screens/SignUp';
+
+
+export default class App extends Component{
+
+render() {
   return (
+
+    <Router>
     <div className="App">
-      <Login></Login>
-      <div
-        className="page-header section-dark"
-        style={{
-          backgroundImage:
-            "url(" + require("./assets/images/SoundBridge.jpg") + ")"
-        }} >
-        <div className="filter" />
-        <div className="content-center">
-        </div>
-        <div />
-      </div>
-      <div>
-        {<img className="logo" src={logo} alt="logo"></img>}
-      </div>
+    <Navbar></Navbar>
+
+      <Route exact path="/" component={Home} />
+      <Route exact path="/about" component={About} />
+      <Route exact path="/contact" component={Contact} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/sign-up" component={SignUp} />
     </div>
+    </Router>
+
   );
 };
 
-
-export default App;
+}
