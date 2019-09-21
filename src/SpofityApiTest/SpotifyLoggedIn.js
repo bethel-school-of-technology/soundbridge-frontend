@@ -7,6 +7,7 @@ export default class SpotifyLoggedIn extends Component {
 
     state = {
         accessToken: '',
+        refreshToken: '',
         user: {},
         playlists: {},
         playlistsDisplay: { 'display': 'none' },
@@ -15,7 +16,10 @@ export default class SpotifyLoggedIn extends Component {
     componentDidMount() {
         if (this.state.accessToken === '') {
             const parsed = queryString.parse(window.location.search);
-            this.setState({ accessToken: parsed.access_token }, () => {
+            this.setState({ 
+                accessToken: parsed.access_token,
+                refreshToken: parsed.refresh_token
+            }, () => {
                 fetch('https://api.spotify.com/v1/me', {
                     headers: {
                         'Authorization': 'Bearer ' + this.state.accessToken,
@@ -45,7 +49,6 @@ export default class SpotifyLoggedIn extends Component {
 
     render() {
         const user = this.state.user;
-        console.log(user);
         return (
             <div>
                 <UserInfo />

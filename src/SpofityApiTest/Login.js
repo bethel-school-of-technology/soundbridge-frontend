@@ -24,7 +24,7 @@ class Login extends Component {
                 const user = res.data;
                 if (user.spotify) {
                     window.location.href =
-                        `/user/${user.name}/${user.spotify}/${user.spotifyId}`;
+                        `/user/${user.name}/${user.spotify}/${user.spotifyId}/${user.spotifyRefreshToken}`;
                 } else {
                     window.location.href =
                         `/user/${user.name}`;
