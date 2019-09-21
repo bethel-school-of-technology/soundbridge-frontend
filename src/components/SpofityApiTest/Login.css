@@ -1,0 +1,28 @@
+.login-form {
+    margin: 5em auto 0;
+    background-color: #383838;
+    padding: 2.5em 3em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 400px;
+}
+
+.login-form button {
+    margin: 0 auto;
+    margin-top: 2em;
+    padding: .5em 1em;
+    font-size: 1.25em;
+    background: #ffda15;
+    border: none;
+    border-radius: 2px;
+}
+
+input:nth-child(2) {
+    margin-bottom: 1em;
+}
+
+label {
+    margin-bottom: 5px;
+    color: white;
+}

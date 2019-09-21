@@ -6,8 +6,9 @@ import Navbar from './components/Navbars/Navbar';
 import Home from './screens/Home';
 import About from './screens/About';
 import Contact from './screens/Contact';
-import Login from './screens/Login';
+import Login from './components/SpofityApiTest/Login';
 import SignUp from './screens/SignUp';
+import UserPage from './components/SpofityApiTest/UserPage';
 
 
 export default class App extends Component{
@@ -24,6 +25,7 @@ render() {
       <Route exact path="/contact" component={Contact} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/sign-up" component={SignUp} />
+      <Route exact path="/user/:name/:hasSpotify/:spotifyId/:spotifyRefreshToken" component={UserPage} />
     </div>
     </Router>
 

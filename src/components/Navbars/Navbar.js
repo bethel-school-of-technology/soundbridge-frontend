@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../assets/Branding/finalLogo2.svg';
 import {
@@ -40,13 +41,13 @@ export default class NavbarL extends React.Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/">Home</NavLink>
+                  <Link to="/">Home</Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/about">About</NavLink>
+                  <Link to="/about">About</Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/contact">Contact</NavLink>
+                  <Link to="/contact">Contact</Link>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
@@ -57,10 +58,10 @@ export default class NavbarL extends React.Component {
                     <NavLink href="/profile">Profile</NavLink>
                   </DropdownItem>
                     <DropdownItem>
-                    <NavLink href="/login">Login</NavLink>
+                    <Link to="/login">Login</Link>
                   </DropdownItem>
                     <DropdownItem>
-                    <NavLink href="/sign-up">Sign Up</NavLink>
+                    <Link to="/sign-up">Sign Up</Link>
                   </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>

@@ -31,6 +31,18 @@ label.mr-sm-2 {
     width: auto;
 }
 
+a {
+  color: #616163;
+  padding-top: 0.8rem;
+  padding-left: 0.7rem;
+  transition: color 0.3s ease 0s;
+}
+
+a:hover {
+  color: #e0e0e0;
+  text-decoration: none;
+}
+
 a.name{
   color: #616163;
   padding-top: 0.8rem;
