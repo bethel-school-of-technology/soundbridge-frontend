@@ -54,7 +54,7 @@ export default class UserPage extends Component {
                 <h1>Hey, {params.name}</h1>
                 <h1>You are logged in!</h1>
                 <div>
-                    <h2>Hello {user.display_name}</h2>
+                    <h2>Spotify Info:</h2>
                     <p>Email: {user.email}</p>
                     <p>User Id: {user.id}</p>
                     {user.followers ? (

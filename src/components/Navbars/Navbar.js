@@ -9,7 +9,6 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -55,7 +54,7 @@ export default class NavbarL extends React.Component {
                 </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>
-                    <NavLink href="/profile">Profile</NavLink>
+                    <Link to="/user/name/false/null/null">Profile</Link>
                   </DropdownItem>
                     <DropdownItem>
                     <Link to="/login">Login</Link>
@@ -65,7 +64,7 @@ export default class NavbarL extends React.Component {
                   </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>
-                    <NavLink href="/sign-up">Logout</NavLink>
+                    <Link to="/sign-up">Logout</Link>
                   </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>

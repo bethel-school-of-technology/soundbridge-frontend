@@ -3,40 +3,103 @@ import './SignUp.css';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaGooglePlusG } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
-import { Button, Input, Card, CardBody, Container } from 'reactstrap';
+import { Button,   Card, CardBody, Container } from 'reactstrap';
+import axios from 'axios';
 
 class SignUp extends React.Component {
+
+  state = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  }
+
+  submitSignup = e => {
+    e.preventDefault();
+
+    const signupInfo = {
+      fullName: this.state.firstName + ' ' + this.state.lastName,
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    axios.post('http://localhost:3001/auth/register', signupInfo);
+  }
+
   render() {
     return (
-        <Container className="justify-content-center">
-          <Card className="mx-auto">
-            <CardBody>
+      <Container className="justify-content-center">
+        <Card className="mx-auto">
+          <CardBody>
+            <div className="text-center">
+              <h3>SignUp</h3>
+            </div>
+            <form onSubmit={this.submitSignup} >
+              <input
+                type="text"
+                name="firstName"
+                value={this.state.firstName}
+                id="firstName"
+                placeholder="First Name" 
+                onChange={e => {
+                  this.setState({
+                    firstName: e.target.value
+                  });
+                }} />
+              <input
+                type="text"
+                name="lastName"
+                value={this.state.lastName}
+                id="lastName"
+                placeholder="Last Name" 
+                onChange={e => {
+                  this.setState({
+                    lastName: e.target.value
+                  });
+                }} />
+              <input
+                type="email"
+                name="email"
+                value={this.state.email}
+                id="email"
+                placeholder="Email"
+                onChange={e => {
+                  this.setState({
+                    email: e.target.value
+                  });
+                }} />
+              <input
+                type="password"
+                name="password"
+                value={this.state.password}
+                id="password"
+                placeholder="Password"
+                onChange={e => {
+                  this.setState({
+                    password: e.target.value
+                  });
+                }} />
               <div className="text-center">
-                <h3>SignUp</h3>
+                <Button id="formbtn" type="submit" className="btn btn-md">Submit</Button>
               </div>
-              <Input type="text" name="firstName" id="firstName" placeholder="First Name"></Input>
-              <Input type="text" name="lastName" id="lastName" placeholder="Last Name"></Input>
-              <Input type="email" name="email" id="email" placeholder="Email"></Input>
-              <Input type="password" name="password" id="password" placeholder="Password"></Input>
-              <div className="text-center">
-                <Button id="formbtn" className="btn btn-md">Submit</Button>
-              </div>
-              <hr></hr>
-              <p id="option" className="d-flex justify-content-center mb-3 pt-2">Or Sign in with:</p>
-              <div className="row my-3 d-flex justify-content-around">
-                <Button className="rounded-pill">
-                  <FaFacebookF />
-                </Button>
-                <Button className="rounded-pill">
-                  <FaTwitter />
-                </Button>
-                <Button className="rounded-pill">
-                  <FaGooglePlusG />
-                </Button>
-              </div>
-            </CardBody>
-          </Card>
-        </Container>
+            </form>
+            <hr></hr>
+            <p id="option" className="d-flex justify-content-center mb-3 pt-2">Or Sign in with:</p>
+            <div className="row my-3 d-flex justify-content-around">
+              <Button className="rounded-pill">
+                <FaFacebookF />
+              </Button>
+              <Button className="rounded-pill">
+                <FaTwitter />
+              </Button>
+              <Button className="rounded-pill">
+                <FaGooglePlusG />
+              </Button>
+            </div>
+          </CardBody>
+        </Card>
+      </Container>
     );
   };
 };
