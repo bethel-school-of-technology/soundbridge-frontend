@@ -1,4 +1,4 @@
-div.mx-auto.card {
+form {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     height: 37em;
     width: 25em;
@@ -12,25 +12,28 @@ div.mx-auto.card {
     padding: 1.25em;
   }
 
-  h3 {
-      padding-bottom: 1em;
+  hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
-  input[type=text],input#email,input#password{
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
+  h3 {
+      padding-bottom: 1em;
   }
   
   .container input,
   input#email,
   input#password,
-  .container input:focus {
-    background-color: transparent;
+  input#name {
     box-shadow: none !important;
     border: none;
     border-bottom: 2px solid lightgray;
+    color: black;
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    color: #212529!important;
+    background-color: white;
   }
   
   #formbtn {
