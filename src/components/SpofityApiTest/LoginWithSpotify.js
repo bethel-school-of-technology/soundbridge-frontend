@@ -4,7 +4,7 @@ import axios from 'axios';
 import './Login.css';
 
 
-class Login extends Component {
+export default class LoginWithSpotify extends Component {
 
     state = {
         email: '',
@@ -19,25 +19,36 @@ class Login extends Component {
             password: this.state.password
         };
 
-        axios.post('http://localhost:3001/auth/login', loginInfo)
+        let spotifyInfo = {
+            email: this.state.email,
+            spotify: this.props.spotifyInfo.spotify,
+            spotifyId: this.props.spotifyInfo.spotifyId,
+            spotifyRefreshToken: this.props.spotifyInfo.spotifyRefreshToken
+        }
+
+        axios.post('http://localhost:3001/add-spotify', spotifyInfo)
             .then(res => {
-                const user = res.data;
-                if (!user) {
-                    console.log('Result: ', res.data, 'no user found')
-                }
-                if (user.spotify) {
-                    window.location.href =
-                        `/user/${user.name}/${user.spotify}/${user.spotifyId}/${user.spotifyRefreshToken}`;
-                } else {
-                    window.location.href =
-                        `/user/${user.name}`;
-                }
-            })
-            .catch(e => console.log(e));
-            console.log(loginInfo);
+                console.log(res.data);
+                axios.post('http://localhost:3001/auth/login', loginInfo)
+                    .then(res => {
+                        const user = res.data;
+                        if (!user) {
+                            console.log('Result: ', res.data, 'no user found')
+                        }
+                        if (user.spotify) {
+                            window.location.href =
+                                `/user/${user.name}/${user.spotify}/${user.spotifyId}/${user.spotifyRefreshToken}`;
+                        } else {
+                            window.location.href =
+                                `/user/${user.name}`;
+                        }
+                    })
+                    .catch(e => console.log(e));
+            });
     }
 
     render() {
+        console.log(this.props);
         return (
             <div className="absolute">
                 <form onSubmit={this.onSubmit} className="login-form">
@@ -70,5 +81,3 @@ class Login extends Component {
         );
     }
 }
-
-export default Login;

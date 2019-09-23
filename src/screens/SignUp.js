@@ -3,7 +3,7 @@ import './SignUp.css';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaGooglePlusG } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
-import { Button,   Card, CardBody, Container } from 'reactstrap';
+import { Button, Card, CardBody, Container } from 'reactstrap';
 import axios from 'axios';
 
 class SignUp extends React.Component {
@@ -19,12 +19,13 @@ class SignUp extends React.Component {
     e.preventDefault();
 
     const signupInfo = {
-      fullName: this.state.firstName + ' ' + this.state.lastName,
+      name: this.state.firstName,
       email: this.state.email,
       password: this.state.password
     };
 
-    axios.post('http://localhost:3001/auth/register', signupInfo);
+    axios.post('http://localhost:3001/auth/register', signupInfo)
+      .then(res => console.log(res.data));
   }
 
   render() {
@@ -41,23 +42,23 @@ class SignUp extends React.Component {
                 name="firstName"
                 value={this.state.firstName}
                 id="firstName"
-                placeholder="First Name" 
+                placeholder="First Name"
                 onChange={e => {
                   this.setState({
                     firstName: e.target.value
                   });
                 }} />
-              <input
+              {/* <input
                 type="text"
                 name="lastName"
                 value={this.state.lastName}
                 id="lastName"
-                placeholder="Last Name" 
+                placeholder="Last Name"
                 onChange={e => {
                   this.setState({
                     lastName: e.target.value
                   });
-                }} />
+                }} /> */}
               <input
                 type="email"
                 name="email"

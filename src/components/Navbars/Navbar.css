@@ -31,15 +31,20 @@ label.mr-sm-2 {
     width: auto;
 }
 
-a {
-  color: #616163;
-  padding-top: 0.8rem;
-  padding-left: 0.7rem;
-  transition: color 0.3s ease 0s;
+li.nav-item {
+  margin: auto;
 }
-
+a {
+  color: #616163 !important;
+  padding-top: 0.8rem;
+  padding-left: 2.7rem !important;
+  transition: color 0.3s ease 0s;
+  text-decoration: none;
+  text-align: center;
+}
+a.active,
 a:hover {
-  color: #e0e0e0;
+  color: #ffda15 !important;
   text-decoration: none;
 }
 
