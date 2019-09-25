@@ -4,7 +4,7 @@ import axios from 'axios';
 import './Login.css';
 
 
-class Login extends Component {
+export default class LoginWithSpotify extends Component {
 
     state = {
         email: '',
@@ -14,30 +14,41 @@ class Login extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-        const loginInfo = {
+        let loginInfo = {
             email: this.state.email,
             password: this.state.password
         };
 
-<<<<<<< HEAD:src/SpofityApiTest/Login.js
-        axios.post('http://localhost:3001/login', loginInfo)
-=======
-        axios.post('http://localhost:4000/api/user/login', loginInfo)
->>>>>>> Switched up routes for back end:src/components/SpofityApiTest/Login.js
+        let spotifyInfo = {
+            email: this.state.email,
+            spotify: this.props.spotifyInfo.spotify,
+            spotifyId: this.props.spotifyInfo.spotifyId,
+            spotifyRefreshToken: this.props.spotifyInfo.spotifyRefreshToken
+        }
+
+        axios.post('http://localhost:4000/add-spotify', spotifyInfo)
             .then(res => {
-                const user = res.data;
-                if (user.spotify) {
-                    window.location.href =
-                        `/user/${user.name}/${user.spotify}/${user.spotifyId}`;
-                } else {
-                    window.location.href =
-                        `/user/${user.name}`;
-                }
-            })
-            .catch(e => console.log(e));
+                console.log(res.data);
+                axios.post('http://localhost:4000/api/user/login', loginInfo)
+                    .then(res => {
+                        const user = res.data;
+                        if (!user) {
+                            console.log('Result: ', res.data, 'no user found')
+                        }
+                        if (user.spotify) {
+                            window.location.href =
+                                `/user/${user.name}/${user.spotify}/${user.spotifyId}/${user.spotifyRefreshToken}`;
+                        } else {
+                            window.location.href =
+                                `/user/${user.name}`;
+                        }
+                    })
+                    .catch(e => console.log(e));
+            });
     }
 
     render() {
+        console.log(this.props);
         return (
             <div className="absolute">
                 <form onSubmit={this.onSubmit} className="login-form">
@@ -70,5 +81,3 @@ class Login extends Component {
         );
     }
 }
-
-export default Login;
