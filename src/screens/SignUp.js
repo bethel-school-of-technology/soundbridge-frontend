@@ -49,7 +49,6 @@ class SignUp extends React.Component {
       password: this.state.password
     };
 
-<<<<<<< HEAD
     axios.post('http://localhost:4000/api/user/register', user)
       .then(res => {
         console.log(res.data);
@@ -63,10 +62,6 @@ class SignUp extends React.Component {
       email: '',
       password: ''
     })
-=======
-    axios.post('http://localhost:4000/api/user/register', signupInfo)
-      .then(res => console.log(res.data));
->>>>>>> Switched up routes for back end
   }
 
 

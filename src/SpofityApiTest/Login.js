@@ -19,11 +19,7 @@ class Login extends Component {
             password: this.state.password
         };
 
-<<<<<<< HEAD:src/SpofityApiTest/Login.js
-        axios.post('http://localhost:3001/login', loginInfo)
-=======
         axios.post('http://localhost:4000/api/user/login', loginInfo)
->>>>>>> Switched up routes for back end:src/components/SpofityApiTest/Login.js
             .then(res => {
                 const user = res.data;
                 if (user.spotify) {
