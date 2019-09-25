@@ -12,6 +12,9 @@ import Login from './components/SpofityApiTest/Login';
 import SignUp from './screens/SignUp';
 import editProfile from './screens/editProfile';
 import profile from './screens/profile';
+import UserPageNoSpotify from './components/SpofityApiTest/UserPageNoSpotify';
+import UserPage from './components/SpofityApiTest/UserPage';
+import SpotifyLoggedIn from './components/SpofityApiTest/SpotifyLoggedIn';
 
 
 
@@ -23,22 +26,15 @@ export default class App extends Component {
       <Router>
         <div className="App">
           <Navbar></Navbar>
-      {/* <Route exact path="/" component={Home} />
-      <Route exact path="/about" component={About} />
-      <Route exact path="/contact" component={Contact} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/sign-up" component={SignUp} />
-      <Route exact path="/user/:name" component={UserPageNoSpotify} />
-      <Route exact path="/user/:name/:hasSpotify/:spotifyId/:spotifyRefreshToken" component={UserPage} />
-      <Route exact path="/spotify-logged-in/:accessToken/:refreshToken" component={SpotifyLoggedIn} />
-    </div>
-    </Router> */}
 
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/sign-up" component={SignUp} />
+          <Route exact path="/user/:name" component={UserPageNoSpotify} />
+          <Route exact path="/user/:name/:hasSpotify/:spotifyId/:spotifyRefreshToken" component={UserPage} />
+          <Route exact path="/spotify-logged-in/:accessToken/:refreshToken" component={SpotifyLoggedIn} />
           <Route exact path="/profile" component={profile} />
           <Route exact path="/editProfile" component={editProfile} />
         </div>
