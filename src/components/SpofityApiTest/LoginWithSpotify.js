@@ -26,10 +26,10 @@ export default class LoginWithSpotify extends Component {
             spotifyRefreshToken: this.props.spotifyInfo.spotifyRefreshToken
         }
 
-        axios.post('http://localhost:3001/add-spotify', spotifyInfo)
+        axios.post('http://localhost:4000/add-spotify', spotifyInfo)
             .then(res => {
                 console.log(res.data);
-                axios.post('http://localhost:3001/auth/login', loginInfo)
+                axios.post('http://localhost:4000/api/user/login', loginInfo)
                     .then(res => {
                         const user = res.data;
                         if (!user) {

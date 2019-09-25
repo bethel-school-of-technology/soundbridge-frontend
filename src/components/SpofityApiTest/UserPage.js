@@ -13,7 +13,7 @@ export default class UserPage extends Component {
 
     componentDidMount() {
         const params = this.props.match.params;
-        axios.post('http://localhost:3001/has-spotify/' + params.spotifyRefreshToken)
+        axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
             .then(res => {
                 this.setState({
                     accessToken: res.data,
