@@ -1,15 +1,13 @@
 import React from 'react';
 import './Navbar.css';
-import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/Branding/finalLogo2.svg';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -36,7 +34,7 @@ export default class NavbarL extends React.Component {
       <div>
         <div>
           <Navbar className="navbar" color="light" dark expand="lg">
-            <NavbarBrand className="name" href="/">{<img className="logoicon" src={logo} alt="logo"></img>}</NavbarBrand>
+            <Link className="name" to="/">{<img className="logoicon" src={logo} alt="logo"></img>}</Link>
             <NavbarToggler className="light" onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -55,18 +53,18 @@ export default class NavbarL extends React.Component {
                 </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>
-                    <NavLink href="/profile">Profile</NavLink>
-                  </DropdownItem>
+                      <Link to="/user/name/false/null/null">Profile</Link>
+                    </DropdownItem>
                     <DropdownItem>
-                    <NavLink href="/login">Login</NavLink>
-                  </DropdownItem>
+                      <Link to="/login">Login</Link>
+                    </DropdownItem>
                     <DropdownItem>
-                    <NavLink href="/sign-up">Sign Up</NavLink>
-                  </DropdownItem>
+                      <Link to="/sign-up">Sign Up</Link>
+                    </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>
-                    <NavLink href="/sign-up">Logout</NavLink>
-                  </DropdownItem>
+                      <Link to="/sign-up">Logout</Link>
+                    </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </Nav>
