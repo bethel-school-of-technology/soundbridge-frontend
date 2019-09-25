@@ -48,6 +48,23 @@ class Login extends React.Component {
         console.log(error);
       });
 
+    // axios.post('http://localhost:4000/api/user/login', user)
+    //   .then(res => {
+    //     const user = res.data;
+    //     if (!user) {
+    //       console.log('Result: ', res.data, 'no user found')
+    //     }
+    //     if (user.spotify) {
+    //       window.location.href =
+    //         `/user/${user.name}/${user.spotify}/${user.spotifyId}/${user.spotifyRefreshToken}`;
+    //     } else {
+    //       window.location.href =
+    //         `/user/${user.name}`;
+    //     }
+    //   })
+    //   .catch(e => console.log(e));
+    // console.log(user);
+
     this.setState({
       email: '',
       password: ''
