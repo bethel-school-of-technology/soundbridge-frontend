@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbars/Navbar';
+import Footer from './components/Navbars/Footer';
 
 import Home from './screens/Home';
 import About from './screens/About';
@@ -30,6 +31,7 @@ export default class App extends Component {
           <Route exact path="/" component={profile} />
           <Route exact path="/editProfile" component={editProfile} />
         </div>
+        <Footer></Footer>
       </Router>
 
     );
