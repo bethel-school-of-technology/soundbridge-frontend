@@ -6,7 +6,6 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   UncontrolledDropdown,
@@ -35,7 +34,7 @@ export default class NavbarL extends React.Component {
       <div>
         <div>
           <Navbar className="navbar" color="light" dark expand="lg">
-            <NavbarBrand className="name" href="/">{<img className="logoicon" src={logo} alt="logo"></img>}</NavbarBrand>
+            <Link className="name" to="/">{<img className="logoicon" src={logo} alt="logo"></img>}</Link>
             <NavbarToggler className="light" onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
