@@ -19,7 +19,7 @@ class Login extends Component {
             password: this.state.password
         };
 
-        axios.post('http://localhost:3001/api/user/login', loginInfo)
+        axios.post('http://localhost:3001/auth/login', loginInfo)
             .then(res => {
                 const user = res.data;
                 if (!user) {

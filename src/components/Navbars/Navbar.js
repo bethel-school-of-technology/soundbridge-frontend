@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/Branding/finalLogo2.svg';
 import {
   Collapse,
@@ -53,18 +53,18 @@ export default class NavbarL extends React.Component {
                 </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>
-                    <Link to="/user/name/false/null/null">Profile</Link>
-                  </DropdownItem>
+                      <Link to="/user/name/false/null/null">Profile</Link>
+                    </DropdownItem>
                     <DropdownItem>
-                    <Link to="/login">Login</Link>
-                  </DropdownItem>
+                      <Link to="/login">Login</Link>
+                    </DropdownItem>
                     <DropdownItem>
-                    <Link to="/sign-up">Sign Up</Link>
-                  </DropdownItem>
+                      <Link to="/sign-up">Sign Up</Link>
+                    </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>
-                    <Link to="/sign-up">Logout</Link>
-                  </DropdownItem>
+                      <Link to="/sign-up">Logout</Link>
+                    </DropdownItem>
                   </DropdownMenu>
                 </UncontrolledDropdown>
               </Nav>

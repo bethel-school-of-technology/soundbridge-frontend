@@ -1,10 +1,10 @@
 import React from 'react';
+import axios from 'axios';
 import './SignUp.css';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaGooglePlusG } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 import { Button, Card, CardBody, Container } from 'reactstrap';
-import axios from 'axios';
 
 class SignUp extends React.Component {
 
@@ -104,5 +104,4 @@ class SignUp extends React.Component {
     );
   };
 };
-
 export default SignUp;
