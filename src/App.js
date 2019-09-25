@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import editProfile from './screens/editProfile';
 import profile from './screens/profile';
@@ -13,7 +13,7 @@ export default class App extends React.Component {
 
       <div>
         <Router>
-              <Route exact path="/profile" component={profile} />
+              <Route exact path="/" component={profile} />
               <Route exact path="/editProfile" component={editProfile} />
             </Router>
         
@@ -134,4 +134,4 @@ export default class App extends React.Component {
 //   }
 // }
 
-// ReactDOM.render(<App />, document.getElementById('root'));
+ ReactDOM.render(<App />, document.getElementById('root'));

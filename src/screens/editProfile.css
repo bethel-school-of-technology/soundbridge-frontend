@@ -1,4 +1,69 @@
 .form-control {
       width: 25%;
+      
   }
+  
+  body {
+     text-align: -webkit-center;
+    align-items: center;
+    font-family:  'Source Sans Pro', sans-serif;
+    margin: 2%; 
+    
+  font-weight: bolder;
+  }
+  
+  Label {
+      color:black;
+  }
+
+  
+  
+  Table {
+    font-weight: bolder; 
+  }
+
+  img {
+    max-width: 100%;
+ }
+
+
+ @media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 1) {
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (min-resolution: 192dpi) {
+}
+
+
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+
+}
   
