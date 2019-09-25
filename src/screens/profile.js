@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../finalLogo2.svg';
+/* import logo from '../finalLogo2.svg'; */
 import { Table, Button, Jumbotron, } from 'reactstrap';
 import './profile.css';
 
@@ -7,10 +7,7 @@ import './profile.css';
 export default class Profile extends React.Component {
     render() {
         return (
-            <div>
-        <div>
-          <img src={logo} alt="logo"></img>
-        </div>
+            <div className="body">
         <Jumbotron>
           <h1 className="display-3">Account Overview</h1>
           <h2>Profile</h2>

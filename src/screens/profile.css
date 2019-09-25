@@ -17,9 +17,6 @@
     font-size: 40px;
     margin-bottom: 35px;
   } */
-  .form-control {
-    width: 25%;
-}
 
 Label {
   color: white;
@@ -31,8 +28,9 @@ Label {
     margin-bottom: 20px;
   }
   
-  body {
-    background-color: #44494f;
+  .body {
+    padding: 1em;
+    background-color: #8e8e90;
     font-family:  'Source Sans Pro', sans-serif; 
     font-weight: bolder;
     align-items: center;

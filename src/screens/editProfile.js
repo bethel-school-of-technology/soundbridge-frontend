@@ -8,9 +8,9 @@ import logo from '../finalLogo2.svg';
 export default class editProfile extends React.Component {
     render() {
         return (
-            <div>
+            <div className="profilebody">
 
-                <Form>
+                <Form className="editProfile" >
                     <FormGroup>
                     <img src={logo} alt="logo"></img><br></br>
                         <Label for="email">Email</Label>
@@ -27,7 +27,7 @@ export default class editProfile extends React.Component {
                     <FormGroup>
                         <Label for="exampleSelect">Date of Birth</Label><br></br>
                         <Label>Month</Label>
-                        <Input type="select" name="select" id="exampleSelect" placeholder="Month">
+                        <Input type="select" name="month" id="monthSelect" placeholder="Month">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -44,7 +44,7 @@ export default class editProfile extends React.Component {
                     </FormGroup>
                     <FormGroup>
                         <Label>Day</Label>
-                        <Input type="select" name="select" id="exampleSelect" placeholder="Day">
+                        <Input type="select" name="day" id="daySelect" placeholder="Day">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -80,7 +80,7 @@ export default class editProfile extends React.Component {
                     </FormGroup>
                     <FormGroup>
                         <Label>Decade</Label>
-                        <Input type="select" name="select" id="exampleSelect" placeholder="Decade">
+                        <Input type="select" name="decade" id="decadeSelect" placeholder="Decade">
                             <option>1920</option>
                             <option>1930</option>
                             <option>1940</option>
