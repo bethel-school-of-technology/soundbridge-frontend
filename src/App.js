@@ -28,7 +28,7 @@ export default class App extends Component {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/sign-up" component={SignUp} />
-          <Route exact path="/" component={profile} />
+          <Route exact path="/profile" component={profile} />
           <Route exact path="/editProfile" component={editProfile} />
         </div>
         <Footer></Footer>
