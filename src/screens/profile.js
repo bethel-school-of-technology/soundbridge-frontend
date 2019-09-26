@@ -1,18 +1,27 @@
 
 import React from 'react';
 import './Profile.css';
+import ImageUploader from 'react-images-upload';
 
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { Input, TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 
 export default class Profile extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { pictures: [] };
+    this.onDrop = this.onDrop.bind(this);
 
     this.toggle = this.toggle.bind(this);
     this.state = {
       activeTab: '1'
     };
+  }
+
+  onDrop(picture) {
+    this.setState({
+      pictures: this.state.pictures.concat(picture),
+    });
   }
 
   toggle(tab) {
@@ -22,6 +31,7 @@ export default class Profile extends React.Component {
       });
     }
   }
+
   render() {
     return (
 
@@ -36,10 +46,17 @@ export default class Profile extends React.Component {
 
               <div className="profile-img-container ">
                 <div className="profile-img">
-                  <img />
+                  <ImageUploader
+                    withIcon={true}
+                    buttonText='Choose images'
+                    onChange={this.onDrop}
+                    imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                    maxFileSize={5242880}
+                  />
+                  <img id="profile-image" src="" alt="Image Preview" />
                 </div>
                 <div className="change-profile-img">
-                  <a href="#">Change</a>
+                  <Input type="file" name="file" id="exampleFile" />
                 </div>
               </div>
 
@@ -101,12 +118,21 @@ export default class Profile extends React.Component {
                 </TabPane>
                 <TabPane tabId="2">
                   <Row>
-                    <Col sm="12">
-                      <Card body>
-                        <CardTitle>Accounts You Follow</CardTitle>
-                        <CardText>This area will be filled with all the accounts and artists this user follows.</CardText>
-                        <Button className="profile-btn">Go somewhere</Button>
-                      </Card>
+                    <Col sm="3">
+                      <div className="playlist-img">Playlist</div>
+                      <div className="playlist-title">Title</div>
+                    </Col>
+                    <Col sm="3">
+                      <div className="playlist-img">Playlist</div>
+                      <div className="playlist-title">Title</div>
+                    </Col>
+                    <Col sm="3">
+                      <div className="playlist-img">Playlist</div>
+                      <div className="playlist-title">Title</div>
+                    </Col>
+                    <Col sm="3">
+                      <div className="playlist-img">Playlist</div>
+                      <div className="playlist-title">Title</div>
                     </Col>
                   </Row>
                 </TabPane>
@@ -114,9 +140,9 @@ export default class Profile extends React.Component {
                   <Row>
                     <Col sm="12">
                       <Card body>
-                        <CardTitle>People Who Follow You</CardTitle>
-                        <CardText>This will be filled with the people that follow this users playlists and account.</CardText>
-                        <Button className="profile-btn">Go somewhere</Button>
+                        <CardTitle>Post Section</CardTitle>
+
+                        <Button className="profile-btn">Post</Button>
                       </Card>
                     </Col>
                   </Row>
@@ -126,6 +152,10 @@ export default class Profile extends React.Component {
 
 
           </div> {/*----- top-page-display-container ----- */}
+
+          <div className="bottom-page-container">
+
+          </div>
 
         </div> {/*----- End Main display Container ----- */}
 
