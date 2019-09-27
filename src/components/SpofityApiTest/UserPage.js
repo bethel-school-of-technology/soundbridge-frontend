@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 import Playlists from './Playlists';
+import { getPlaylist } from '../../services/spotifyApiMethods';
 
 export default class UserPage extends Component {
 
@@ -16,31 +17,21 @@ export default class UserPage extends Component {
         });
     }
 
-    getPlaylist = async () => {
-        try {
-            const res = await fetch("https://api.spotify.com/v1/me/playlists", {
-                headers: {
-                    'Authorization': 'Bearer ' + this.state.accessToken,
-                }
-            });
-            const playlists = await res.json();
-            this.setState({
-                playlists,
-                playlistsDisplay: { 'display': 'inherit' }
-            });
-        } catch (e) {
-            console.log(e);
-        }
+    playlist = async () => {
+        const playlists = await getPlaylist(this.state.accessToken)
+        this.setState({
+            playlists,
+            playlistsDisplay: { 'display': 'inherit' }
+        });
     }
 
     render() {
-        const params = this.props.params;
+        const user = this.props.params;
         const spotifyInfo = this.props.spotifyInfo;
-        console.log('userInfo: ', params);
         console.log('spotifyInfo: ', spotifyInfo);
         return (
             <div>
-                <h1>Hey, {params.name}</h1>
+                <h1>Hey, {user.name}</h1>
                 <h1>You are logged in!</h1>
                 <div>
                     <h2>Spotify Info:</h2>
@@ -52,7 +43,7 @@ export default class UserPage extends Component {
                             <p>Followers: {spotifyInfo.followers}</p>
                         )
                     }
-                    <button onClick={this.getPlaylist}>get playlists</button>
+                    <button onClick={this.playlist}>get playlists</button>
                 </div>
                 <div style={this.state.playlistsDisplay}>
                     <Playlists playlists={this.state.playlists} />
