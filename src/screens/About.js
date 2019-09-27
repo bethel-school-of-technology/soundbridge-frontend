@@ -1,8 +1,8 @@
 import React from 'react';
-import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
-} from 'reactstrap';
+// import {
+//   Card, CardImg, CardText, CardBody,
+//   CardTitle, CardSubtitle, Button
+// } from 'reactstrap';
 import './About.css';
 import './Contact.css';
 import { Animated } from "react-animated-css";
@@ -79,7 +79,7 @@ const About = () => (
             <p>our Location<br></br>Our City, AA 222</p>
             <strong>Contact Info</strong>
             <p>(222) 222-2222<br></br>email@soundbridge.com</p>
-            <a href="#">
+            <a href="/#">
               <i class="fab fa-facebook-square"></i>
               <i class="fab fa-twitter-square"></i>
               <i class="fab fa-instagram"></i>

@@ -1,49 +1,87 @@
 import React from 'react';
-/* import logo from '../finalLogo2.svg'; */
+import axios from 'axios';
 import { Table, Button, Jumbotron, } from 'reactstrap';
+import UserPage from '../components/SpofityApiTest/UserPage';
+import SpotifyApiTest from '../components/SpofityApiTest/SpotifyApiTest';
 import './profile.css';
 
-
 export default class Profile extends React.Component {
-    render() {
-        return (
-            <div className="body">
+
+  state = {
+    accessToken: '',
+    spotifyInfo: {},
+    playlists: {},
+    playlistsDisplay: { 'display': 'none' },
+  }
+
+  componentDidMount() {
+    const params = this.props.location.state.info;
+    axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
+      .then(res => {
+        this.setState({
+          accessToken: res.data,
+        }, () => {
+          fetch('https://api.spotify.com/v1/me', {
+            headers: {
+              'Authorization': 'Bearer ' + this.state.accessToken,
+            }
+          }).then(res => res.json())
+            .then(data => this.setState({ spotifyInfo: data }));
+        });
+      });
+  }
+
+  render() {
+    const params = this.props.location.state.info;
+    const user = this.state.spotifyInfo;
+    const accessToken = (this.state.accessToken);
+    if (params.spotify && !accessToken) {
+      return <h1>Loading</h1>
+    }
+    return (
+      <div className="body">
+        {
+          !params.spotify ?
+            <SpotifyApiTest /> :
+            <UserPage
+              params={params}
+              spotifyInfo={user}
+              accessToken={accessToken}
+            />
+        }
         <Jumbotron>
           <h1 className="display-3">Account Overview</h1>
           <h2>Profile</h2>
           <Table>
-            <thead>
+            <tbody>
               <tr>
                 <th scope="row">Username</th>
-                <br></br>
                 <td>MAAC</td>
               </tr>
-            </thead>
-            <tr>
-              <th scope="row">Email</th>
-              <br></br>
-              <td>Soundbridge@gmail.com</td>
-            </tr>
-            <tr>
-              <th scope="row">Date of birth</th>
-              <br></br>
-              <td>9/12/2019</td>
-            </tr>
-            <tr>
-              <th scope="row">Country</th>
-              <br></br>
-              <td>U.S.A.</td>
-            </tr>
-            <tr>
-              <th scope="row">Password</th>
-              <br></br>
-              <td>*******</td>
-            </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <th scope="row">Email</th>
+                <td>Soundbridge@gmail.com</td>
+              </tr>
+              <tr>
+                <th scope="row">Date of birth</th>
+                <td>9/12/2019</td>
+              </tr>
+              <tr>
+                <th scope="row">Country</th>
+                <td>U.S.A.</td>
+              </tr>
+              <tr>
+                <th scope="row">Password</th>
+                <td>*******</td>
+              </tr>
+            </tbody>
           </Table>
           <p className="lead">
           </p>
           <a href="/editProfile" id="editProfile"><Button class="btn btn-secondary">Edit Profile</Button></a>
-           
+
         </Jumbotron>
         <div>
           <Jumbotron>
@@ -59,6 +97,6 @@ export default class Profile extends React.Component {
         </div>
         <hr />
       </div>
-        );
-    }
+    );
+  }
 }

@@ -30,9 +30,12 @@ export default class SpotifyLoggedIn extends Component {
     };
 
     render() {
+        if (this.state.spotifyInfo === {}) {
+            return <h1>Loading...</h1>
+        }
         return (
             <div>
-                <h1>Log back in to add spotify!</h1>
+                <h2>Log back in to add spotify!</h2>
                 <LoginWithSpotify spotifyInfo={this.state.spotifyInfo} />
             </div>
         )
