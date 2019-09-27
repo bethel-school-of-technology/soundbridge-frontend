@@ -1,10 +1,6 @@
 import React from 'react';
 import './Contact.css';
-import {Form,Button} from 'reactstrap'
-import { FaFacebookF } from 'react-icons/fa';
-import { FaTwitter } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
+import {Form} from 'reactstrap'
 
 const Contact = () => (
 
@@ -21,20 +17,13 @@ const Contact = () => (
             <p>our Location<br></br>Our City, AA 222</p>
             <strong>Contact Info</strong>
             <p>(222) 222-2222<br></br>email@soundbridge.com</p>
-            <div id="icons" className="row">
-              <Button className=" fa rounded-pill">
-                <FaFacebookF />
-              </Button>
-              <Button className=" fa rounded-pill" >
-                <FaTwitter />
-              </Button>
-              <Button className=" fa rounded-pill">
-                <FaInstagram />
-              </Button>
-              <Button className=" fa rounded-pill">
-                <FaLinkedin />
-              </Button>
-              </div>
+            <a href="/">
+                <i className="fab fa-facebook-square"></i>
+                <i className="fab fa-twitter-square"></i>
+                <i className="fab fa-instagram"></i>
+                <i className="fab fa-reddit-square"></i>
+                <i className="fab fa-linkedin"></i>
+            </a>
 
         </div>
 
@@ -64,6 +53,7 @@ const Contact = () => (
                     <input type="submit" className="btn btn-outline-light btn-sm" value="Send message"></input>
 
                 </div>
+
             </Form>
 
         </div>
