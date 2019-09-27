@@ -7,7 +7,7 @@ import Footer from './components/Navbars/Footer';
 import Home from './screens/Home';
 import About from './screens/About';
 import Contact from './screens/Contact';
-import Profile from './screens/Profile';
+import Profile from './screens/profile';
 import Login from './screens/Login';
 import SignUp from './screens/SignUp';
 import editProfile from './screens/editProfile';

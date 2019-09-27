@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './Profile.css';
+import './profile.css';
 import ImageUploader from 'react-images-upload';
 
 import { Input, TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
