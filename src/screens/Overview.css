@@ -1,21 +1,41 @@
-.editProfile {
-  width: 35%
-}  
-  .profilebody {
-    background-color: #8e8e90;
-    text-align: -webkit-center;
-    align-items: center;
-    font-family:  'Source Sans Pro', sans-serif;
-    font-weight: bolder;
+/* h1 {
+    color: black;
+    font-size: 40px;
   }
   
-  Label {
-      color:black;
+  h2 {
+    
+    color: black;
+    font-size: 40px;
+    margin-bottom: 35px;
+    margin-top: 35px;
+  
   }
+  
+  h3{
+    color: black;
+    font-size: 40px;
+    margin-bottom: 35px;
+  } */
 
-  .form-control{
-    background-color: white !important;
+Label {
+  color: white;
+  align-items: center;
+}
+
+  button {
+   
+    margin-bottom: 20px;
   }
+  
+  .body {
+    padding: 1em;
+    background-color: #8e8e90;
+    font-family:  'Source Sans Pro', sans-serif; 
+    font-weight: bolder;
+    align-items: center;
+  }
+  
   
   Table {
     font-weight: bolder; 
@@ -24,6 +44,8 @@
   img {
     max-width: 100%;
  }
+
+
 
 
  @media screen

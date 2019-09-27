@@ -1,90 +1,207 @@
-/* h1 {
-    color: black;
-    font-size: 40px;
-  }
-  
-  h2 {
-    
-    color: black;
-    font-size: 40px;
-    margin-bottom: 35px;
-    margin-top: 35px;
-  
-  }
-  
-  h3{
-    color: black;
-    font-size: 40px;
-    margin-bottom: 35px;
-  } */
 
-Label {
-  color: white;
-  align-items: center;
-}
 
-  button {
-   
-    margin-bottom: 20px;
+/* ----- Page Display Container ----*/
+
+.main-display-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7d7e7d+0,0e0e0e+100;Black+3D */
+    background: rgb(125, 126, 125); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(125, 126, 125, 1) 0%, rgba(14, 14, 14, 1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      top,
+      rgba(125, 126, 125, 1) 0%,
+      rgba(14, 14, 14, 1) 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      to bottom,
+      rgba(125, 126, 125, 1) 0%,
+      rgba(14, 14, 14, 1) 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
   }
   
-  .body {
-    padding: 1em;
-    background-color: #8e8e90;
-    font-family:  'Source Sans Pro', sans-serif; 
-    font-weight: bolder;
+  .top-page-display-container {
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+  
+  .img-and-username-container {
+    display: flex;
     align-items: center;
+    position: relative;
+    margin: 0;
   }
   
+  /*-------- Profile Image -------*/
   
-  Table {
-    font-weight: bolder; 
+  .profile-img-container {
+    height: 15rem;
+    width: 15rem;
+    min-width: 15rem;
+    max-width: 15rem;
+    background-color: #d4c81b1e;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-right: 0;
+  
+    border-radius: 50%;
+    box-shadow: 3px 3px 4px 4px #313438b9;
   }
-
-  img {
-    max-width: 100%;
- }
-
-
-
-
- @media screen
-and (min-device-width: 1200px)
-and (max-device-width: 1600px)
-and (-webkit-min-device-pixel-ratio: 1) {
-}
-
-/* ----------- Retina Screens ----------- */
-@media screen
-and (min-device-width: 1200px)
-and (max-device-width: 1600px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (min-resolution: 192dpi) {
-}
-
-
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3) {
-
-}
-
-/* Portrait */
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: portrait) {
-
-}
-
-/* Landscape */
-@media only screen
-and (min-device-width: 414px)
-and (max-device-width: 736px)
-and (-webkit-min-device-pixel-ratio: 3)
-and (orientation: landscape) {
-
-}
+  
+  .profile-img img {
+    width: auto;
+    height: 100%;
+  }
+  
+  .change-profile-img {
+    
+    opacity: 0.5;
+    height: 7rem;
+    width: 15rem;
+    position: absolute;
+    top: 80%;
+    right: -30%;
+  }
+  .change-profile-img a {
+    text-align: center;
+    opacity: 0.9;
+    color: white;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .change-profile-img a:hover {
+    opacity: 1;
+  }
+  
+  .username-title {
+    font-size: 1.7rem;
+    margin-left: 2rem;
+  }
+  
+  .profile-nav-tabs{
+    background-color: none;
+  }
+  .nav-tabs .nav-link{
+    border: none;
+    color: #888;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    padding: 50px;
+  }
+  .nav-tabs .nav-item{
+      margin: 0;
+  }
+  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    background-color: transparent;
+    color: white;
+    border-width: 2px;
+     border-bottom: 2px white solid;
+     width: 100%;
+     display: flex; 
+  }
+  .nav-link:hover{
+    color: #d4c81b;
+  }
+  .song-col{
+     
+  }
+  .songs{
+      padding: 1rem;
+      color: white;
+      border-bottom: 1px #888 solid;
+      font-size: 1.0rem;
+      letter-spacing: 2px;
+  }
+  .col-sm-4{
+      padding: 0;
+  }
+  .col-sm-3{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .playlist-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #555;
+    height:15vw;
+  }
+  .playlist-title{
+    color: white;
+    font-size: 1.0rem;
+    letter-spacing: 1.5px;
+  }
+  .card{
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: #f1f1f1;
+  }
+  .profile-btn{
+    width: 20%;
+  }
+  
+  .profile-tabs {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin-top: 3rem;
+  }
+  .profile-tabs a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  .profile-tabs a:hover {
+    color: #f1f1f1;
+  }
+  
+  .tabs-underline {
+    width: 3rem;
+    height: 0.2rem;
+    background-color: #d4c81b;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+  }
+  .bottom-page-container{
+    
+  }
+  
+  /*-------- Custom Scroll Bar -------*/
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: 111;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
   
