@@ -6,22 +6,15 @@ import { getPlaylist } from '../../services/spotifyApiMethods';
 export default class UserPage extends Component {
 
     state = {
-        accessToken: '',
-        playlists: {},
-        playlistsDisplay: { 'display': 'none' },
+        playlists: {
+            items: []
+        },
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+        const playlists = await getPlaylist(this.props.accessToken);
         this.setState({
-            accessToken: this.props.accessToken
-        });
-    }
-
-    playlist = async () => {
-        const playlists = await getPlaylist(this.state.accessToken)
-        this.setState({
-            playlists,
-            playlistsDisplay: { 'display': 'inherit' }
+            playlists
         });
     }
 
@@ -29,27 +22,38 @@ export default class UserPage extends Component {
         const user = this.props.params;
         const spotifyInfo = this.props.spotifyInfo;
         console.log('spotifyInfo: ', spotifyInfo);
-        return (
-            <div>
-                <h1>Hey, {user.name}</h1>
-                <h1>You are logged in!</h1>
+        console.log('playlists: ', this.state.playlists)
+        if (this.state.playlists.items.length < 1) {
+            return <h1>Loading</h1>
+        } else {
+            return (
                 <div>
-                    <h2>Spotify Info:</h2>
-                    <p>Email: {spotifyInfo.email}</p>
-                    <p>User Id: {spotifyInfo.id}</p>
-                    {spotifyInfo.followers ? (
-                        <p>You don't have any followers :(</p>
-                    ) : (
-                            <p>Followers: {spotifyInfo.followers}</p>
-                        )
-                    }
-                    <button onClick={this.playlist}>get playlists</button>
+                    <h1>Hey, {user.name}</h1>
+                    <h1>You are logged in!</h1>
+                    <div>
+                        <h2>Spotify Info:</h2>
+                        <p>Email: {spotifyInfo.email}</p>
+                        <p>User Id: {spotifyInfo.id}</p>
+                        {spotifyInfo.followers ? (
+                            <p>You don't have any followers :(</p>
+                        ) : (
+                                <p>Followers: {spotifyInfo.followers}</p>
+                            )
+                        }
+                        {/* <button onClick={this.playlist}>get playlists</button> */}
+                    </div>
+                    <div style={this.state.playlistsDisplay}>
+                        {this.state.playlists.items.map((playlist, i) => {
+                            return <Playlists
+                                key={i}
+                                playlists={playlist}
+                                accessToken={this.props.accessToken} />
+                        })
+                        }
+                    </div>
                 </div>
-                <div style={this.state.playlistsDisplay}>
-                    <Playlists playlists={this.state.playlists} />
-                </div>
-            </div>
-        )
+            )
+        }
     }
 }
 
