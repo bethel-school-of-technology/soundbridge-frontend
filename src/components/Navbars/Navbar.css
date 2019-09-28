@@ -9,12 +9,11 @@
 }
 
 
-.collapse{
-  
-  height: 100vh;
-  width: 100vw;
+.navbar-collapse{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   z-index: 9999;
-  
 }
 
 
