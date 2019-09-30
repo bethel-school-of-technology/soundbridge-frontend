@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 import Playlists from './Playlists';
-import SpotifyApiMethods from '../../services/SpotifyApiMethods';
+import { SpotifyApiMethods} from '../../services/SpotifyApiMethods';
 
 export default class UserPage extends Component {
 
