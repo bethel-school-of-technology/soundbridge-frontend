@@ -1,7 +1,7 @@
 
 import React from 'react';
-import './profile.css';
-import ImageUploader from 'react-images-upload';
+import './navProfile.css';
+import Darrin from '../assets/images/DarrinDeal.jpg';
 
 import { Input, TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
@@ -46,22 +46,17 @@ export default class Profile extends React.Component {
 
               <div className="profile-img-container ">
                 <div className="profile-img">
-                  <ImageUploader
-                    withIcon={true}
-                    buttonText='Choose images'
-                    onChange={this.onDrop}
-                    imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                    maxFileSize={5242880}
-                  />
-                  <img id="profile-image" src="" alt="Image Preview" />
+                  
+                  <img id="profile-image" src={Darrin} alt="DarrinDeal" />
                 </div>
                 <div className="change-profile-img">
-                  <Input type="file" name="file" id="exampleFile" />
+                  <a to="#" >Change</a>
                 </div>
               </div>
 
               <div className="username-title ">
-                <h1>User's Name</h1>
+                <p>User</p>
+                <h1>Darrin</h1>
               </div>
 
             </div> {/*----- End img-and-username-container ----- */}
