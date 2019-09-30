@@ -1,4 +1,4 @@
-var SpotifyMethods = {
+export const SpotifyMethods = {
 
     // Retrieve user playlists
 
@@ -35,5 +35,3 @@ var SpotifyMethods = {
     }
 
 }
-
-module.exports = SpotifyMethods;
