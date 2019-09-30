@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 import Playlists from './Playlists';
-import SpotifyMethods from '../../services/spotifyApiMethods';
+import { getPlaylist } from '../../services/spotifyApiMethods';
 
 export default class UserPage extends Component {
 
@@ -12,7 +12,7 @@ export default class UserPage extends Component {
     }
 
     async componentDidMount() {
-        const playlists = await SpotifyMethods.getPlaylist(this.props.accessToken);
+        const playlists = await getPlaylist(this.props.accessToken);
         this.setState({
             playlists
         });

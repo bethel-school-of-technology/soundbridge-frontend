@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SpotifyMethods from '../../services/spotifyApiMethods';
+import { getPlaylistTracks } from '../../services/spotifyApiMethods';
 
 const listStyle = {
     'marginTop': '1em',
@@ -21,7 +21,7 @@ class Playlists extends Component {
     }
 
     async componentDidMount() {
-        const tracks = await SpotifyMethods.getPlaylistTracks(this.props.playlists.tracks.href, this.props.accessToken);
+        const tracks = await getPlaylistTracks(this.props.playlists.tracks.href, this.props.accessToken);
         this.setState({ tracks })
     }
 
