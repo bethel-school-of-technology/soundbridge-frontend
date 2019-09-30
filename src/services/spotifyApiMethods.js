@@ -1,4 +1,4 @@
-export const SpotifyMethods = {
+export const SpotifyApiMethods = {
 
     // Retrieve user playlists
 
