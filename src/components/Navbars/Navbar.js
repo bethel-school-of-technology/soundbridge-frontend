@@ -42,7 +42,7 @@ export default class NavbarL extends React.Component {
                   <Link to="/">Home</Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/Profile">Profile</Link>
+                  <Link to="/nav-profile">Profile</Link>
                 </NavItem>
                 <NavItem>
                   <Link to="/about">About</Link>
@@ -56,7 +56,7 @@ export default class NavbarL extends React.Component {
                 </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>
-                    <Link to="/Overview">Overview</Link>
+                    <Link to="/overview">Overview</Link>
                   </DropdownItem>
                     <DropdownItem>
                     <Link to="/login">Login</Link>

@@ -12,7 +12,7 @@ import navProfile from './screens/navProfile';
 import Login from './screens/Login';
 import SignUp from './screens/SignUp';
 import editProfile from './screens/editProfile';
-import profile from './screens/profile';
+import profile from './screens/Profile';
 import SpotifyLoggedIn from './components/SpofityApiTest/SpotifyLoggedIn';
 // import UserPageNoSpotify from './components/SpofityApiTest/UserPageNoSpotify';
 // import UserPage from './components/SpofityApiTest/UserPage';
@@ -31,7 +31,7 @@ export default class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
-          <Route exact path="/profile" component={navProfile} />
+          <Route exact path="/nav-profile" component={navProfile} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/sign-up" component={SignUp} />
           <Route exact path="/user/:name" component={profile} />
