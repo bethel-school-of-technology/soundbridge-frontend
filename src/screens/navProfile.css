@@ -121,9 +121,6 @@
   .nav-link:hover{
     color: #d4c81b;
   }
-  .song-col{
-     
-  }
   .songs{
       padding: 1rem;
       color: white;
@@ -184,27 +181,19 @@
     margin-bottom: 2rem;
     transition: 0.3s;
   }
-  .bottom-page-container{
-    
-  }
-  
   /*-------- Custom Scroll Bar -------*/
-  
   /* width */
   ::-webkit-scrollbar {
     width: 10px;
   }
-  
   /* Track */
   ::-webkit-scrollbar-track {
     background: 111;
   }
-  
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #888;
   }
-  
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
