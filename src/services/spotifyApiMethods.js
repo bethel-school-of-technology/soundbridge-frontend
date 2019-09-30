@@ -2,7 +2,7 @@ export var SpotifyApiMethods = {
 
     // Retrieve user playlists
 
-    getPlaylist: async authToken => {
+    getPlaylist: async function(authToken) {
         try {
             const res = await fetch(
                 "https://api.spotify.com/v1/me/playlists",
@@ -18,7 +18,7 @@ export var SpotifyApiMethods = {
         }
     },
 
-    getPlaylistTracks: async (url, authToken) => {
+    getPlaylistTracks: async function(url, authToken) {
         try {
             const res = await fetch(
                 url,
