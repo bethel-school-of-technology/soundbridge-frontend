@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SpotifyApiMethods} from '../../services/SpotifyApiMethods';
+import { SpotifyApiMethods} from '../../services/spotifyApiMethods';
 
 const listStyle = {
     'marginTop': '1em',
