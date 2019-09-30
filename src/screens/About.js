@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'reactstrap';
+import {Button} from 'reactstrap';
 import './About.css';
 import './Contact.css';
 import { Animated } from "react-animated-css";
@@ -7,7 +7,6 @@ import { FaFacebookF } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
-
 
 const About = () => (
   <div>
@@ -57,7 +56,7 @@ const About = () => (
             <hr></hr>
           </div>
           <div className="about-text-content">
-            <p>Together, we aim to connect Listeners and Musicians in a tight-nit, online community.</p>
+            <p>Together, we aim to connect Listeners and Musicians in a tight-nit, online community.</p> 
             <p>As musicians ourselves, we want to make it easy to colaberate with other artists, find new listeners and even discover new venues and events!</p>
           </div>
 
@@ -96,51 +95,51 @@ const About = () => (
               </Button>
               </div>
 
-            </div>
+          </div>
 
-            <div className="col-md-7">
-              <h3>Have a Question?</h3>
+          <div className="col-md-7">
+            <h3>Have a Question?</h3>
 
-              <form id="contact-form" method="post" action="contact.php">
+            <form id="contact-form" method="post" action="contact.php">
 
-                <div className="messages"></div>
-                <div className="controls">
+              <div className="messages"></div>
+              <div className="controls">
 
-                  <div className="form-group">
-                    <input id="form_name" type="text" name="name" className="form-control"
-                      placeholder="Enter your name." required="required"></input>
-                  </div>
-
-                  <div className="form-group">
-                    <input id="form_email" type="email" name="email" className="form-control"
-                      placeholder="Enter your email." required="required"></input>
-                  </div>
-
-                  <div className="form-group">
-                    <textarea id="form_message" name="message" className="form-control"
-                      placeholder="Add your message." rows="4" required="required"></textarea>
-                  </div>
-
-                  <input type="submit" className="btn btn-outline-light btn-sm" value="Send message"></input>
-
+                <div className="form-group">
+                  <input id="form_name" type="text" name="name" className="form-control"
+                    placeholder="Enter your name." required="required"></input>
                 </div>
 
-              </form>
+                <div className="form-group">
+                  <input id="form_email" type="email" name="email" className="form-control"
+                    placeholder="Enter your email." required="required"></input>
+                </div>
 
-            </div>
+                <div className="form-group">
+                  <textarea id="form_message" name="message" className="form-control"
+                    placeholder="Add your message." rows="4" required="required"></textarea>
+                </div>
 
-            <hr className="socket"></hr>
+                <input type="submit" className="btn btn-outline-light btn-sm" value="Send message"></input>
+
+              </div>
+
+            </form>
+
+          </div>
+
+          <hr className="socket"></hr>
 
 
-          </div> {/*} <!-- End Row --> */}
+        </div> {/*} <!-- End Row --> */}
       </footer> {/*} <!-- End Footer --> */}
 
 
 
-        {/* End Contact Section */}
+      {/* End Contact Section */}
     </div>
 
-    </div>
-    );
-    
+  </div>
+);
+
 export default About;

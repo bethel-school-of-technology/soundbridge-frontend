@@ -21,8 +21,6 @@ export default class LoginWithSpotify extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-        console.log('submit')
-
         let loginInfo = {
             email: this.state.email,
             password: this.state.password
@@ -35,18 +33,14 @@ export default class LoginWithSpotify extends Component {
             spotifyRefreshToken: this.props.spotifyInfo.spotifyRefreshToken
         }
 
-        console.log(spotifyInfo);
-
-        axios.post('http://localhost:4000/add-spotify', spotifyInfo)
+        axios.post('https://soundbridge.herokuapp.com/add-spotify', spotifyInfo)
             .then(res => {
-                console.log('res.data: ',res.data);
-                axios.post('http://localhost:4000/api/user/login', loginInfo)
+                axios.post('https://soundbridge.herokuapp.com/api/user/login', loginInfo)
                     .then(res => {
                         const user = res.data;
                         if (!user) {
                             console.log('Result: ', res.data, 'no user found')
                         } else {
-                            console.log('user: ', user)
                             this.setState({
                                 loggedIn: !this.state.loggedIn,
                                 user,
@@ -59,7 +53,6 @@ export default class LoginWithSpotify extends Component {
 
     render() {
         if (this.state.loggedIn) {
-            console.log(this.state.loggedIn);
             return <Redirect
                 to={{
                     pathname: `/user/${this.state.user.name}`,
@@ -67,7 +60,6 @@ export default class LoginWithSpotify extends Component {
                 }}
             />
         }
-        console.log(this.state.loggedIn);
         return (
             <Container className="justify-content-center">
                 <Form className="mx-auto" onSubmit={this.onSubmit}>

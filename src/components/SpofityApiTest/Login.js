@@ -19,7 +19,7 @@ class Login extends Component {
             password: this.state.password
         };
 
-        axios.post('http://localhost:4000/api/user/login', loginInfo)
+        axios.post('https://soundbridge.herokuapp.com/api/user/login', loginInfo)
             .then(res => {
                 const user = res.data;
                 if (!user) {
