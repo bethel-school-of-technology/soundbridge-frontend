@@ -1,5 +1,7 @@
 .editProfile {
   width: 35%
+  
+
 }  
   .profilebody {
     background-color: #8e8e90;
@@ -7,21 +9,51 @@
     align-items: center;
     font-family:  'Source Sans Pro', sans-serif;
     font-weight: bolder;
+    border: .15rem solid #666b71;
+    }
+
+    a {
+      align-items: center;
+    }
+
+   .input.form-control, input#email, input#password, 
+    input#name, input#confirmPassword, input#DOB, 
+    input#country.form-control {
+    border: .15rem solid #666b71;
+    background-color: white;
+    color: black
+    }
+
+ .form-control {
+   color: black !Important;
+    width: 100%;
+    transition: none;
+  
   }
   
+  .input {
+    background-color: white;
+  }
   Label {
       color:black;
   }
 
-  
-  
   Table {
-    font-weight: bolder; 
+    font-weight: bolder;
+     
+  }
+  .btn {
+    margin-bottom: 20px;
+    border: 30px;
+    margin-left: 0px;
+    align-items: flex-start;
   }
 
-  img {
-    max-width: 100%;
- }
+Buttons {
+  margin: 0 auto;
+  justify-content: center;
+}
+
 
 
  @media screen

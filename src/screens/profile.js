@@ -1,13 +1,12 @@
-import React from 'react';
-/* import logo from '../finalLogo2.svg'; */
-import { Table, Button, Jumbotron, } from 'reactstrap';
+import React, { Component } from 'react';
+import { Table, Button, Jumbotron } from 'reactstrap';
 import './profile.css';
 
 
-export default class Profile extends React.Component {
-    render() {
-        return (
-            <div className="body">
+export default class Profile extends Component {
+  render() {
+    return (
+      <div className="body">
         <Jumbotron>
           <h1 className="display-3">Account Overview</h1>
           <h2>Profile</h2>
@@ -40,10 +39,10 @@ export default class Profile extends React.Component {
               <td>*******</td>
             </tr>
           </Table>
-          <p className="lead">
-          </p>
-          <a href="/editProfile" id="editProfile"><Button class="btn btn-secondary">Edit Profile</Button></a>
-           
+          
+          <a href="/editProfile" id="editbtn"><Button className="secondary float-left">Edit Profile</Button></a>
+          
+
         </Jumbotron>
         <div>
           <Jumbotron>
@@ -53,12 +52,15 @@ export default class Profile extends React.Component {
             <hr className="my-2" />
             <p>Enjoy unlimited streaming with premium!</p>
             <p className="lead">
-              <Button class="btn btn-secondary">Join Premium</Button>
+            <Button className="secondary" onClick={() => {alert('Success!!! You are now part of the elite group of Premium Members!!!')}}>Join Premium</Button>
+              
+    
             </p>
           </Jumbotron>
+         
         </div>
         <hr />
       </div>
-        );
-    }
+    );
+  }
 }
