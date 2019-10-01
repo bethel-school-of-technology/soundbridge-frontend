@@ -5,6 +5,7 @@ import { FaFacebookF } from 'react-icons/fa';
 import { FaGooglePlusG } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 import { Button, Input, Container, Form } from 'reactstrap';
+import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor(props) {
@@ -16,7 +17,9 @@ class Login extends React.Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      loggedIn: false,
+      user: {},
     }
   }
 
@@ -40,30 +43,29 @@ class Login extends React.Component {
       password: this.state.password
     };
 
-    axios.post('http://localhost:4000/api/user/login', user)
-      .then(res => {
-        console.log(res.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
     // axios.post('http://localhost:4000/api/user/login', user)
     //   .then(res => {
-    //     const user = res.data;
-    //     if (!user) {
-    //       console.log('Result: ', res.data, 'no user found')
-    //     }
-    //     if (user.spotify) {
-    //       window.location.href =
-    //         `/user/${user.name}/${user.spotify}/${user.spotifyId}/${user.spotifyRefreshToken}`;
-    //     } else {
-    //       window.location.href =
-    //         `/user/${user.name}`;
-    //     }
+    //     console.log(res.data);
     //   })
-    //   .catch(e => console.log(e));
-    // console.log(user);
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
+
+    axios.post('https://soundbridge.herokuapp.com/api/user/login', user)
+      .then(res => {
+        const user = res.data;
+        if (!user) {
+          console.log('Result: ', res.data, 'no user found')
+        } else {
+          console.log(user)
+          this.setState({
+            loggedIn: !this.state.loggedIn,
+            user,
+          });
+        }
+      })
+      .catch (e => console.log(e));
+    console.log(user);
 
     this.setState({
       email: '',
@@ -71,15 +73,21 @@ class Login extends React.Component {
     })
   }
 
-
-
   render() {
+    if (this.state.loggedIn) {
+      return <Redirect
+        to={{
+          pathname: `/user/${this.state.user.name}`,
+          state: { info: this.state.user }
+        }}
+      />
+    }
     return (
       <Container className="justify-content-center">
         <Form className="mx-auto" onSubmit={this.onSubmit}>
           <div className="cardbody">
             <div className="text-center">
-              <h3>SignUp</h3>
+              <h3>Login</h3>
             </div>
             <Input type="email" name="email" id="email" placeholder="Email" value={this.state.email} onChange={this.onChangeEmail} />
             <Input type="password" name="password" id="password" placeholder="Password" value={this.state.password} onChange={this.onChangePassword} />

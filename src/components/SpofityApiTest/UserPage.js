@@ -1,75 +1,59 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import Playlists from './Playlists';
+import { SpotifyApiMethods} from '../../services/spotifyApiMethods';
 
 export default class UserPage extends Component {
 
     state = {
-        accessToken: '',
-        spotifyInfo: {},
-        playlists: {},
-        playlistsDisplay: { 'display': 'none' },
+        playlists: {
+            items: []
+        },
     }
 
-    componentDidMount() {
-        const params = this.props.match.params;
-        axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
-            .then(res => {
-                this.setState({
-                    accessToken: res.data,
-                }, () => {
-                    fetch('https://api.spotify.com/v1/me', {
-                        headers: {
-                            'Authorization': 'Bearer ' + this.state.accessToken,
-                        }
-                    }).then(res => res.json())
-                        .then(data => this.setState({ spotifyInfo: data }));
-                });
-            });
-    }
-
-    getPlaylist = async () => {
-        try {
-            const res = await fetch("https://api.spotify.com/v1/me/playlists", {
-                headers: {
-                    'Authorization': 'Bearer ' + this.state.accessToken,
-                }
-            });
-            const playlists = await res.json();
-            this.setState({
-                playlists,
-                playlistsDisplay: { 'display': 'inherit' }
-            });
-        } catch (e) {
-            console.log(e);
-        }
+    async componentDidMount() {
+        const playlists = await SpotifyApiMethods.getPlaylist(this.props.accessToken);
+        this.setState({
+            playlists
+        });
     }
 
     render() {
-        const params = this.props.match.params;
-        const user = this.state.spotifyInfo;
-        console.log(user);
-        return (
-            <div>
-                <h1>Hey, {params.name}</h1>
-                <h1>You are logged in!</h1>
+        const user = this.props.params;
+        const spotifyInfo = this.props.spotifyInfo;
+        console.log('spotifyInfo: ', spotifyInfo);
+        console.log('playlists: ', this.state.playlists)
+        if (this.state.playlists.items.length < 1) {
+            return <h1>Loading</h1>
+        } else {
+            return (
                 <div>
-                    <h2>Spotify Info:</h2>
-                    <p>Email: {user.email}</p>
-                    <p>User Id: {user.id}</p>
-                    {user.followers ? (
-                        <p>You don't have any followers :(</p>
-                    ) : (
-                            <p>Followers: {user.followers}</p>
-                        )
-                    }
-                    <button onClick={this.getPlaylist}>get playlists</button>
+                    <h1>Hey, {user.name}</h1>
+                    <h1>You are logged in!</h1>
+                    <div>
+                        <h2>Spotify Info:</h2>
+                        <p>Email: {spotifyInfo.email}</p>
+                        <p>User Id: {spotifyInfo.id}</p>
+                        {spotifyInfo.followers ? (
+                            <p>You don't have any followers :(</p>
+                        ) : (
+                                <p>Followers: {spotifyInfo.followers}</p>
+                            )
+                        }
+                        {/* <button onClick={this.playlist}>get playlists</button> */}
+                    </div>
+                    <div style={this.state.playlistsDisplay}>
+                        {this.state.playlists.items.map((playlist, i) => {
+                            return <Playlists
+                                key={i}
+                                playlists={playlist}
+                                accessToken={this.props.accessToken} />
+                        })
+                        }
+                    </div>
                 </div>
-                <div style={this.state.playlistsDisplay}>
-                    <Playlists playlists={this.state.playlists} />
-                </div>
-            </div>
-        )
+            )
+        }
     }
 }
 
