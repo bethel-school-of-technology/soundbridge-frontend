@@ -3,7 +3,7 @@ import React from 'react';
 import './navProfile.css';
 import Darrin from '../assets/images/DarrinDeal.jpg';
 
-import { Input, TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 
 export default class Profile extends React.Component {
@@ -50,7 +50,7 @@ export default class Profile extends React.Component {
                   <img id="profile-image" src={Darrin} alt="DarrinDeal" />
                 </div>
                 <div className="change-profile-img">
-                  <a to="#" >Change</a>
+                  <a href="#" >Change</a>
                 </div>
               </div>
 

@@ -1,90 +1,67 @@
-/* h1 {
-    color: black;
-    font-size: 40px;
-  }
-  
-  h2 {
-    
-    color: black;
-    font-size: 40px;
-    margin-bottom: 35px;
-    margin-top: 35px;
-  
-  }
-  
-  h3{
-    color: black;
-    font-size: 40px;
-    margin-bottom: 35px;
-  } */
 
-  Label {
-    color: white;
+
+.placeholder {
+  color: white;
+} 
+  
+  .body {
+    padding: auto;
+    background-color: #8e8e90;
+    font-family:  'Source Sans Pro', sans-serif; 
+    font-weight: bolder;
     align-items: center;
   }
-  
-    button {
-     
-      margin-bottom: 20px;
-    }
-    
-    .body {
-      padding: 1em;
-      background-color: #8e8e90;
-      font-family:  'Source Sans Pro', sans-serif; 
-      font-weight: bolder;
-      align-items: center;
-    }
-    
-    
-    Table {
-      font-weight: bolder; 
-    }
-  
-    img {
-      max-width: 100%;
-   }
-  
-  
-  
-  
-   @media screen
-  and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 1) {
+  .input {
+    background-color: white;
   }
-  
-  /* ----------- Retina Screens ----------- */
-  @media screen
-  and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (min-resolution: 192dpi) {
+
+ 
+  Table {
+    font-weight: bolder; 
   }
-  
-  
-  @media only screen
-  and (min-device-width: 414px)
-  and (max-device-width: 736px)
-  and (-webkit-min-device-pixel-ratio: 3) {
-  
+
+  .form-group {
+    align-items: center;
   }
+
+
+@media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 1) {
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (min-resolution: 192dpi) {
+}
+
+
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+
+}
   
-  /* Portrait */
-  @media only screen
-  and (min-device-width: 414px)
-  and (max-device-width: 736px)
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: portrait) {
-  
-  }
-  
-  /* Landscape */
-  @media only screen
-  and (min-device-width: 414px)
-  and (max-device-width: 736px)
-  and (-webkit-min-device-pixel-ratio: 3)
-  and (orientation: landscape) {
-  
-  }
-    
