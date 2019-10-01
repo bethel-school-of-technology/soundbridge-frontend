@@ -56,9 +56,6 @@ export default class NavbarL extends React.Component {
                 </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>
-                      <Link to="/profile">Profile</Link>
-                    </DropdownItem>
-                    <DropdownItem>
                     <Link to="/profile">Overview</Link>
                   </DropdownItem>
                     <DropdownItem>
