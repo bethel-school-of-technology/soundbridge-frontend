@@ -23,8 +23,9 @@ form.mx-auto {
     margin-bottom: 2rem;
   }
 
-  h3 {
+  #signUpHeader {
       padding-bottom: 1em;
+      color: #212529;
   }
   
   .container input,

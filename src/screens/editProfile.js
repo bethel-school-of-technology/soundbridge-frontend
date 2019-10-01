@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './editProfile.css';
-import logo from '../finalLogo2.svg';
+import logo from '../assets/Branding/finalLogo2.svg';
 
 
 export default class editProfile extends React.Component {

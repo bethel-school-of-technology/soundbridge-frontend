@@ -26,17 +26,17 @@ footer {
   footer .svg-inline--fa:hover{
     color: #1F7A8C!important;
   } 
-  footer h3 {
-    text-transform: uppercase;
-    margin: 1.5rem 0;
-  }
   .contact-info{
     margin-top: 1.5rem; 
   }
   #rowbg {
     height: 100vh;
   }
-  
+  #contactHeader {
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 1.5rem 0;
+  }
   /*---- Start Contact Form ----*/
   .form-group{
     margin-bottom: 1.3rem;
