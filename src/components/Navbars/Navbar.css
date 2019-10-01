@@ -15,7 +15,10 @@
   align-items: flex-start;
   z-index: 9999;
 }
-
+.dropdown-menu{
+  padding: 10px;
+  justify-content: center;
+}
 
 .bg-light{
   background-color: #121316 !important;
@@ -68,6 +71,20 @@ a.name{
   }
 
   @media (min-width: 992px){
+  .navbar-expand-lg{
+    padding-right: 0.5rem;
+      padding-left: 0.5rem;
+  }
+  .navbar-nav{
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+  } 
+  .nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  }
+  } 
+  @media (min-width: 768px){
   .navbar-expand-lg{
     padding-right: 0.5rem;
       padding-left: 0.5rem;
