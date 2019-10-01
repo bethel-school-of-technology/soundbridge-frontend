@@ -1,22 +1,42 @@
 
 import React from 'react';
+import axios from 'axios';
 import './navProfile.css';
 import Darrin from '../assets/images/DarrinDeal.jpg';
 
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
-import Playlist from '../components/Playlist'
+import Playlists from '../components/Playlists'
 
 export default class Profile extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { pictures: [] };
+    this.state = {
+      pictures: [],
+      activeTab: '1',
+      spotifyInfo: {},
+      accessToken: '',
+    };
     this.onDrop = this.onDrop.bind(this);
 
     this.toggle = this.toggle.bind(this);
-    this.state = {
-      activeTab: '1'
-    };
+  }
+
+  componentDidMount() {
+    const params = this.props.location.state.info;
+    axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
+      .then(res => {
+        this.setState({
+          accessToken: res.data,
+        }, () => {
+          fetch('https://api.spotify.com/v1/me', {
+            headers: {
+              'Authorization': 'Bearer ' + this.state.accessToken,
+            }
+          }).then(res => res.json())
+            .then(data => this.setState({ spotifyInfo: data }));
+        });
+      });
   }
 
   onDrop(picture) {
@@ -34,6 +54,12 @@ export default class Profile extends React.Component {
   }
 
   render() {
+    const params = this.props.location.state.info;
+    const user = this.state.spotifyInfo;
+    const accessToken = this.state.accessToken;
+    console.log('params: ', params);
+    console.log('user: ', user);
+    console.log('accessToken: ', accessToken);
     return (
 
       <div>
@@ -47,7 +73,7 @@ export default class Profile extends React.Component {
 
               <div className="profile-img-container ">
                 <div className="profile-img">
-                  
+
                   <img id="profile-image" src={Darrin} alt="DarrinDeal" />
                 </div>
                 <div className="change-profile-img">
@@ -113,7 +139,13 @@ export default class Profile extends React.Component {
                   </Row>
                 </TabPane>
                 <TabPane tabId="2">
-                  <Playlist></Playlist>
+                  {
+                    params.spotify && !accessToken ?
+                    <h1>loading...</h1> :
+                    <Playlists 
+                    accessToken={accessToken}
+                    />
+                  }
                 </TabPane>
                 <TabPane tabId="3">
                   <Row>
