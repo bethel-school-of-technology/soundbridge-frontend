@@ -5,6 +5,7 @@ import Darrin from '../assets/images/DarrinDeal.jpg';
 
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
+import Playlist from '../components/Playlist'
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -112,24 +113,7 @@ export default class Profile extends React.Component {
                   </Row>
                 </TabPane>
                 <TabPane tabId="2">
-                  <Row>
-                    <Col sm="3">
-                      <div className="playlist-img">Playlist</div>
-                      <div className="playlist-title">Title</div>
-                    </Col>
-                    <Col sm="3">
-                      <div className="playlist-img">Playlist</div>
-                      <div className="playlist-title">Title</div>
-                    </Col>
-                    <Col sm="3">
-                      <div className="playlist-img">Playlist</div>
-                      <div className="playlist-title">Title</div>
-                    </Col>
-                    <Col sm="3">
-                      <div className="playlist-img">Playlist</div>
-                      <div className="playlist-title">Title</div>
-                    </Col>
-                  </Row>
+                  <Playlist></Playlist>
                 </TabPane>
                 <TabPane tabId="3">
                   <Row>
