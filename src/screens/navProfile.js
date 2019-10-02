@@ -59,7 +59,6 @@ export default class Profile extends React.Component {
     const accessToken = this.state.accessToken;
     console.log('params: ', params);
     console.log('user: ', user);
-    console.log('accessToken: ', accessToken);
     return (
 
       <div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Row, Col } from 'reactstrap';
+import { Row } from 'reactstrap';
 import { SpotifyApiMethods } from '../services/spotifyApiMethods';
+import Playlist from './Playlist';
 
 class Playlists extends Component {
 
@@ -18,7 +19,6 @@ class Playlists extends Component {
   }
 
   render() {
-    console.log('playlists: ', this.state.playlists)
     if (this.state.playlists.items.length < 1) {
       return <h1>loading playlists...</h1>
     }
@@ -26,9 +26,16 @@ class Playlists extends Component {
       return <h1>You don't have any Spotify playlists</h1>
     }
     else {
+      const playlists = this.state.playlists;
+      console.log('playlists: ', playlists);
       return (
         <Row>
-          <Col sm="3">
+          {
+            playlists.items.map((playlist, i) => {
+              return <Playlist key={i} playlistInfo={playlist} />
+            })
+          }
+          {/* <Col sm="3">
             <div className="playlist-img">Playlist</div>
             <div className="playlist-title">Title</div>
           </Col>
@@ -43,7 +50,7 @@ class Playlists extends Component {
           <Col sm="3">
             <div className="playlist-img">Playlist</div>
             <div className="playlist-title">Title</div>
-          </Col>
+          </Col> */}
         </Row>
       )
     }
