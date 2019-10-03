@@ -7,7 +7,7 @@ class SignUp extends React.Component {
 
   state = {
     firstName: '',
-    lastName: '',
+    /* lastName: '', */
     email: '',
     password: '',
   }
@@ -28,7 +28,7 @@ class SignUp extends React.Component {
   render() {
     return (
       <Container className="justify-content-center">
-        <Card className="mx-auto">
+        <Card className="mx-auto" id="signUpBody">
           <CardBody>
             <div className="text-center">
               <h3 id="signUpHeader">SignUp</h3>
@@ -38,8 +38,8 @@ class SignUp extends React.Component {
                 type="text"
                 name="firstName"
                 value={this.state.firstName}
-                id="firstName"
-                placeholder="First Name"
+                id="firstNametxt"
+                placeholder="Name"
                 onChange={e => {
                   this.setState({
                     firstName: e.target.value
@@ -47,7 +47,7 @@ class SignUp extends React.Component {
                 }} />
               {/* <input
                 type="text"
-                name="lastName"
+                name="lastNametxt"
                 value={this.state.lastName}
                 id="lastName"
                 placeholder="Last Name"
@@ -60,7 +60,7 @@ class SignUp extends React.Component {
                 type="email"
                 name="email"
                 value={this.state.email}
-                id="email"
+                id="emailtxt"
                 placeholder="Email"
                 onChange={e => {
                   this.setState({
@@ -71,7 +71,7 @@ class SignUp extends React.Component {
                 type="password"
                 name="password"
                 value={this.state.password}
-                id="password"
+                id="passwordtxt"
                 placeholder="Password"
                 onChange={e => {
                   this.setState({

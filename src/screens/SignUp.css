@@ -27,6 +27,11 @@ form.mx-auto {
       padding-bottom: 1em;
       color: #212529;
   }
+
+  #signUpBody {
+    height: 36em;
+    width: 25em;
+  }
   
   .container input,
   input#email,

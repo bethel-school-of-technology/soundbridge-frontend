@@ -79,13 +79,13 @@ class Login extends React.Component {
     }
     return (
       <Container className="justify-content-center">
-        <Form className="mx-auto" onSubmit={this.onSubmit}>
+        <Form className="mx-auto" id="cardBody" onSubmit={this.onSubmit}>
           <div className="cardbody">
             <div className="text-center">
               <h3>Login</h3>
             </div>
-            <Input type="email" name="email" id="email" placeholder="Email" value={this.state.email} onChange={this.onChangeEmail} />
-            <Input type="password" name="password" id="password" placeholder="Password" value={this.state.password} onChange={this.onChangePassword} />
+            <Input type="email" name="email" id="emailtxt" placeholder="Email" value={this.state.email} onChange={this.onChangeEmail} />
+            <Input type="password" name="password" id="passwordtxt" placeholder="Password" value={this.state.password} onChange={this.onChangePassword} />
             <div className="text-center">
               <Button id="formbtn" type="submit" className="btn btn-md">Submit</Button>
             </div>
