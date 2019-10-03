@@ -34,19 +34,18 @@
   }
   
   .btn-lg {
+    text-align: center;
     border-width: medium;
     border-radius: 5px;
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 2rem;
     font-size: 1.1rem;
     text-transform: uppercase;
     display: inline-block !important;
     
   }
-  #icons {
-    height: auto;
-    background: transparent;
-    padding: 10px;
-  }
+.page-bg{
+  background-color: #53595f;
+}
   
     button.fa.rounded-pill {
       background-color:transparent;
@@ -70,6 +69,7 @@
   }
   .narrow {
     width: 75%;
+    color: white;
     margin: 0 auto;
     padding-top: 2rem;
   }
@@ -121,7 +121,8 @@
       padding-bottom: 1.7rem;
     }
     .btn-lg {
-      padding: .7rem 1.2rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
       font-size: 1rem;
     }
     .narrow h1 {

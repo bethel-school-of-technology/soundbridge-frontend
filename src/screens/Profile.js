@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Button, Jumbotron } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import './Profile.css';
 
 
@@ -40,7 +41,7 @@ export default class Profile extends Component {
             </tr>
           </Table>
           
-          <a href="/editProfile" id="editbtn"><Button className="secondary float-left">Edit Profile</Button></a>
+          <Link to="/editProfile" id="editbtn"><Button className="secondary float-left">Edit Profile</Button></Link>
           
 
         </Jumbotron>
