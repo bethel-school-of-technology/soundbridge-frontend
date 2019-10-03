@@ -49,6 +49,7 @@ form.mx-auto {
   }
   
   #formbtn {
+    margin-top: 20px;
     border-radius: 2.5em;
     color: black;
     padding: 16px 20px;

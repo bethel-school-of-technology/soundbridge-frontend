@@ -16,7 +16,7 @@ class SignUp extends React.Component {
     e.preventDefault();
 
     const signupInfo = {
-      name: this.state.firstName,
+      name: this.state.name,
       email: this.state.email,
       password: this.state.password
     };
@@ -36,13 +36,13 @@ class SignUp extends React.Component {
             <form onSubmit={this.submitSignup} >
               <input
                 type="text"
-                name="firstName"
-                value={this.state.firstName}
+                name="name"
+                value={this.state.name}
                 id="firstNametxt"
                 placeholder="Name"
                 onChange={e => {
                   this.setState({
-                    firstName: e.target.value
+                    name: e.target.value
                   });
                 }} />
               {/* <input

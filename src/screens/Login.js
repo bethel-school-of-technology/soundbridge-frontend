@@ -82,7 +82,7 @@ class Login extends React.Component {
         <Form className="mx-auto" id="cardBody" onSubmit={this.onSubmit}>
           <div className="cardbody">
             <div className="text-center">
-              <h3>Login</h3>
+              <h3 id="headerTitle">Login</h3>
             </div>
             <Input type="email" name="email" id="emailtxt" placeholder="Email" value={this.state.email} onChange={this.onChangeEmail} />
             <Input type="password" name="password" id="passwordtxt" placeholder="Password" value={this.state.password} onChange={this.onChangePassword} />

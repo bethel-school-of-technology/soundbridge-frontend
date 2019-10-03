@@ -17,8 +17,9 @@ form.mx-auto {
     margin-bottom: 2rem;
   }
 
-  h3 {
+  #headerTitle {
       padding-bottom: 1em;
+      margin-bottom: 1.5em;
   }
   
   .container input,
@@ -26,7 +27,7 @@ form.mx-auto {
   input#passwordtxt,
   input#nametxt {
     box-shadow: none !important;
-    border: none ;
+    border: none;
     border-bottom: 2px solid lightgray;
     color: black;
     width: 100%;
