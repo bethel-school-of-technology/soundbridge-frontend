@@ -49,12 +49,12 @@ class Login extends React.Component {
     //   });
 
     axios.post('https://soundbridge.herokuapp.com/api/user/login', user)
+    // axios.post('http://localhost:4000/api/user/login', user)
       .then(res => {
         const user = res.data;
         if (!user) {
           console.log('Result: ', res.data, 'no user found')
         } else {
-          console.log(user)
           this.setState({
             loggedIn: !this.state.loggedIn,
             user,
@@ -62,8 +62,6 @@ class Login extends React.Component {
         }
       })
       .catch (e => console.log(e));
-    console.log(user);
-
     this.setState({
       email: '',
       password: ''
