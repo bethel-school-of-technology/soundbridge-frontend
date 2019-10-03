@@ -6,7 +6,8 @@ import Darrin from '../assets/images/DarrinDeal.jpg';
 
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
-import Playlists from '../components/Playlists'
+import Playlists from '../components/Playlists';
+import Posts from '../components/Posts';
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -151,7 +152,7 @@ export default class Profile extends React.Component {
                     <Col sm="12">
                       <Card body>
                         <CardTitle>Post Section</CardTitle>
-
+                        <Posts />
                         <Button className="profile-btn">Post</Button>
                       </Card>
                     </Col>
