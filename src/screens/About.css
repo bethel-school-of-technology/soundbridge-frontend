@@ -1,178 +1,204 @@
 .home-inner {
-    background-image: url("../assets/images/about-img2.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    height: calc(100vh - 5rem);
-    width: 100vw;
-  }
-  .caption {
-    width: 100%;
-    max-width: 100%;
-    position: absolute;
-    top: 30%;
-    z-index: 1;
-  }
-  
-  .caption h1 {
-    color: white;
-    font-size: 4.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.3rem;
-    text-shadow: 0.1rem 0.1rem 0.8rem black;
-    padding-bottom: 1rem;
-  }
-  .caption h3 {
-    color: white;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    font-weight: 400;
-    text-shadow: 0.1rem 0.1rem 0.5em #eeffee ;
-    padding-bottom: 2rem;
-  }
-  
-  .btn-lg {
-    text-align: center;
-    border-width: medium;
-    border-radius: 5px;
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    display: inline-block !important;
-    
-  }
-.page-bg{
-  background-color: #53595f;
+  background-image: url("../assets/images/about-img2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: calc(100vh - 5rem);
+  width: 100vw;
 }
+.caption {
+  width: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 30%;
+  z-index: 1;
+}
+
+.caption h1 {
+  color: white;
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  text-shadow: 0.1rem 0.1rem 0.8rem black;
+  padding-bottom: 1rem;
+}
+.caption h3 {
+  color: white;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-shadow: 0.1rem 0.1rem 0.5em #eeffee;
+  padding-bottom: 2rem;
+}
+
+.btn-lg {
+  text-align: center;
+  border-width: medium;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  display: inline-block !important;
+}
+.signup-btn {
+  background-color: transparent;
+  margin: 1rem;
+}
+.login-btn {
+  background-color: transparent;
+  margin: 1rem;
+}
+.row {
+  margin-right: 0;
+}
+.narrow {
+  width: 75%;
+  margin: 3rem auto;
+  padding-top: 2rem;
+}
+
+/*============= About Portrait Section =============*/
+
+.portrait-section {
+  height: 50em;
+  padding: 100px 50px;
+  margin-bottom: 10rem;
+}
+.about-text-container {
+  height: 85vh;
+  width: 40%;
+  padding: 100px;
+  margin-top: 5rem;
+  margin-left: 3rem;
+  margin-right: -160;
+  background-color: #ededed;
+  position: absolute;
+  border-radius: 5px;
+}
+.about-img {
+  background-image: url("../assets/images/portrait-about-img.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 110vh;
+  width: 50%;
+  float: right;
+  position: absolute;
+  left: 40%;
+  border-radius: 5px;
+}
+.caption-btm {
+  width: 100%;
+  max-width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.bottom-signup-container {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+  background-image: url("../assets/images/About-footer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+.caption-btm h3 {
+  color: white;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-shadow: 0.1rem 0.1rem 0.5em #eeffee;
+  padding-bottom: 2rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+.overlay {
+  position: absolute;
+  background-color: black;
+  opacity: 0.6;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+}
+.signup-btn-group {
+  display: flex;
+  justify-content: center;
+}
+.signup-btn-bottom {
+  background-color: transparent;
   
-    button.fa.rounded-pill {
-      background-color:transparent;
-      color: #ffffff;
-      border: none;
-      border-radius: 45px;
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease 0s;
-      cursor: pointer;
-      outline: none;
-  }
-    button.fa.rounded-pill:hover {
-      background-color: #33CCFF;
-      box-shadow: 0px 15px 20px ;
-      color: #ffffff;
-      transform: translateY(-7px);
-  }
+}
+.login-btn-bottom {
+  background-color: transparent;
+}
 
-  .row{
-    margin-right: 0;
-  }
-  .narrow {
-    width: 75%;
-    color: white;
-    margin: 0 auto;
-    padding-top: 2rem;
-  }
-
- /*============= About Portrait Section =============*/
-
- .portrait-section{
-     height: 50em;
-     padding: 100px 50px;
-     margin-bottom: 10rem;
-     
- }
- .about-text-container{
-     height: 85vh;
-     width: 40%;
-     padding: 100px;
-     margin-top: 5rem; 
-     margin-left: 3rem;
-     margin-right: -160;
-     background-color: #ededed;
-     position: absolute;
-     border-radius: 5px;
-    
- }
- .about-img{
-     background-image: url('../assets/images/portrait-about-img.jpg');
-     background-repeat: no-repeat;
-     background-position: center;
-     height: 110vh;
-     width: 50%;
-     float: right;
-     position: absolute;
-     left: 40%;
-     border-radius: 5px;
-  
- }
-
-  /*============= MEDIA QUERIES =============*/
+/*============= MEDIA QUERIES =============*/
 
 /* Devices under 992px (lg) */
 @media (max-width: 991px) {
-    .caption h1 {
-      font-size: 3.5rem;
-      letter-spacing: .2rem;
-      padding-bottom: .8rem;
-    }
-    .caption h3 {
-      font-size: 2.2rem;
-      padding-bottom: 1.7rem;
-    }
-    .btn-lg {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      font-size: 1rem;
-    }
-    .narrow h1 {
-      font-size: 2.1rem;
-    }
+  .caption h1 {
+    font-size: 3.5rem;
+    letter-spacing: 0.2rem;
+    padding-bottom: 0.8rem;
   }
-  
-  /* Devices under 768px (md) */
-  @media (max-width: 767px) {
-    .caption h1 {
-      font-size: 2.7rem;
-      letter-spacing: .15rem;
-      padding-bottom: .5rem;
-    }
-    .caption h3 {
-      font-size: 1.7rem;
-      padding-bottom: 1.2rem;
-    }
-    .btn-lg {
-      padding: .6rem 1.1rem;
-      font-size: 1rem;
-    }
-    .narrow h1 {
-      font-size: 1.8rem;
-    }
-    .clients img {
-      max-width: 50%;
-      margin: 0 auto;
-    }
-    .top-scroll {
-      display: none!important;
-    }
+  .caption h3 {
+    font-size: 2.2rem;
+    padding-bottom: 1.7rem;
   }
-  
-  /* Devices under 576px (sm) */
-  @media (max-width: 575px) {
-    .caption h1 {
-      font-size: 1.9rem;
-      letter-spacing: .1rem;
-      padding-bottom: .4rem;
-    }
-    .caption h3 {
-      font-size: 1.2rem;
-      padding-bottom: 1rem;
-    }
-    .btn-lg {
-      padding: .4rem .9rem;
-      font-size: .9rem;
-    }
-    .narrow {
-      width: 85%;
-    }
+  .btn-lg {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1rem;
   }
+  .narrow h1 {
+    font-size: 2.1rem;
+  }
+}
+
+/* Devices under 768px (md) */
+@media (max-width: 767px) {
+  .caption h1 {
+    font-size: 2.7rem;
+    letter-spacing: 0.15rem;
+    padding-bottom: 0.5rem;
+  }
+  .caption h3 {
+    font-size: 1.7rem;
+    padding-bottom: 1.2rem;
+  }
+  .btn-lg {
+    padding: 0.6rem 1.1rem;
+    font-size: 1rem;
+  }
+  .narrow h1 {
+    font-size: 1.8rem;
+  }
+  .clients img {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+  .top-scroll {
+    display: none !important;
+  }
+}
+
+/* Devices under 576px (sm) */
+@media (max-width: 575px) {
+  .caption h1 {
+    font-size: 1.9rem;
+    letter-spacing: 0.1rem;
+    padding-bottom: 0.4rem;
+  }
+  .caption h3 {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+  }
+  .btn-lg {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+  }
+  .narrow {
+    width: 85%;
+  }
+}

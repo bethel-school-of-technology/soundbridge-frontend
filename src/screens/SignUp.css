@@ -26,6 +26,9 @@ form.mx-auto {
   h3 {
       padding-bottom: 1em;
   }
+  .sign-up-card-title h3{
+    color: black;
+  }
   
   .container input,
   input#email,

@@ -28,14 +28,13 @@ export default class App extends Component {
         <div className="App">
           <Navbar></Navbar>
 
-          <Route exact path="/home" component={Home} />
           <Route exact path="/" component={About} />
+          <Route exact path="/home" component={Home} />
           <Route exact path="/contact" component={Contact} />
           {/* <Route exact path="/nav-profile" component={navProfile} /> */}
           <Route exact path="/login" component={Login} />
           <Route exact path="/sign-up" component={SignUp} />
           <Route exact path="/user/:name" component={navProfile} />
-         
           <Route exact path="/spotify-logged-in/:accessToken/:refreshToken" component={SpotifyLoggedIn} />
           <Route exact path="/profile" component={profile} />
           <Route exact path="/editProfile" component={editProfile} />
