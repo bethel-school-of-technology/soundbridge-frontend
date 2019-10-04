@@ -152,7 +152,7 @@ export default class Profile extends React.Component {
                     <Col sm="12">
                       <Card body>
                         <CardTitle>Post Section</CardTitle>
-                        <Posts />
+                        <Posts userInfo={params} />
                         <Button className="profile-btn">Post</Button>
                       </Card>
                     </Col>

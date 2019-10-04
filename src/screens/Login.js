@@ -51,8 +51,8 @@ class Login extends React.Component {
     //     console.log(error);
     //   });
 
-    axios.post('https://soundbridge.herokuapp.com/api/user/login', user)
-    // axios.post('http://localhost:4000/api/user/login', user)
+    // axios.post('https://soundbridge.herokuapp.com/api/user/login', user)
+    axios.post('http://localhost:4000/api/user/login', user)
       .then(res => {
         const user = res.data;
         if (!user) {
