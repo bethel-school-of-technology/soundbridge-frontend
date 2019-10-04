@@ -52,8 +52,7 @@ export default class NavbarL extends React.Component {
                   <Link to="/contact">Contact</Link>
                 </NavItem>
                 <NavItem>
-                <Link to="/sign-up"><a className="btn logout">Logout</a></Link>
-                <a className="btn btn-outline-light btn-lg" href="#">Learn More</a>
+                <Link to="/sign-up"><a className="btn btn-outline-light btn-sm logout-btn" href="#">Logout</a></Link>
                 </NavItem>
               </Nav>
             </Collapse>

@@ -66,6 +66,10 @@ a.name{
   a.nav-link:hover {
     color: #ffda15 !important;
   }
+  .logout-btn{
+    padding-right: 2.3rem;
+    padding-left: 1rem;
+  }
 
   @media (min-width: 992px){
   .navbar-expand-lg{
