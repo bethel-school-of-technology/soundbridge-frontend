@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Button, Jumbotron } from 'reactstrap';
-import './profile.css';
+import './Profile.css';
 
 
 export default class Profile extends Component {
