@@ -31,8 +31,8 @@ class PostForm extends Component {
             body: this.state.body,
         }
 
-        // axios.post('https://soundbridge.herokuapp.com/api/posts', postInfo);
-        axios.post('http://localhost:4000/api/posts', postInfo);
+        axios.post('https://soundbridge.herokuapp.com/api/posts', postInfo);
+        // axios.post('http://localhost:4000/api/posts', postInfo);
 
         this.props.getNewPost(postInfo);
 
