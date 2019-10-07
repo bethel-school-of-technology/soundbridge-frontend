@@ -50,6 +50,13 @@ class Login extends React.Component {
         if (!user) {
           console.log('Result: ', res.data, 'no user found')
         } else {
+          sessionStorage.setItem('userId', user._id);
+          sessionStorage.setItem('name', user.name);
+          sessionStorage.setItem('email', user.email);
+          sessionStorage.setItem('spotify', user.spotify);
+          sessionStorage.setItem('spotifyId', user.spotifyId);
+          sessionStorage.setItem('spotifyRefreshToken', user.spotifyRefreshToken);
+          sessionStorage.setItem('loggedIn', true);
           this.setState({
             loggedIn: !this.state.loggedIn,
             user,
