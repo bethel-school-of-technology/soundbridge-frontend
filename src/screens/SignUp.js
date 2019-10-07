@@ -33,7 +33,7 @@ class SignUp extends React.Component {
       <Container className="justify-content-center">
         <Card className="mx-auto">
           <CardBody>
-            <div className="text-center">
+            <div className="text-center sign-up-card-title">
               <h3>SignUp</h3>
             </div>
             <form onSubmit={this.submitSignup} >

@@ -28,8 +28,8 @@ export default class App extends Component {
         <div className="App">
           <Navbar></Navbar>
 
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
+          <Route exact path="/" component={About} />
+          <Route exact path="/home" component={Home} />
           <Route exact path="/contact" component={Contact} />
           {/* <Route exact path="/nav-profile" component={navProfile} /> */}
           <Route exact path="/login" component={Login} />

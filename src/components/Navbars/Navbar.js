@@ -11,7 +11,8 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Button
 } from 'reactstrap';
 
 
@@ -39,37 +40,20 @@ export default class NavbarL extends React.Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <Link to="/">Home</Link>
+                  <Link to="/home">Home</Link>
                 </NavItem>
                 <NavItem>
                   <Link to="/nav-profile">Profile</Link>
                 </NavItem>
                 <NavItem>
-                  <Link to="/about">About</Link>
+                <Link to="/profile">Overview</Link>
                 </NavItem>
                 <NavItem>
                   <Link to="/contact">Contact</Link>
                 </NavItem>
-                <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav caret>
-                    Account
-                </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem>
-                    <Link to="/profile">Overview</Link>
-                  </DropdownItem>
-                    <DropdownItem>
-                    <Link to="/login">Login</Link>
-                  </DropdownItem>
-                    <DropdownItem>
-                    <Link to="/sign-up">Sign Up</Link>
-                  </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                    <Link to="/sign-up">Logout</Link>
-                  </DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
+                <NavItem>
+                <Link to="/sign-up"><a className="btn btn-outline-light btn-sm logout-btn" href="#">Logout</a></Link>
+                </NavItem>
               </Nav>
             </Collapse>
           </Navbar>
