@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PostForm from './PostForm';
 
 export default class componentName extends Component {
 
@@ -19,6 +20,7 @@ export default class componentName extends Component {
         const posts = this.state.posts;
         return (
             <div>
+                <PostForm userInfo={this.props.userInfo} />
                 {
                     posts.map(post => {
                         return (
