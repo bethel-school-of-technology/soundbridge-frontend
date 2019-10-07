@@ -13,18 +13,22 @@ export default class componentName extends Component {
         this.setState({ posts });
     }
 
+    getNewPost = (postInfo) => {
+        this.setState({ posts: [...this.state.posts, postInfo] });
+    }
+
     render() {
         if (this.state.posts < 1) {
             return <h1>loading...</h1>
         }
-        const posts = this.state.posts;
+        let posts = this.state.posts;
         return (
             <div>
-                <PostForm userInfo={this.props.userInfo} />
+                <PostForm userInfo={this.props.userInfo} getNewPost={this.getNewPost} />
                 {
-                    posts.map(post => {
+                    posts.map((post, i) => {
                         return (
-                            <div>
+                            <div key={i}>
                                 <h1>{post.title}</h1>
                                 <p>{post.body}</p>
                             </div>

@@ -31,20 +31,18 @@ class PostForm extends Component {
             body: this.state.body,
         }
 
-        axios.post('http://localhost:4000/api/posts', postInfo)
-            .then(res => {
-                console.log('posted: ', res.data);
-            });
+        axios.post('http://localhost:4000/api/posts', postInfo);
 
-        console.log('post info: ', postInfo);
+        this.props.getNewPost(postInfo);
+
         this.setState({
             title: '',
             body: '',
         });
+
     }
 
     render() {
-        console.log(this.props);
         return (
             <Container>
                 <form onSubmit={this.onSubmit}>
