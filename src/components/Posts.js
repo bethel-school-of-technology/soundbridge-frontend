@@ -11,8 +11,8 @@ export default class componentName extends Component {
     }
 
     async componentDidMount() {
-        const res = await fetch(`https://soundbridge.herokuapp.com/api/posts/user-posts/${this.props.userInfo._id}`);
-        // const res = await fetch(`http://localhost:4000/api/posts/user-posts/${this.props.userInfo._id}`);
+        // const res = await fetch(`https://soundbridge.herokuapp.com/api/posts/user-posts/${this.props.userInfo._id}`);
+        const res = await fetch(`http://localhost:4000/api/posts/user-posts/${this.props.userInfo._id}`);
         const posts = await res.json();
         this.setState({ posts });
     }
@@ -45,7 +45,7 @@ export default class componentName extends Component {
 
     render() {
         if (this.state.posts < 1) {
-            return <h1>loading...</h1>
+            return <PostForm userInfo={this.props.userInfo} getNewPost={this.getNewPost} />
         }
         let posts = this.state.posts;
         return (

@@ -3,11 +3,11 @@ import React from 'react';
 import axios from 'axios';
 import './navProfile.css';
 import Darrin from '../assets/images/DarrinDeal.jpg';
-
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import Playlists from '../components/Playlists';
 import Posts from '../components/Posts';
+import SpotifyApiTest from '../components/SpofityApiTest/SpotifyApiTest';
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -25,8 +25,8 @@ export default class Profile extends React.Component {
 
   componentDidMount() {
     const params = this.props.location.state.info;
-    axios.post('https://soundbridge.herokuapp.com/has-spotify/' + params.spotifyRefreshToken)
-    // axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
+    // axios.post('https://soundbridge.herokuapp.com/has-spotify/' + params.spotifyRefreshToken)
+    axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
       .then(res => {
         this.setState({
           accessToken: res.data,
@@ -78,7 +78,7 @@ export default class Profile extends React.Component {
                   <img id="profile-image" src={Darrin} alt="DarrinDeal" />
                 </div>
                 <div className="change-profile-img">
-                  <a href="#" >Change</a>
+                  <p>Change</p>
                 </div>
               </div>
 
@@ -141,6 +141,8 @@ export default class Profile extends React.Component {
                 </TabPane>
                 <TabPane tabId="2">
                   {
+                    !params.spotify ?
+                    <SpotifyApiTest /> :
                     params.spotify && !accessToken ?
                     <h1>loading...</h1> :
                     <Playlists 

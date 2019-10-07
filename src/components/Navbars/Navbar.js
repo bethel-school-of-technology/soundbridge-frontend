@@ -7,12 +7,7 @@ import {
   Navbar,
   NavbarToggler,
   Nav,
-  NavItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Button
+  NavItem
 } from 'reactstrap';
 
 
@@ -52,7 +47,7 @@ export default class NavbarL extends React.Component {
                   <Link to="/contact">Contact</Link>
                 </NavItem>
                 <NavItem>
-                <Link to="/sign-up"><a className="btn btn-outline-light btn-sm logout-btn" href="#">Logout</a></Link>
+                <Link to="/sign-up"><a className="btn btn-outline-light btn-sm logout-btn" href="/">Logout</a></Link>
                 </NavItem>
               </Nav>
             </Collapse>
