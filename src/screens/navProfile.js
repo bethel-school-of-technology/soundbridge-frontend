@@ -25,6 +25,7 @@ export default class Profile extends React.Component {
 
   componentDidMount() {
     const params = this.props.location.state.info;
+    console.log('params: ', params);
     // axios.post('https://soundbridge.herokuapp.com/has-spotify/' + params.spotifyRefreshToken)
     axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
       .then(res => {
@@ -59,7 +60,6 @@ export default class Profile extends React.Component {
     const params = this.props.location.state.info;
     const user = this.state.spotifyInfo;
     const accessToken = this.state.accessToken;
-    console.log('params: ', params);
     console.log('user: ', user);
     return (
 
@@ -83,8 +83,8 @@ export default class Profile extends React.Component {
               </div>
 
               <div className="username-title ">
-                <p>User</p>
-                <h1>Darrin</h1>
+                <p>Hello,</p>
+                <h1>{params.name}</h1>
               </div>
 
             </div> {/*----- End img-and-username-container ----- */}
