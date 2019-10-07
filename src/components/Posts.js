@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import PostForm from './PostForm';
+import CommentForm from './CommentForm';
 
 export default class componentName extends Component {
 
     state = {
         posts: [],
+        showCommentForm: false,
+        commentBtnText: 'Comment',
     }
 
     async componentDidMount() {
@@ -13,8 +16,30 @@ export default class componentName extends Component {
         this.setState({ posts });
     }
 
-    getNewPost = (postInfo) => {
+    getNewPost = postInfo => {
         this.setState({ posts: [...this.state.posts, postInfo] });
+    }
+
+    getNewComment = commentInfo => {
+        console.log('this will do something with ', commentInfo);
+        this.setState({
+            commentBtnText: 'Comment',
+            showCommentForm: !this.state.showCommentForm
+        });
+    }
+
+    commentBtnClicked = () => {
+        if (this.state.commentBtnText === 'Comment') {
+            this.setState({
+                commentBtnText: 'Close',
+                showCommentForm: !this.state.showCommentForm
+            });
+        } else {
+            this.setState({
+                commentBtnText: 'Comment',
+                showCommentForm: !this.state.showCommentForm
+            });
+        }
     }
 
     render() {
@@ -31,6 +56,19 @@ export default class componentName extends Component {
                             <div key={i}>
                                 <h1>{post.title}</h1>
                                 <p>{post.body}</p>
+                                <button onClick={this.commentBtnClicked}>
+                                    {this.state.commentBtnText}
+                                </button>
+                                <div >
+                                    {
+                                        this.state.showCommentForm ?
+                                            <CommentForm
+                                                postId={post._id}
+                                                userInfo={this.props.userInfo}
+                                                getNewComment={this.getNewComment}
+                                            /> : null
+                                    }
+                                </div>
                             </div>
                         )
                     })
