@@ -25,6 +25,7 @@ class PostForm extends Component {
         }
 
         axios.post('https://soundbridge.herokuapp.com/api/posts/comment', commentInfo);
+        // axios.post('http://localhost:4000/api/posts/comment', commentInfo);
 
         this.props.getNewComment(commentInfo);
 

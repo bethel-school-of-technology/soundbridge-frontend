@@ -5,7 +5,25 @@ import './Profile.css';
 
 
 export default class Profile extends Component {
+
+  state = {
+    userId: '',
+    name: '',
+    email: '',
+  }
+
+  componentDidMount() {
+    const userId = sessionStorage.getItem('userId');
+    const name = sessionStorage.getItem('name');
+    const email = sessionStorage.getItem('email');
+    this.setState({
+      userId,
+      name,
+      email,
+    });
+  }
   render() {
+    const user = this.state;
     return (
       <div className="body">
         <Jumbotron>
@@ -16,23 +34,13 @@ export default class Profile extends Component {
               <tr>
                 <th scope="row">Username</th>
                 <br></br>
-                <td>MAAC</td>
+                <td>{user.name}</td>
               </tr>
             </thead>
             <tr>
               <th scope="row">Email</th>
               <br></br>
-              <td>Soundbridge@gmail.com</td>
-            </tr>
-            <tr>
-              <th scope="row">Date of birth</th>
-              <br></br>
-              <td>9/12/2019</td>
-            </tr>
-            <tr>
-              <th scope="row">Country</th>
-              <br></br>
-              <td>U.S.A.</td>
+              <td>{user.email}</td>
             </tr>
             <tr>
               <th scope="row">Password</th>
@@ -40,9 +48,9 @@ export default class Profile extends Component {
               <td>*******</td>
             </tr>
           </Table>
-          
+
           <Link to="/editProfile" id="editbtn"><Button className="secondary float-left">Edit Profile</Button></Link>
-          
+
 
         </Jumbotron>
         <div>
@@ -53,12 +61,12 @@ export default class Profile extends Component {
             <hr className="my-2" />
             <p>Enjoy unlimited streaming with premium!</p>
             <p className="lead">
-            <Button className="secondary" onClick={() => {alert('Success!!! You are now part of the elite group of Premium Members!!!')}}>Join Premium</Button>
-              
-    
+              <Button className="secondary" onClick={() => { alert('Success!!! You are now part of the elite group of Premium Members!!!') }}>Join Premium</Button>
+
+
             </p>
           </Jumbotron>
-         
+
         </div>
         <hr />
       </div>

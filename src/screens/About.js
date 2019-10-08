@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import './About.css';
 import './Contact.css';
 import { Animated } from "react-animated-css";
-import { domainToASCII } from 'url';
 
 const About = () => (
   <div>

@@ -32,6 +32,7 @@ class PostForm extends Component {
         }
 
         axios.post('https://soundbridge.herokuapp.com/api/posts', postInfo);
+        // axios.post('http://localhost:4000/api/posts', postInfo);
 
         this.props.getNewPost(postInfo);
 
@@ -53,6 +54,7 @@ class PostForm extends Component {
                         placeholder="Title"
                         value={this.state.title}
                         onChange={this.titleChange}
+                        
                     />
                     <Input
                         type="text"

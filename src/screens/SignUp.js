@@ -5,6 +5,7 @@ import { FaFacebookF } from 'react-icons/fa';
 import { FaGooglePlusG } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 import { Button, Card, CardBody, Container } from 'reactstrap';
+import { Redirect } from 'react-router-dom';
 
 class SignUp extends React.Component {
 
@@ -13,6 +14,8 @@ class SignUp extends React.Component {
     lastName: '',
     email: '',
     password: '',
+    signedUp: false,
+    user: {},
   }
 
   submitSignup = e => {
@@ -25,10 +28,24 @@ class SignUp extends React.Component {
     };
 
     axios.post('https://soundbridge.herokuapp.com/api/user/register', signupInfo)
-      .then(res => console.log(res.data));
+    // axios.post('http://localhost:4000/api/user/register', signupInfo)
+      .then(res => res.data ? this.setState({
+        user: res.data,
+        signedUp: !this.state.signedUp
+      }) :
+        console.log('User not registered')
+      );
   }
 
   render() {
+    if (this.state.signedUp) {
+      return <Redirect
+        to={{
+          pathname: `/user/${this.state.user.name}`,
+          state: { info: this.state.user }
+        }}
+      />
+    }
     return (
       <Container className="justify-content-center">
         <Card className="mx-auto">
