@@ -5,6 +5,46 @@ import './editProfile.css';
 
 
 export default class editProfile extends React.Component {
+    constructor(props){
+        super(props)
+        
+        this.onChangeEmail = this.onChangeEmail.bind(this);
+        this.onChangePassword = this.onChangePassword.bind(this);
+        this.onChangeConfirmPassword = this.onChangeConfirmPassword.bind(this);
+        this.onChangeDOB = this.onChangeDOB.bind(this);
+        this.onChangeCountry = this.onChangeCountry.bind(this);
+
+        this.state = {
+            email: '',
+            password: '',
+            confirmPassword: '',
+            dob: '',
+            country: ''
+        }
+    }
+
+    onChangeEmail = event => {
+        this.setState({
+            email: event.target.value
+        });
+    }
+
+    onChangePassword = event => {
+        this.setState({
+            password: event.target.value
+        });
+    }
+
+    onChangeConfirmPassword = event => {
+        this.setState({
+            confirmPassword: event.target.value
+        });
+    }
+
+
+
+
+
     render() {
         return (
             <div className="profilebody">
