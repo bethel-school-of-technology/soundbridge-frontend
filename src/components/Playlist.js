@@ -9,7 +9,8 @@ const Playlist = (props) => {
             <div
                 className="playlist-img"
                 style={{
-                    'backgroundImage': `url(${playlistInfo.images[0].url})`
+                    'backgroundImage': `url(${playlistInfo.images[0].url})`,
+                    "backgroundSize": 'cover'
                 }}>
                 Playlist
             </div>

@@ -27,15 +27,18 @@ export default class NavbarL extends React.Component {
           <div>
             <Navbar className="navbar footer" color="light" dark expand="lg">
                 <Nav className="ml-auto footer-nav" navbar>
-                  <NavItem>
-                    <Link to="/">Home</Link>
-                  </NavItem>
-                  <NavItem>
-                    <Link to="/about">About</Link>
-                  </NavItem>
-                  <NavItem>
-                    <Link to="/contact">Contact</Link>
-                  </NavItem>
+                <NavItem>
+                  <Link to="/home">Home</Link>
+                </NavItem>
+                <NavItem>
+                  <Link to="/nav-profile">Profile</Link>
+                </NavItem>
+                <NavItem>
+                <Link to="/profile">Overview</Link>
+                </NavItem>
+                <NavItem>
+                  <Link to="/contact">Contact</Link>
+                </NavItem>
                 </Nav>
             </Navbar>
           </div>

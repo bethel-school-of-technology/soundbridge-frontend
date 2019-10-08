@@ -34,7 +34,7 @@ export default class editProfile extends React.Component {
                     </FormGroup>
                   
                    
-                        <Link to="/profile"><Button className="secondary col-text-center" id="editbtn">Cancel</Button></Link>{' '}
+                        <Link to="/profile" className="edit-profile-link"><Button className="secondary col-text-center" id="editbtn">Cancel</Button></Link>{' '}
 
                         <Button className="secondary float-center" id="editbtn" onClick={() => {alert('Save Yourself!!!')}}>Save</Button>
                    

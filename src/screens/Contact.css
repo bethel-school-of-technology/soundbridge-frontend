@@ -59,11 +59,14 @@ footer {
   input .btn {
     cursor: pointer;
   }
-  .btn-outline-light{
-    border-color: #ffda15;
-  }
+
   hr.socket{
     border-top: .2rem solid #666b71;
     width: 100%;
+  }
+  #icons {
+    height: auto;
+    background: transparent;
+    padding: 10px;
   }
   

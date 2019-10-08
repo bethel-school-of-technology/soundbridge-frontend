@@ -32,6 +32,9 @@ form.mx-auto {
     height: 36em;
     width: 25em;
   }
+  .sign-up-card-title h3{
+    color: black;
+  }
   
   .container input,
   input#email,

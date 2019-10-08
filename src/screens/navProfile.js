@@ -2,11 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import './navProfile.css';
 import Darrin from '../assets/images/DarrinDeal.jpg';
-
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import Playlists from '../components/Playlists';
 import Posts from '../components/Posts';
+import SpotifyApiTest from '../components/SpofityApiTest/SpotifyApiTest';
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -24,7 +24,8 @@ export default class Profile extends React.Component {
 
   componentDidMount() {
     const params = this.props.location.state.info;
-    axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
+    axios.post('https://soundbridge.herokuapp.com/has-spotify/' + params.spotifyRefreshToken)
+    // axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
       .then(res => {
         this.setState({
           accessToken: res.data,
@@ -57,7 +58,6 @@ export default class Profile extends React.Component {
     const params = this.props.location.state.info;
     const user = this.state.spotifyInfo;
     const accessToken = this.state.accessToken;
-    console.log('params: ', params);
     console.log('user: ', user);
     return (
 
@@ -76,13 +76,13 @@ export default class Profile extends React.Component {
                   <img id="profile-image" src={Darrin} alt="DarrinDeal" />
                 </div>
                 <div className="change-profile-img">
-                  <a href="#" >Change</a>
+                  <p>Change</p>
                 </div>
               </div>
 
               <div className="username-title ">
-                <p>User</p>
-                <h1>Darrin</h1>
+                <p>Hello,</p>
+                <h1>{params.name}</h1>
               </div>
 
             </div> {/*----- End img-and-username-container ----- */}
@@ -139,6 +139,8 @@ export default class Profile extends React.Component {
                 </TabPane>
                 <TabPane tabId="2">
                   {
+                    !params.spotify ?
+                    <SpotifyApiTest /> :
                     params.spotify && !accessToken ?
                     <h1>loading...</h1> :
                     <Playlists 
@@ -151,7 +153,7 @@ export default class Profile extends React.Component {
                     <Col sm="12">
                       <Card body>
                         <CardTitle>Post Section</CardTitle>
-                        <Posts />
+                        <Posts userInfo={params} />
                         <Button className="profile-btn">Post</Button>
                       </Card>
                     </Col>
