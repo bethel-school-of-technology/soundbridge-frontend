@@ -13,6 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  align-content: flex-start;
   z-index: 9999;
 }
 
@@ -90,7 +91,7 @@ a.name{
   }
   a {
     color: #616163 !important;
-    padding-top: 0.8rem;
+    padding-top: 7.8rem;
     padding-left: 2.7rem !important;
     transition: color 0.3s ease 0s;
     text-decoration: none;

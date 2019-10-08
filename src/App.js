@@ -39,7 +39,6 @@ export default class App extends Component {
           <Route exact path="/profile" component={profile} />
           <Route exact path="/editProfile" component={editProfile} />
         </div>
-        <Footer></Footer>
       </Router>
 
     );

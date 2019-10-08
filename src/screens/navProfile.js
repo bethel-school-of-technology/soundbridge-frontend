@@ -25,8 +25,9 @@ export default class Profile extends React.Component {
 
   componentDidMount() {
     const params = this.props.location.state.info;
-    axios.post('https://soundbridge.herokuapp.com/has-spotify/' + params.spotifyRefreshToken)
-      .then(res => {
+    axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
+     //https://soundbridge.herokuapp.com/has-spotify/ 
+    .then(res => {
         this.setState({
           accessToken: res.data,
         }, () => {
