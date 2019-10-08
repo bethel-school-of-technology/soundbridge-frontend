@@ -33,8 +33,7 @@ export default class editProfile extends React.Component {
                         <Label for="country">Country</Label>
                         <Input type="country" name="country" id="country" placeholder="Country" />
                     </FormGroup>
-                  
-                   
+                            <br></br>
                         <Link to="/profile"><Button className="secondary col-text-center" id="editbtn">Cancel</Button></Link>{' '}
 
                         <Button className="secondary float-center" id="editbtn" onClick={() => {alert('Save Yourself!!!')}}>Save</Button>

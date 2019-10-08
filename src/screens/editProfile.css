@@ -49,6 +49,10 @@
     align-items: flex-start;
   }
 
+  .secondary-col-text-center, .secondary-float-center {
+    color: #666b71;
+  }
+
 Buttons {
   margin: 0 auto;
   justify-content: center;

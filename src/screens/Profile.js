@@ -39,7 +39,7 @@ export default class Profile extends Component {
               <td>*******</td>
             </tr>
           </Table>
-          
+          <br></br>
           <a href="/editProfile" id="editbtn"><Button className="secondary float-left">Edit Profile</Button></a>
           
 
@@ -51,7 +51,7 @@ export default class Profile extends Component {
             <p className="lead">Search bands and play music in shuffle mode only, with ads.</p>
             <hr className="my-2" />
             <p>Enjoy unlimited streaming with premium!</p>
-            <p className="lead">
+            <p className="lead"><br></br>
             <Button className="secondary" onClick={() => {alert('Success!!! You are now part of the elite group of Premium Members!!!')}}>Join Premium</Button>
               
     
