@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table, Button, Jumbotron } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import './profile.css';
+import './Profile.css';
 
 
 export default class Profile extends Component {
@@ -22,6 +22,7 @@ export default class Profile extends Component {
       email,
     });
   }
+  
   render() {
     const user = this.state;
     return (

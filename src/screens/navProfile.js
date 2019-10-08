@@ -61,6 +61,7 @@ export default class Profile extends React.Component {
     const user = this.state.spotifyInfo;
     const accessToken = this.state.accessToken;
     console.log('user: ', user);
+    console.log(sessionStorage.getItem('time'))
     return (
 
       <div>

@@ -20,12 +20,20 @@ import SpotifyLoggedIn from './components/SpofityApiTest/SpotifyLoggedIn';
 export default class App extends Component {
 
   componentDidMount() {
-    sessionStorage.setItem('loggedIn', false);
+    const lastLogin = sessionStorage.getItem('time');
+    const time = new Date();
+    if (time.getTime() - lastLogin > 7200000) {
+      sessionStorage.clear();
+      sessionStorage.setItem('loggedIn', false);
+    } else {
+      console.log('still logged in');
+    }
   }
 
   render() {
+    const loggedIn = sessionStorage.getItem('loggedIn');
+    console.log('logged in = ', loggedIn);
     return (
-
       <Router>
         <div className="App">
           <Navbar></Navbar>
