@@ -8,20 +8,8 @@
     height: 100%;
     width: 100%;
   
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7d7e7d+0,0e0e0e+100;Black+3D */
-    background: rgb(125, 126, 125); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(125, 126, 125, 1) 0%, rgba(14, 14, 14, 1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(
-      top,
-      rgba(125, 126, 125, 1) 0%,
-      rgba(14, 14, 14, 1) 100%
-    ); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(
-      to bottom,
-      rgba(125, 126, 125, 1) 0%,
-      rgba(14, 14, 14, 1) 100%
-    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(69,69,69,1) 100%);
   }
   
   .top-page-display-container {
@@ -35,6 +23,8 @@
     align-items: center;
     position: relative;
     margin: 0;
+    margin-bottom: 20px;
+    flex-wrap: wrap-reverse;
   }
   
   /*-------- Profile Image -------*/
@@ -52,6 +42,7 @@
     align-items: center;
     overflow: hidden;
     margin-right: 0;
+    
   
     border-radius: 50%;
     box-shadow: 3px 3px 4px 4px #313438b9;
@@ -95,18 +86,23 @@
     margin: 0;
     font-size: 1.3;
   }
+  .nav{
+    flex-wrap: nowrap;
+  }
   
   .profile-nav-tabs{
     background-color: none;
   }
+
   .nav-tabs .nav-link{
     border: none;
-    color: #888;
+    color: white;
     font-size: 1.3rem;
     letter-spacing: 2px;
     margin-bottom: 2rem;
-    padding: 50px;
+    padding: 10px 50px;
   }
+
   .nav-tabs .nav-item{
       margin: 0;
   }
@@ -127,6 +123,9 @@
       border-bottom: 1px #888 solid;
       font-size: 1.0rem;
       letter-spacing: 2px;
+  }
+  .user-songs{
+    flex-wrap: nowrap;
   }
   .col-sm-4{
       padding: 0;
@@ -198,4 +197,22 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
-  
+
+  /* Devices under 576px (sm) */
+@media (max-width: 575px) {
+  .nav-tabs .nav-link{
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 2rem;
+    padding: 10px 25px;
+  }
+  .profile-img-container{
+    height: 7rem;
+    width: 7rem;
+    min-width: 7rem;
+    max-width: 7rem;
+    align-items: flex-start;
+  }
+}

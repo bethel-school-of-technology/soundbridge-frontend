@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Input, Container } from 'reactstrap';
 import axios from 'axios';
+import './SpofityApiTest/PostForm.css';
 
 class PostForm extends Component {
 
@@ -45,9 +46,10 @@ class PostForm extends Component {
 
     render() {
         return (
-            <Container>
+            <Container className="postform-container">
                 <form onSubmit={this.onSubmit}>
                     <Input
+                    className="form-control"
                         type="text"
                         name="title"
                         id="title"
@@ -64,7 +66,7 @@ class PostForm extends Component {
                         value={this.state.body}
                         onChange={this.bodyChange}
                     />
-                    <Button id="formbtn" type="submit" className="btn btn-md">Submit</Button>
+                    <Button id="formbtn-post" type="submit" className="btn btn-outline-light btn-sm">Submit</Button>
                 </form>
             </Container>
         )

@@ -1,5 +1,5 @@
 .navbar { 
-    padding: 0.7rem 1rem;
+    padding: 0rem 1rem;
     text-transform: uppercase;
     font-size: 0.9rem;
     font-weight: 700;
@@ -50,7 +50,7 @@ a:hover {
 
 a.name{
   color: #616163;
-  padding-top: 0.8rem;
+  padding-top: 0rem;
   padding-left: 0.7rem;
   transition: color 0.3s ease 0s;
 }
@@ -101,4 +101,7 @@ a.name{
   a:hover {
     color: #ffda15 !important;
     text-decoration: none;
+  }
+
+  @media (max-width: 575px) {
   }
