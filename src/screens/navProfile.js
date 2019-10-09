@@ -24,7 +24,16 @@ export default class Profile extends React.Component {
   }
 
   componentDidMount() {
-    const params = this.props.location.state.info;
+    // const params = this.props.location.state.info;
+    const params = {
+      userId: sessionStorage.getItem('userId'),
+      name: sessionStorage.getItem('name'),
+      email: sessionStorage.getItem('email'),
+      spotify: sessionStorage.getItem('spotify'),
+      spotifyId: sessionStorage.getItem('spotifyId'),
+      spotifyRefreshToken: sessionStorage.getItem('spotifyRefreshToken'),
+      loggedIn: sessionStorage.getItem('loggedIn')
+    }
     console.log('params: ', params);
     // axios.post('https://soundbridge.herokuapp.com/has-spotify/' + params.spotifyRefreshToken)
     axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
@@ -57,7 +66,15 @@ export default class Profile extends React.Component {
   }
 
   render() {
-    const params = this.props.location.state.info;
+    const params = {
+      userId: sessionStorage.getItem('userId'),
+      name: sessionStorage.getItem('name'),
+      email: sessionStorage.getItem('email'),
+      spotify: sessionStorage.getItem('spotify'),
+      spotifyId: sessionStorage.getItem('spotifyId'),
+      spotifyRefreshToken: sessionStorage.getItem('spotifyRefreshToken'),
+      loggedIn: sessionStorage.getItem('loggedIn')
+    }
     const user = this.state.spotifyInfo;
     const accessToken = this.state.accessToken;
     console.log('user: ', user);
@@ -143,12 +160,12 @@ export default class Profile extends React.Component {
                 <TabPane tabId="2">
                   {
                     !params.spotify ?
-                    <SpotifyApiTest /> :
-                    params.spotify && !accessToken ?
-                    <h1>loading...</h1> :
-                    <Playlists 
-                    accessToken={accessToken}
-                    />
+                      <SpotifyApiTest /> :
+                      params.spotify && !accessToken ?
+                        <h1>loading...</h1> :
+                        <Playlists
+                          accessToken={accessToken}
+                        />
                   }
                 </TabPane>
                 <TabPane tabId="3">

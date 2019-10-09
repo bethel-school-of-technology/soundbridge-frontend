@@ -22,7 +22,7 @@ export default class App extends Component {
   componentDidMount() {
     const lastLogin = sessionStorage.getItem('time');
     const time = new Date();
-    if (time.getTime() - lastLogin > 7200000) {
+    if (time.getTime() - lastLogin > 7200000 || !lastLogin) {
       sessionStorage.clear();
       sessionStorage.setItem('loggedIn', false);
     } else {
@@ -32,7 +32,7 @@ export default class App extends Component {
 
   render() {
     const loggedIn = sessionStorage.getItem('loggedIn');
-    console.log('logged in = ', loggedIn);
+    console.log('logged in =', loggedIn);
     return (
       <Router>
         <div className="App">

@@ -5,7 +5,6 @@ import { FaFacebookF } from 'react-icons/fa';
 import { FaGooglePlusG } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 import { Button, Input, Container, Form } from 'reactstrap';
-import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor(props) {
@@ -74,12 +73,13 @@ class Login extends React.Component {
 
   render() {
     if (this.state.loggedIn) {
-      return <Redirect
-        to={{
-          pathname: `/user/${this.state.user.name}`,
-          state: { info: this.state.user }
-        }}
-      />
+      window.location.href = `http://localhost:3000/user/${this.state.user.name}`;
+      // return <Redirect
+      //   to={{
+      //     pathname: `/user/${this.state.user.name}`,
+      //     state: { info: this.state.user }
+      //   }}
+      // />
     }
     return (
       <Container className="justify-content-center">

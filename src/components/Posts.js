@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PostForm from './PostForm';
-import CommentForm from './CommentForm';
+import Post from './Post';
 
 export default class componentName extends Component {
 
@@ -11,22 +11,14 @@ export default class componentName extends Component {
     }
 
     async componentDidMount() {
-        // const res = await fetch(`https://soundbridge.herokuapp.com/api/posts/user-posts/${this.props.userInfo._id}`);
-        const res = await fetch(`http://localhost:4000/api/posts/user-posts/${this.props.userInfo._id}`);
+        // const res = await fetch(`https://soundbridge.herokuapp.com/api/posts/user-posts/${this.props.userInfo.userId}`);
+        const res = await fetch(`http://localhost:4000/api/posts/user-posts/${this.props.userInfo.userId}`);
         const posts = await res.json();
         this.setState({ posts });
     }
 
     getNewPost = postInfo => {
         this.setState({ posts: [...this.state.posts, postInfo] });
-    }
-
-    getNewComment = commentInfo => {
-        console.log('this will do something with ', commentInfo);
-        this.setState({
-            commentBtnText: 'Comment',
-            showCommentForm: !this.state.showCommentForm
-        });
     }
 
     commentBtnClicked = () => {
@@ -44,6 +36,7 @@ export default class componentName extends Component {
     }
 
     render() {
+        console.log('posts props: ', this.props)
         if (this.state.posts < 1) {
             return <PostForm userInfo={this.props.userInfo} getNewPost={this.getNewPost} />
         }
@@ -52,24 +45,10 @@ export default class componentName extends Component {
             <div>
                 <PostForm userInfo={this.props.userInfo} getNewPost={this.getNewPost} />
                 {
-                    posts.map((post, i) => {
+                    posts.reverse().map((post, i) => {
                         return (
                             <div key={i}>
-                                <h1>{post.title}</h1>
-                                <p>{post.body}</p>
-                                <button onClick={this.commentBtnClicked}>
-                                    {this.state.commentBtnText}
-                                </button>
-                                <div >
-                                    {
-                                        this.state.showCommentForm ?
-                                            <CommentForm
-                                                postId={post._id}
-                                                userInfo={this.props.userInfo}
-                                                getNewComment={this.getNewComment}
-                                            /> : null
-                                    }
-                                </div>
+                                <Post post={post} />
                             </div>
                         )
                     })

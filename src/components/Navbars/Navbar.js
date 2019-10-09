@@ -12,6 +12,7 @@ import {
 
 
 export default class NavbarL extends React.Component {
+
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -19,11 +20,17 @@ export default class NavbarL extends React.Component {
       isOpen: false,
     };
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
   }
+
+  logout = () => {
+    sessionStorage.clear();
+  }
+
   render() {
     return (
       <div>
@@ -40,13 +47,18 @@ export default class NavbarL extends React.Component {
                   <Link to="/nav-profile">Profile</Link>
                 </NavItem>
                 <NavItem>
-                <Link to="/profile">Overview</Link>
+                  <Link to="/profile">Overview</Link>
                 </NavItem>
                 <NavItem>
                   <Link to="/contact">Contact</Link>
                 </NavItem>
                 <NavItem>
-                <Link to="/sign-up"><a className="btn btn-outline-light btn-sm logout-btn" href="/">Logout</a></Link>
+                  {
+                    sessionStorage.getItem('loggedIn') ?
+                      <Link onClick={this.logout} to="/"><a className="btn btn-outline-light btn-sm logout-btn" href="/">Logout</a></Link>
+                      :
+                      <Link to="/login"><a className="btn btn-outline-light btn-sm logout-btn" href="/">Login</a></Link>
+                  }
                 </NavItem>
               </Nav>
             </Collapse>
