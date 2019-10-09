@@ -50,6 +50,9 @@
   background-color: transparent;
   margin: 1rem;
 }
+a{
+  padding-left: 0;
+}
 .row {
   margin-right: 0;
 }

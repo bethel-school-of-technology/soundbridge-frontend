@@ -2,6 +2,7 @@ import React from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/Branding/finalLogo2.svg';
+import logoImg from '../../assets/Branding/LogoImg.svg';
 import {
   Collapse,
   Navbar,
@@ -29,7 +30,7 @@ export default class NavbarL extends React.Component {
       <div>
         <div>
           <Navbar className="navbar" color="light" dark expand="lg">
-            <Link className="name" to="/">{<img className="logoicon" src={logo} alt="logo"></img>}</Link>
+            <Link className="name" to="/">{<img className="logoicon" src={logoImg} alt="logo"></img>}{<img className="logoicon" src={logo} alt="logo"></img>}</Link>
             <NavbarToggler className="light" onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
