@@ -41,8 +41,8 @@ export default class App extends Component {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/sign-up" component={SignUp} />
-          <Route exact path="/user/:name" component={navProfile} />
-          <Route exact path="/spotify-logged-in/:accessToken/:refreshToken" component={SpotifyLoggedIn} />
+          <Route path="/user/:name" component={navProfile} />
+          <Route path="/spotify-logged-in/:accessToken/:refreshToken" component={SpotifyLoggedIn} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/editProfile" component={editProfile} />
         </div>
