@@ -31,8 +31,6 @@ export default class App extends Component {
   }
 
   render() {
-    const loggedIn = sessionStorage.getItem('loggedIn');
-    console.log('logged in =', loggedIn);
     return (
       <Router>
         <div className="App">

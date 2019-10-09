@@ -18,7 +18,13 @@ export default class NavbarL extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false,
+      loggedIn: false,
     };
+  }
+
+  componentDidMount() {
+    const loggedIn = sessionStorage.getItem('loggedIn');
+    this.setState({ loggedIn });
   }
 
   toggle() {
@@ -29,43 +35,61 @@ export default class NavbarL extends React.Component {
 
   logout = () => {
     sessionStorage.clear();
+    window.location.href = 'http://localhost:3000/'
   }
 
   render() {
     return (
       <div>
-        <div>
-          <Navbar className="navbar" color="light" dark expand="lg">
-            <Link className="name" to="/">{<img className="logoicon" src={logo} alt="logo"></img>}</Link>
-            <NavbarToggler className="light" onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <Link to="/home">Home</Link>
-                </NavItem>
-                <NavItem>
-                  <Link to="/nav-profile">Profile</Link>
-                </NavItem>
-                <NavItem>
-                  <Link to="/profile">Overview</Link>
-                </NavItem>
-                <NavItem>
-                  <Link to="/contact">Contact</Link>
-                </NavItem>
-                <NavItem>
-                  {
-                    sessionStorage.getItem('loggedIn') ?
+        {
+          this.state.loggedIn ?
+            <div>
+              <Navbar className="navbar" color="light" dark expand="lg">
+                <Link className="name" to="/">{<img className="logoicon" src={logo} alt="logo"></img>}</Link>
+                <NavbarToggler className="light" onClick={this.toggle} />
+                <Collapse isOpen={this.state.isOpen} navbar>
+                  <Nav className="ml-auto" navbar>
+                    <NavItem>
+                      <Link to="/home">Home</Link>
+                    </NavItem>
+                    <NavItem>
+                      <Link to="/nav-profile">Profile</Link>
+                    </NavItem>
+                    <NavItem>
+                      <Link to="/profile">Overview</Link>
+                    </NavItem>
+                    <NavItem>
+                      <Link to="/contact">Contact</Link>
+                    </NavItem>
+                    <NavItem>
                       <Link onClick={this.logout} to="/"><a className="btn btn-outline-light btn-sm logout-btn" href="/">Logout</a></Link>
-                      :
+                    </NavItem>
+                  </Nav>
+                </Collapse>
+              </Navbar>
+            </div>
+            :
+            <div>
+              <Navbar className="navbar" color="light" dark expand="lg">
+                <Link className="name" to="/">{<img className="logoicon" src={logo} alt="logo"></img>}</Link>
+                <NavbarToggler className="light" onClick={this.toggle} />
+                <Collapse isOpen={this.state.isOpen} navbar>
+                  <Nav className="ml-auto" navbar>
+                    <NavItem>
+                      <Link to="/home">Home</Link>
+                    </NavItem>
+                    <NavItem>
+                      <Link to="/contact">Contact</Link>
+                    </NavItem>
+                    <NavItem>
                       <Link to="/login"><a className="btn btn-outline-light btn-sm logout-btn" href="/">Login</a></Link>
-                  }
-                </NavItem>
-              </Nav>
-            </Collapse>
-          </Navbar>
-        </div>
+                    </NavItem>
+                  </Nav>
+                </Collapse>
+              </Navbar>
+            </div>
+        }
       </div>
-
     );
   }
 }
