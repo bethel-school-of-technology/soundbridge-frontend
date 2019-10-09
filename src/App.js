@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import './App.css';
 import Navbar from './components/Navbars/Navbar';
-import Footer from './components/Navbars/Footer';
 
 import Home from './screens/Home';
 import About from './screens/About';
@@ -31,6 +30,7 @@ export default class App extends Component {
   }
 
   render() {
+    console.log(sessionStorage.getItem('loggedIn'))
     return (
       <Router>
         <div className="App">

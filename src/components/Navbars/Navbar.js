@@ -39,6 +39,7 @@ export default class NavbarL extends React.Component {
   }
 
   render() {
+    const userName = sessionStorage.getItem('name')
     return (
       <div>
         {
@@ -53,7 +54,7 @@ export default class NavbarL extends React.Component {
                       <Link to="/home">Home</Link>
                     </NavItem>
                     <NavItem>
-                      <Link to="/nav-profile">Profile</Link>
+                      <Link to={`/user/${userName}`}>Profile</Link>
                     </NavItem>
                     <NavItem>
                       <Link to="/profile">Overview</Link>
@@ -80,6 +81,9 @@ export default class NavbarL extends React.Component {
                     </NavItem>
                     <NavItem>
                       <Link to="/contact">Contact</Link>
+                    </NavItem>
+                    <NavItem>
+                      <Link to="/sign-up"><a className="btn btn-outline-light btn-sm logout-btn" href="/">Sign Up</a></Link>
                     </NavItem>
                     <NavItem>
                       <Link to="/login"><a className="btn btn-outline-light btn-sm logout-btn" href="/">Login</a></Link>
