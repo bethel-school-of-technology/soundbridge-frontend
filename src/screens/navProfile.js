@@ -5,6 +5,7 @@ import './navProfile.css';
 import Darrin from '../assets/images/DarrinDeal.jpg';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
+import Songs from '../components/Songs';
 import Playlists from '../components/Playlists';
 import Posts from '../components/Posts';
 import SpotifyApiTest from '../components/SpofityApiTest/SpotifyApiTest';
@@ -136,7 +137,16 @@ export default class Profile extends React.Component {
               </Nav>
               <TabContent activeTab={this.state.activeTab}>
                 <TabPane tabId="1">
-                  <Row>
+                {
+                    !params.spotify ?
+                      <SpotifyApiTest /> :
+                      params.spotify && !accessToken ?
+                        <h1>loading...</h1> :
+                        <Songs
+                          accessToken={accessToken}
+                        />
+                  }
+                  {/* <Row className="user-songs">
                     <Col className="song-col" sm="4">
                       <div className="songs" >Title</div>
                       <ul>
@@ -155,7 +165,7 @@ export default class Profile extends React.Component {
                         <li></li>
                       </ul>
                     </Col>
-                  </Row>
+                  </Row> */}
                 </TabPane>
                 <TabPane tabId="2">
                   {

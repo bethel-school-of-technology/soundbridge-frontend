@@ -4,7 +4,6 @@ import { Button, Input, Container, Form } from 'reactstrap';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaGooglePlusG } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
-import { Redirect } from 'react-router-dom';
 
 import '../../screens/Login.css';
 
@@ -53,12 +52,7 @@ export default class LoginWithSpotify extends Component {
 
     render() {
         if (this.state.loggedIn) {
-            return <Redirect
-                to={{
-                    pathname: `/user/${this.state.user.name}`,
-                    state: { info: this.state.user }
-                }}
-            />
+            window.location.href = `http://localhost:3000/user/${this.state.user.name}`;
         }
         return (
             <Container className="justify-content-center">
