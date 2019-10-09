@@ -73,7 +73,7 @@ class Login extends React.Component {
 
   render() {
     if (this.state.loggedIn) {
-      window.location.href = `https://soundbridge.netlify.com/user/${this.state.user.name}`;
+      window.location.href = `https://soundbridge.netlify.com/`;
       // return <Redirect
       //   to={{
       //     pathname: `/user/${this.state.user.name}`,

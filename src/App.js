@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import './App.css';
 import Navbar from './components/Navbars/Navbar';
@@ -19,6 +19,11 @@ import SpotifyLoggedIn from './components/SpofityApiTest/SpotifyLoggedIn';
 export default class App extends Component {
 
   componentDidMount() {
+    const loggedIn = sessionStorage.getItem('loggedIn');
+    if (loggedIn === 'true') {
+      const userName = sessionStorage.getItem('name');
+      return <Redirect to={{ pathname: `/user/${userName}` }} />
+    }
     const lastLogin = sessionStorage.getItem('time');
     const time = new Date();
     if (time.getTime() - lastLogin > 7200000 || !lastLogin) {
@@ -30,7 +35,6 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(sessionStorage.getItem('loggedIn'))
     return (
       <Router>
         <div className="App">
