@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import './navProfile.css';
 import Darrin from '../assets/images/DarrinDeal.jpg';
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Row, Col } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import Songs from '../components/Songs';
 import Playlists from '../components/Playlists';
@@ -35,21 +35,22 @@ export default class Profile extends React.Component {
       spotifyRefreshToken: sessionStorage.getItem('spotifyRefreshToken'),
       loggedIn: sessionStorage.getItem('loggedIn')
     }
-    console.log('params: ', params);
-    axios.post('https://soundbridge.herokuapp.com/has-spotify/' + params.spotifyRefreshToken)
-    // axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
-      .then(res => {
-        this.setState({
-          accessToken: res.data,
-        }, () => {
-          fetch('https://api.spotify.com/v1/me', {
-            headers: {
-              'Authorization': 'Bearer ' + this.state.accessToken,
-            }
-          }).then(res => res.json())
-            .then(data => this.setState({ spotifyInfo: data }));
+    if (params.spotify === 'true') {
+      axios.post('https://soundbridge.herokuapp.com/has-spotify/' + params.spotifyRefreshToken)
+        // axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
+        .then(res => {
+          this.setState({
+            accessToken: res.data,
+          }, () => {
+            fetch('https://api.spotify.com/v1/me', {
+              headers: {
+                'Authorization': 'Bearer ' + this.state.accessToken,
+              }
+            }).then(res => res.json())
+              .then(data => this.setState({ spotifyInfo: data }));
+          });
         });
-      });
+    }
   }
 
   onDrop(picture) {
@@ -137,8 +138,8 @@ export default class Profile extends React.Component {
               </Nav>
               <TabContent activeTab={this.state.activeTab}>
                 <TabPane tabId="1">
-                {
-                    !params.spotify ?
+                  {
+                    params.spotify === 'false' ?
                       <SpotifyApiTest /> :
                       params.spotify && !accessToken ?
                         <h1>loading...</h1> :
@@ -169,7 +170,7 @@ export default class Profile extends React.Component {
                 </TabPane>
                 <TabPane tabId="2">
                   {
-                    !params.spotify ?
+                    params.spotify === 'false' ?
                       <SpotifyApiTest /> :
                       params.spotify && !accessToken ?
                         <h1>loading...</h1> :
@@ -182,9 +183,7 @@ export default class Profile extends React.Component {
                   <Row>
                     <Col sm="12">
                       <Card body>
-                        <CardTitle>Post Section</CardTitle>
                         <Posts userInfo={params} />
-                        <Button className="profile-btn">Post</Button>
                       </Card>
                     </Col>
                   </Row>

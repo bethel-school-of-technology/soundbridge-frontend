@@ -25,7 +25,7 @@ class PostForm extends Component {
         e.preventDefault();
 
         const postInfo = {
-            userId: this.props.userInfo._id,
+            userId: this.props.userInfo.userId,
             userName: this.props.userInfo.name,
             title: this.state.title,
             body: this.state.body,
@@ -44,6 +44,7 @@ class PostForm extends Component {
     }
 
     render() {
+        console.log('post form props: ', this.props)
         return (
             <Container>
                 <form onSubmit={this.onSubmit}>
