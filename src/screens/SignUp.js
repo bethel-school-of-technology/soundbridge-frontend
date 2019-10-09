@@ -5,7 +5,6 @@ import { FaFacebookF } from 'react-icons/fa';
 import { FaGooglePlusG } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 import { Button, Card, CardBody, Container } from 'reactstrap';
-import { Redirect } from 'react-router-dom';
 
 class SignUp extends React.Component {
 
