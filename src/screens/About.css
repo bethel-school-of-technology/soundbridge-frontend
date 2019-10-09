@@ -65,13 +65,14 @@ a{
 /*============= About Portrait Section =============*/
 
 .portrait-section {
-  height: 50em;
+  height: 40em;
   padding: 100px 50px;
-  margin-bottom: 10rem;
+  margin-bottom: 15rem;
 }
 .about-text-container {
   height: 85vh;
-  width: 40%;
+  width: 45%;
+  min-width: 225px;
   padding: 100px;
   margin-top: 5rem;
   margin-left: 3rem;
@@ -89,7 +90,7 @@ a{
   float: right;
   position: absolute;
   left: 40%;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .caption-btm {
   width: 100%;
@@ -157,6 +158,9 @@ a{
   .narrow h1 {
     font-size: 2.1rem;
   }
+  .about-text-container {
+    padding: 65px;
+  }
 }
 
 /* Devices under 768px (md) */
@@ -184,6 +188,10 @@ a{
   .top-scroll {
     display: none !important;
   }
+  .about-text-container {
+    padding: 40px;
+    margin-left: 1.5rem;
+  }
 }
 
 /* Devices under 576px (sm) */
@@ -203,5 +211,32 @@ a{
   }
   .narrow {
     width: 85%;
+    margin: 0 2rem ;
+  }
+  .about-text-container {
+    padding: 20px;
+    width: 55%;
+    margin-top: 4rem;
+    margin-left: 0;
+    height: 70vh;
+    background-color: #e9e9e99c;
+    margin-left: 0;
+    left: 20%;
+  }
+  .about-img {
+    height: 90vh;
+    width: 90%;
+    float: right;
+    position: absolute;
+    border-radius: 10px;
+    left: 5%;
+  }
+  .portrait-section {
+    margin-bottom: 3rem;
+    padding-top: 3rem;
+  
+  }
+  .home-inner{
+    height: 70vh;
   }
 }
