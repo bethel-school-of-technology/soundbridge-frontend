@@ -30,6 +30,7 @@ export default class App extends Component {
   }
 
   render() {
+    console.log(sessionStorage.getItem('loggedIn'))
     return (
       <Router>
         <div className="App">
