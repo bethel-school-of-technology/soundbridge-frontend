@@ -129,6 +129,7 @@ export default class Profile extends React.Component {
                   <NavLink
                     className={classnames({ active: this.state.activeTab === '3' })}
                     onClick={() => { this.toggle('3'); }}
+                    id="post-tab"
                   >
                     Posts
                     </NavLink>
@@ -136,7 +137,7 @@ export default class Profile extends React.Component {
               </Nav>
               <TabContent activeTab={this.state.activeTab}>
                 <TabPane tabId="1">
-                  <Row>
+                  <Row className="user-songs">
                     <Col className="song-col" sm="4">
                       <div className="songs" >Title</div>
                       <ul>
@@ -174,7 +175,6 @@ export default class Profile extends React.Component {
                       <Card body>
                         <CardTitle>Post Section</CardTitle>
                         <Posts userInfo={params} />
-                        <Button className="profile-btn">Post</Button>
                       </Card>
                     </Col>
                   </Row>
