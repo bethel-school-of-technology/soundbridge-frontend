@@ -28,7 +28,7 @@ class SignUp extends React.Component {
     };
 
     axios.post('https://soundbridge.herokuapp.com/api/user/register', signupInfo)
-    // axios.post('http://localhost:4000/api/user/register', signupInfo)
+      // axios.post('http://localhost:4000/api/user/register', signupInfo)
       .then(res => res.data ? this.setState({
         user: res.data,
         signedUp: !this.state.signedUp
@@ -39,12 +39,13 @@ class SignUp extends React.Component {
 
   render() {
     if (this.state.signedUp) {
-      return <Redirect
-        to={{
-          pathname: `/user/${this.state.user.name}`,
-          state: { info: this.state.user }
-        }}
-      />
+      window.location.href = `https://soundbridge.netlify.com/user/${this.state.user.name}`;
+      // return <Redirect
+      //   to={{
+      //     pathname: `/user/${this.state.user.name}`,
+      //     state: { info: this.state.user }
+      //   }}
+      // />
     }
     return (
       <Container className="justify-content-center">

@@ -61,7 +61,7 @@ export default class LoginWithSpotify extends Component {
 
     render() {
         if (this.state.loggedIn) {
-            window.location.href = `http://localhost:3000/user/${this.state.user.name}`;
+            window.location.href = `https://soundbridge.netlify.com/user/${this.state.user.name}`;
         }
         return (
             <Container className="justify-content-center">
