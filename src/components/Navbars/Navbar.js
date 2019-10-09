@@ -2,7 +2,6 @@ import React from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/Branding/finalLogo2.svg';
-import logoImg from '../../assets/Branding/LogoImg.svg';
 import {
   Collapse,
   Navbar,
