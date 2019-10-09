@@ -54,11 +54,7 @@ export default class NavbarL extends React.Component {
                       <Link to="/home">Home</Link>
                     </NavItem>
                     <NavItem>
-<<<<<<< HEAD
-                      <Link to="/user/:name">Profile</Link>
-=======
                       <Link to={`/user/${userName}`}>Profile</Link>
->>>>>>> spotify-songs
                     </NavItem>
                     <NavItem>
                       <Link to="/profile">Overview</Link>
