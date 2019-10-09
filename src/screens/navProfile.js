@@ -131,6 +131,7 @@ export default class Profile extends React.Component {
                   <NavLink
                     className={classnames({ active: this.state.activeTab === '3' })}
                     onClick={() => { this.toggle('3'); }}
+                    id="post-tab"
                   >
                     Posts
                     </NavLink>
