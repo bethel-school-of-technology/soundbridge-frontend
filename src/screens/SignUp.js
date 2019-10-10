@@ -25,7 +25,7 @@ class SignUp extends React.Component {
     };
 
     axios.post('https://soundbridge.herokuapp.com/api/user/register', signupInfo)
-    // axios.post('http://localhost:4000/api/user/register', signupInfo)
+    //axios.post('http://localhost:4000/api/user/register', signupInfo)
       .then(res => res.data ? this.setState({
         user: res.data,
         signedUp: !this.state.signedUp
