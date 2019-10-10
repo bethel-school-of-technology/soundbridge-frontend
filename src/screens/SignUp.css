@@ -23,14 +23,8 @@ form.mx-auto {
     margin-bottom: 2rem;
   }
 
-  #signUpHeader {
+  h3 {
       padding-bottom: 1em;
-      color: #212529;
-  }
-
-  #signUpBody {
-    height: 36em;
-    width: 25em;
   }
   .sign-up-card-title h3{
     color: black;
@@ -52,7 +46,6 @@ form.mx-auto {
   }
   
   #formbtn {
-    margin-top: 20px;
     border-radius: 2.5em;
     color: black;
     padding: 16px 20px;

@@ -1,13 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 import './SignUp.css';
+import { FaFacebookF } from 'react-icons/fa';
+import { FaGooglePlusG } from 'react-icons/fa';
+import { FaTwitter } from 'react-icons/fa';
 import { Button, Card, CardBody, Container } from 'reactstrap';
 
 class SignUp extends React.Component {
 
   state = {
     firstName: '',
-    /* lastName: '', */
+    lastName: '',
     email: '',
     password: '',
     signedUp: false,
@@ -18,13 +21,13 @@ class SignUp extends React.Component {
     e.preventDefault();
 
     const signupInfo = {
-      name: this.state.name,
+      name: this.state.firstName,
       email: this.state.email,
       password: this.state.password
     };
 
     axios.post('https://soundbridge.herokuapp.com/api/user/register', signupInfo)
-    //axios.post('http://localhost:4000/api/user/register', signupInfo)
+      // axios.post('http://localhost:4000/api/user/register', signupInfo)
       .then(res => res.data ? this.setState({
         user: res.data,
         signedUp: !this.state.signedUp
@@ -45,26 +48,26 @@ class SignUp extends React.Component {
     }
     return (
       <Container className="justify-content-center">
-        <Card className="mx-auto" id="signUpBody">
+        <Card className="mx-auto">
           <CardBody>
             <div className="text-center sign-up-card-title">
-              <h3 id="signUpHeader">SignUp</h3>
+              <h3>SignUp</h3>
             </div>
             <form onSubmit={this.submitSignup} >
               <input
                 type="text"
-                name="name"
-                value={this.state.name}
-                id="firstNametxt"
-                placeholder="Name"
+                name="firstName"
+                value={this.state.firstName}
+                id="firstName"
+                placeholder="First Name"
                 onChange={e => {
                   this.setState({
-                    name: e.target.value
+                    firstName: e.target.value
                   });
                 }} />
               {/* <input
                 type="text"
-                name="lastNametxt"
+                name="lastName"
                 value={this.state.lastName}
                 id="lastName"
                 placeholder="Last Name"
@@ -77,7 +80,7 @@ class SignUp extends React.Component {
                 type="email"
                 name="email"
                 value={this.state.email}
-                id="emailtxt"
+                id="email"
                 placeholder="Email"
                 onChange={e => {
                   this.setState({
@@ -88,7 +91,7 @@ class SignUp extends React.Component {
                 type="password"
                 name="password"
                 value={this.state.password}
-                id="passwordtxt"
+                id="password"
                 placeholder="Password"
                 onChange={e => {
                   this.setState({
@@ -99,6 +102,19 @@ class SignUp extends React.Component {
                 <Button id="formbtn" type="submit" className="btn btn-md">Submit</Button>
               </div>
             </form>
+            <hr></hr>
+            <p id="option" className="d-flex justify-content-center mb-3 pt-2">Or Sign in with:</p>
+            <div className="row my-3 d-flex justify-content-around">
+              <Button className="rounded-pill">
+                <FaFacebookF />
+              </Button>
+              <Button className="rounded-pill">
+                <FaTwitter />
+              </Button>
+              <Button className="rounded-pill">
+                <FaGooglePlusG />
+              </Button>
+            </div>
           </CardBody>
         </Card>
       </Container>
