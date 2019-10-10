@@ -1,4 +1,6 @@
 .navbar { 
+  position: fixed;
+  width: 100%;
     padding: 0rem 1rem;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -6,11 +8,24 @@
     letter-spacing: 0.1rem;
     transition: background-color 0.5s ease 0s; 
     height: 5rem;
+    z-index: 9999;
 }
 
+.show{
+  background-color: #2a2c31ea;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 -20px;
 
+}
+.show a{
+  height: 2rem;
+}
+.ml-auto{
+  height: 300px;
+}
 .navbar-collapse{
-  display: flex;
+  
   justify-content: space-between;
   align-items: flex-start;
   align-content: flex-start;
@@ -35,8 +50,8 @@ li.nav-item {
   margin: auto;
 }
 .navbar a {
-  color: #616163 !important;
-  
+  color: #c4c4c4 !important;
+  text-shadow: 0 0 0 #eeffee;
   padding-left: 2.7rem;
   transition: color 0.3s ease 0s;
   text-decoration: none;
