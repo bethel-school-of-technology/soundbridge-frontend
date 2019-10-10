@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './Login.css';
 import { Button, Input, Container, Form } from 'reactstrap';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor(props) {
@@ -69,12 +69,13 @@ class Login extends React.Component {
 
   render() {
     if (this.state.loggedIn) {
-      return <Redirect
-        to={{
-          pathname: `/user/${this.state.user.name}`,
-          state: { info: this.state.user }
-        }}
-      />
+      window.location.href = `https://soundbridge.netlify.com/user/${this.state.user.name}`;
+      // return <Redirect
+      //   to={{
+      //     pathname: `/user/${this.state.user.name}`,
+      //     state: { info: this.state.user }
+      //   }}
+      // />
     }
     return (
       <Container className="justify-content-center">

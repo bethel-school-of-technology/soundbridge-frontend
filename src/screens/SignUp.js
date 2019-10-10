@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './SignUp.css';
 import { Button, Card, CardBody, Container } from 'reactstrap';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 class SignUp extends React.Component {
 
@@ -25,23 +25,36 @@ class SignUp extends React.Component {
     };
 
     axios.post('https://soundbridge.herokuapp.com/api/user/register', signupInfo)
-    //axios.post('http://localhost:4000/api/user/register', signupInfo)
-      .then(res => res.data ? this.setState({
-        user: res.data,
-        signedUp: !this.state.signedUp
-      }) :
-        console.log('User not registered')
-      );
+    // axios.post('http://localhost:4000/api/user/register', signupInfo)
+      .then(res => {
+        const user = res.data;
+        if (!user) {
+          console.log('Result: ', res.data, 'no user found')
+        } else {
+          sessionStorage.setItem('userId', user._id);
+          sessionStorage.setItem('name', user.name);
+          sessionStorage.setItem('email', user.email);
+          sessionStorage.setItem('spotify', user.spotify);
+          sessionStorage.setItem('spotifyId', user.spotifyId);
+          sessionStorage.setItem('spotifyRefreshToken', user.spotifyRefreshToken);
+          sessionStorage.setItem('loggedIn', true);
+          this.setState({
+            user: res.data,
+            signedUp: !this.state.signedUp
+          })
+        }
+      });
   }
 
   render() {
     if (this.state.signedUp) {
-      return <Redirect
-        to={{
-          pathname: `/user/${this.state.user.name}`,
-          state: { info: this.state.user }
-        }}
-      />
+      window.location.href = `https://soundbridge.netlify.com/user/${this.state.user.name}`;
+      // return <Redirect
+      //   to={{
+      //     pathname: `/user/${this.state.user.name}`,
+      //     state: { info: this.state.user }
+      //   }}
+      // />
     }
     return (
       <Container className="justify-content-center">
