@@ -35,7 +35,8 @@ export default class NavbarL extends React.Component {
 
   logout = () => {
     sessionStorage.clear();
-    window.location.href = 'https://soundbridge.netlify.com/'
+    // window.location.href = 'http://localhost:3000/';
+    window.location.href = 'https://soundbridge.netlify.com/';
   }
 
   render() {
