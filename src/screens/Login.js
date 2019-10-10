@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './Login.css';
 import { Button, Input, Container, Form } from 'reactstrap';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor(props) {

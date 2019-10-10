@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './SignUp.css';
 import { Button, Card, CardBody, Container } from 'reactstrap';
+import { Redirect } from 'react-router-dom';
 
 class SignUp extends React.Component {
 
