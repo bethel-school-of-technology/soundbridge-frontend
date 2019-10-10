@@ -1,14 +1,15 @@
 /* ----- Page Display Container ----*/
 
 .main-display-container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(69, 69, 69, 1) 100%);
-}
-
+  padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(69,69,69,1) 100%);
+  }
 .top-page-display-container {
   width: 100%;
   margin-top: 2rem;

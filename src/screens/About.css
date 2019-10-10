@@ -1,3 +1,6 @@
+.landing{
+  padding-top: 5rem;
+}
 .home-inner {
   background-image: url("../assets/images/about-img2.jpg");
   background-repeat: no-repeat;
@@ -219,7 +222,7 @@ a{
     margin-top: 4rem;
     margin-left: 0;
     height: 70vh;
-    background-color: #e9e9e99c;
+    background-color: #e9e9e9cc;
     margin-left: 0;
     left: 20%;
   }

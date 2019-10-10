@@ -19,13 +19,13 @@ const About = () => (
 
 
     <div className="caption center-block text-center">
-      <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={true} animationInDelay={600}>
+      <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={true} animationInDelay={100}>
         <h3>We bridge the gap between</h3>
       </Animated>
-      <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={true} animationInDelay={1500}>
+      <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={true} animationInDelay={300}>
         <h3>The Artist and the Listener.</h3>
       </Animated>
-      <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={true} animationInDelay={2000}>
+      <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={true} animationInDelay={600}>
         <Link to="/sign-up">
           <Button className="btn btn-outline-light btn-lg signup-btn">
             Sign Up
