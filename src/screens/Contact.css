@@ -1,10 +1,13 @@
 /*============ Contact Section ============*/
-
+#contact{
+  padding-top: 5rem;
+}
 footer {
     background: url('../assets/images/ContactBg.jpg') no-repeat;
     /*background-color: #40474e;*/
     background-size: cover;
     color: white;
+    height: 100%;
     
   }
   footer .row {

@@ -3,6 +3,7 @@
 /* ----- Page Display Container ----*/
 
 .main-display-container {
+  padding-top: 5rem;
     display: flex;
     flex-direction: column;
     height: 100%;

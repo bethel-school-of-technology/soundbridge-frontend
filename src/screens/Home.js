@@ -1,8 +1,9 @@
 import React from 'react';
 import './Home.css';
+import { Animated } from "react-animated-css";
 
 const Home = () => (
-  <div>
+  <Animated animationIn="fadeIn" animationOut="fadeOut" isVisible={true} animationInDelay={200}>
 
     <div className="home-page-content page-header section-dark" style={{
       backgroundImage:
@@ -14,7 +15,7 @@ const Home = () => (
 
     </div>
 
-  </div>
+  </Animated>
 
 );
 

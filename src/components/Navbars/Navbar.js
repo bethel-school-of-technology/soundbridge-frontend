@@ -10,31 +10,43 @@ import {
   Nav,
   NavItem
 } from 'reactstrap';
+import { Animated } from "react-animated-css";
 
 
 export default class NavbarL extends React.Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false,
-    };
+    this.closeNavbar = this.closeNavbar.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
 
-    this.closeNav = this.closeNav.bind(this);
-        this.state = {
-            isOpen: false
-        };
-  }
-  toggle() {
+    this.state = {
+        isOpen: false,
+    };
+}
+componentWillMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+}
+componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+}
+
+toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+        isOpen: !this.state.isOpen
     });
-  }
-  closeNav() {
+}
+closeNavbar() {
     this.setState({
-      isOpen: false
+        isOpen: false
     });
-  }
+}
+handleClickOutside(event) {
+    const t = event.target;
+    if (this.state.isOpen && !t.classList.contains('navbar-toggler')) {
+        this.closeNavbar();
+    }
+}
   render() {
     return (
       <div>
@@ -45,7 +57,7 @@ export default class NavbarL extends React.Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <Link to="/home" onClick={closeNav} >Home</Link>
+                  <Link to="/home" onClick={this.closeNavbar} >Home</Link>
                 </NavItem>
                 <NavItem>
                   <Link to="/nav-profile">Profile</Link>
