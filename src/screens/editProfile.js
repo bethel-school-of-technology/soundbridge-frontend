@@ -13,14 +13,12 @@ export default class editProfile extends React.Component {
 
         this.onChangeEmail = this.onChangeEmail.bind(this);
         this.onChangePassword = this.onChangePassword.bind(this);
-        this.onChangeConfirmPassword = this.onChangeConfirmPassword.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
             userId: '',
             email: '',
             password: '',
-            confirmPassword: ''
         };
     };
 
@@ -44,11 +42,7 @@ export default class editProfile extends React.Component {
         });
     }
 
-    onChangeConfirmPassword = event => {
-        this.setState({
-            confirmPassword: event.target.value
-        });
-    }
+
 
 
     onSubmit = async event => {
@@ -73,23 +67,7 @@ export default class editProfile extends React.Component {
                 }
             })
             .catch(e => console.log(e));
-        /* this.setState({
-            email: '',
-            password: '',
-            confirmPassword: '',
-        }) */
     }
-
-    check = () => {
-        if (document.getElementById('password').value ===
-            document.getElementById('confirmpassword').value) {
-            document.getElementById('message').style.color = 'green';
-            document.getElementById('message').innerHTML = 'matching';
-        } else {
-            document.getElementById('message').style.color = 'red';
-            document.getElementById('message').innerHTML = 'not matching';
-        }
-    } 
 
 
     render() {
@@ -107,13 +85,9 @@ export default class editProfile extends React.Component {
                         <Label for="password">Password</Label>
                         <Input type="password" name="password" id="password" placeholder="Password" onKeyUp={this.check}  value={this.state.password} onChange={this.onChangePassword} />
                     </FormGroup>
-                    <FormGroup>
-                        <Label for="confirmPassword">Confirm Password</Label>
-                        <Input type="password" name="confirmpassword" id="confirmPassword" placeholder="Confirm Password" onKeyUp={this.check} value={this.state.confirmPassword} onChange={this.onChangeConfirmPassword} />
-                    </FormGroup>
                     <div id="message"></div>
                     <Link to="/profile" className="edit-profile-link"><Button className="secondary col-text-center" id="editbtn">Cancel</Button></Link>
-                    <Button className="secondary float-center" id="editbtn" onClick={this.onSubmit}>Save</Button>
+                    <Button className="secondary float-center" id="editbtn" onClick={this.onSubmit }>Save</Button>
 
                 </Form>
             </div>

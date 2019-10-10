@@ -35,7 +35,7 @@ export default class SpotifyLoggedIn extends Component {
         }
         return (
             <div>
-                <h2>Log back in to add spotify!</h2>
+                <h2 className="text-center">Log back in to add spotify!</h2>
                 <LoginWithSpotify spotifyInfo={this.state.spotifyInfo} />
             </div>
         )
