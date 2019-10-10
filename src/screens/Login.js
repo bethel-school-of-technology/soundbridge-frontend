@@ -40,8 +40,8 @@ class Login extends React.Component {
       password: this.state.password
     };
 
-    axios.post('https://soundbridge.herokuapp.com/api/user/login', user)
-      // axios.post('http://localhost:4000/api/user/login', user)
+    // axios.post('https://soundbridge.herokuapp.com/api/user/login', user)
+      axios.post('http://localhost:4000/api/user/login', user)
       .then(res => {
         const user = res.data;
         if (!user) {
@@ -69,7 +69,8 @@ class Login extends React.Component {
 
   render() {
     if (this.state.loggedIn) {
-      window.location.href = `https://soundbridge.netlify.com/user/${this.state.user.name}`;
+      window.location.href = `http://localhost:3000/user/${this.state.user.name}`;
+      // window.location.href = `https://soundbridge.netlify.com/user/${this.state.user.name}`;
       // return <Redirect
       //   to={{
       //     pathname: `/user/${this.state.user.name}`,
