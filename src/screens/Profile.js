@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table, Button, Jumbotron } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import './Profile.css';
+import './profile.css';
 
 
 export default class Profile extends Component {
