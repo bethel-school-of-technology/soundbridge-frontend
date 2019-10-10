@@ -18,7 +18,7 @@ export default class NavbarL extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false,
-      loggedIn: false,
+      loggedIn: 'false',
     };
   }
 
@@ -35,7 +35,7 @@ export default class NavbarL extends React.Component {
 
   logout = () => {
     sessionStorage.clear();
-    window.location.href = 'http://localhost:3000/'
+    window.location.href = 'https://soundbridge.netlify.com/'
   }
 
   render() {
@@ -43,7 +43,7 @@ export default class NavbarL extends React.Component {
     return (
       <div>
         {
-          this.state.loggedIn ?
+          this.state.loggedIn === 'true' ?
             <div>
               <Navbar className="navbar" color="light" dark expand="lg">
                 <Link className="name" to="/">{<img className="logoicon" src={logo} alt="logo"></img>}</Link>
