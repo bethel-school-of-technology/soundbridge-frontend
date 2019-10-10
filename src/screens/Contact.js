@@ -38,7 +38,7 @@ const Contact = () => (
                 </div>
 
                 <div className="col-md-7">
-                    <h3>Have a Question?</h3>
+                    <h3 id="contactHeader">Have a Question?</h3>
 
                     <Form id="contact-form" method="post" action="contact.php">
 

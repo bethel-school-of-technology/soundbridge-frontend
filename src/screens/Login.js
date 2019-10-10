@@ -1,9 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import './Login.css';
-import { FaFacebookF } from 'react-icons/fa';
-import { FaGooglePlusG } from 'react-icons/fa';
-import { FaTwitter } from 'react-icons/fa';
 import { Button, Input, Container, Form } from 'reactstrap';
 
 class Login extends React.Component {
@@ -43,7 +40,7 @@ class Login extends React.Component {
     };
 
     axios.post('https://soundbridge.herokuapp.com/api/user/login', user)
-    // axios.post('http://localhost:4000/api/user/login', user)
+      // axios.post('http://localhost:4000/api/user/login', user)
       .then(res => {
         const user = res.data;
         if (!user) {
@@ -64,7 +61,7 @@ class Login extends React.Component {
           });
         }
       })
-      .catch (e => console.log(e));
+      .catch(e => console.log(e));
     this.setState({
       email: '',
       password: ''
@@ -83,28 +80,15 @@ class Login extends React.Component {
     }
     return (
       <Container className="justify-content-center">
-        <Form className="mx-auto" onSubmit={this.onSubmit}>
+        <Form className="mx-auto" id="cardBody" onSubmit={this.onSubmit}>
           <div className="cardbody">
             <div className="text-center">
-              <h3>Login</h3>
+              <h3 id="headerTitle">Login</h3>
             </div>
-            <Input type="email" name="email" id="email" placeholder="Email" value={this.state.email} onChange={this.onChangeEmail} />
-            <Input type="password" name="password" id="password" placeholder="Password" value={this.state.password} onChange={this.onChangePassword} />
+            <Input type="email" name="email" id="emailtxt" placeholder="Email" value={this.state.email} onChange={this.onChangeEmail} />
+            <Input type="password" name="password" id="passwordtxt" placeholder="Password" value={this.state.password} onChange={this.onChangePassword} />
             <div className="text-center">
               <Button id="formbtn" type="submit" className="btn btn-md">Submit</Button>
-            </div>
-            <hr></hr>
-            <p id="option" className="d-flex justify-content-center mb-3 pt-2">Or Sign in with:</p>
-            <div className="row my-3 d-flex justify-content-around">
-              <Button className="rounded-pill">
-                <FaFacebookF />
-              </Button>
-              <Button className="rounded-pill">
-                <FaTwitter />
-              </Button>
-              <Button className="rounded-pill">
-                <FaGooglePlusG />
-              </Button>
             </div>
           </div>
         </Form>

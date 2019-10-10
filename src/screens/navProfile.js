@@ -1,4 +1,3 @@
-
 import React from 'react';
 import axios from 'axios';
 import './navProfile.css';
@@ -25,30 +24,19 @@ export default class Profile extends React.Component {
   }
 
   componentDidMount() {
-    // const params = this.props.location.state.info;
-    const params = {
-      userId: sessionStorage.getItem('userId'),
-      name: sessionStorage.getItem('name'),
-      email: sessionStorage.getItem('email'),
-      spotify: sessionStorage.getItem('spotify'),
-      spotifyId: sessionStorage.getItem('spotifyId'),
-      spotifyRefreshToken: sessionStorage.getItem('spotifyRefreshToken'),
-      loggedIn: sessionStorage.getItem('loggedIn')
-    }
-    if (params.spotify === 'true') {
-      axios.post('https://soundbridge.herokuapp.com/has-spotify/' + params.spotifyRefreshToken)
-        // axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
-        .then(res => {
-          this.setState({
-            accessToken: res.data,
-          }, () => {
-            fetch('https://api.spotify.com/v1/me', {
-              headers: {
-                'Authorization': 'Bearer ' + this.state.accessToken,
-              }
-            }).then(res => res.json())
-              .then(data => this.setState({ spotifyInfo: data }));
-          });
+    const params = this.props.location.state.info;
+    axios.post('https://soundbridge.herokuapp.com/has-spotify/' + params.spotifyRefreshToken)
+     //axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
+      .then(res => {
+        this.setState({
+          accessToken: res.data,
+        }, () => {
+          fetch('https://api.spotify.com/v1/me', {
+            headers: {
+              'Authorization': 'Bearer ' + this.state.accessToken,
+            }
+          }).then(res => res.json())
+            .then(data => this.setState({ spotifyInfo: data }));
         });
     }
   }
@@ -205,4 +193,3 @@ export default class Profile extends React.Component {
     );
   }
 }
-

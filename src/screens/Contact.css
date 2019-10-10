@@ -26,18 +26,17 @@ footer {
   footer .svg-inline--fa:hover{
     color: #1F7A8C!important;
   } 
-  footer h3 {
-    text-transform: uppercase;
-    margin: 1.5rem 0;
-  }
-  
   .contact-info{
     margin-top: 1.5rem; 
   }
   #rowbg {
     height: 100vh;
   }
-  
+  #contactHeader {
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 1.5rem 0;
+  }
   /*---- Start Contact Form ----*/
   .form-group{
     margin-bottom: 1.3rem;
@@ -70,4 +69,20 @@ footer {
     background: transparent;
     padding: 10px;
   }
+  button.fa.rounded-pill {
+    background-color:transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+button.fa.rounded-pill:hover {
+  background-color: #33CCFF;
+  box-shadow: 0px 15px 20px ;
+  color: #ffffff;
+  transform: translateY(-7px);
+}
   

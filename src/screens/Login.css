@@ -17,14 +17,15 @@ form.mx-auto {
     margin-bottom: 2rem;
   }
 
-  h3 {
+  #headerTitle {
       padding-bottom: 1em;
+      margin-bottom: 1.5em;
   }
   
   .container input,
-  input#email,
-  input#password,
-  input#name {
+  input#emailtxt,
+  input#passwordtxt,
+  input#nametxt {
     box-shadow: none !important;
     border: none;
     border-bottom: 2px solid lightgray;
@@ -34,6 +35,11 @@ form.mx-auto {
     margin: 5px 0 22px 0;
     color: #212529!important;
     background-color: white;
+  }
+
+  #cardBody {
+    height:  36em;
+    width: 25em;
   }
   
   #formbtn {

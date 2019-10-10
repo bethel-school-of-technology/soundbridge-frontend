@@ -163,74 +163,17 @@
   border: none;
   background-color: rgba(0, 0, 0, 0);
   color: #f1f1f1;
-}
-
-.profile-btn {
-  width: 20%;
-}
-
-.profile-tabs {
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-  margin-top: 3rem;
-}
-
-.profile-tabs a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
-
-.profile-tabs a:hover {
-  color: #f1f1f1;
-}
-
-.tabs-underline {
-  width: 3rem;
-  height: 0.2rem;
-  background-color: #d4c81b;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-  transition: 0.3s;
-}
-
-/*-------- Custom Scroll Bar -------*/
-
-/* width */
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-
-::-webkit-scrollbar-track {
-  background: 111;
-}
-
-/* Handle */
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* Devices under 576px (sm) */
-
-@media (max-width: 575px) {
-  .nav-tabs .nav-link {
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    letter-spacing: 1.5px;
+  }
+  .profile-btn{
+    width: 20%;
+  }
+  
+  
+  .tabs-underline {
+    width: 3rem;
+    height: 0.2rem;
+    background-color: #d4c81b;
+    margin: 0 auto;
     margin-bottom: 2rem;
     padding: 10px 25px;
   }
@@ -241,4 +184,51 @@
     max-width: 7rem;
     align-items: flex-start;
   }
+
+  img {
+    max-width: 100%;
+ }
+
+
+
+
+ @media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 1) {
 }
+
+/* ----------- Retina Screens ----------- */
+@media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (min-resolution: 192dpi) {
+}
+
+
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3) {
+
+}
+
+/* Portrait */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+
+}
+  
