@@ -13,6 +13,7 @@ import SignUp from './screens/SignUp';
 import editProfile from './screens/editProfile';
 import Profile from './screens/Profile';
 import SpotifyLoggedIn from './components/SpofityApiTest/SpotifyLoggedIn';
+import Footer from './components/Navbars/Footer';
 
 
 
