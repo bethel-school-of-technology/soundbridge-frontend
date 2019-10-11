@@ -1,11 +1,17 @@
 /*============ Contact Section ============*/
-
+#contact {
+  padding-top: 5rem;
+}
 footer {
-  background: url('../assets/images/ContactBg.jpg') no-repeat;
+  background: url("../assets/images/ContactBg.jpg") no-repeat;
   /*background-color: #40474e;*/
   background-size: cover;
   color: white;
-  
+  height: 100%;
+}
+footer h3 {
+  text-transform: uppercase;
+  margin: 1.5rem 0;
 }
 footer .row {
   background-color: rgba(57, 63, 70, 0.85);
@@ -16,18 +22,18 @@ footer img {
   height: 2rem;
   margin: 1.5rem 0;
 }
-footer a{
+footer a {
   color: white;
 }
 footer .svg-inline--fa {
   font-size: 1.6rem;
-  margin: 1.2rem .5rem 0 0;
+  margin: 1.2rem 0.5rem 0 0;
 }
-footer .svg-inline--fa:hover{
-  color: #1F7A8C!important;
-} 
-.contact-info{
-  margin-top: 1.5rem; 
+footer .svg-inline--fa:hover {
+  color: #1f7a8c !important;
+}
+.contact-info {
+  margin-top: 1.5rem;
 }
 #rowbg {
   height: 100vh;
@@ -38,30 +44,30 @@ footer .svg-inline--fa:hover{
   margin: 1.5rem 0;
 }
 /*---- Start Contact Form ----*/
-.form-group{
+.form-group {
   margin-bottom: 1.3rem;
 }
-.form-control{
+.form-control {
   background-color: #53595f;
-  border: .15rem solid #666b71;
-  color: white!important;
+  border: 0.15rem solid #666b71;
+  color: white !important;
   font-size: 1.1rem;
   width: 80%;
 }
 .form-control:focus {
   background-color: #53595f;
-  border: .15rem solid #666b71;
+  border: 0.15rem solid #666b71;
 }
 .form-group input::placeholder,
-.form-group textarea::placeholder{
-  color: #b2b5b8!important;
-} 
+.form-group textarea::placeholder {
+  color: #b2b5b8 !important;
+}
 input .btn {
   cursor: pointer;
 }
 
-hr.socket{
-  border-top: .2rem solid #666b71;
+hr.socket {
+  border-top: 0.2rem solid #666b71;
   width: 100%;
 }
 #icons {
@@ -70,7 +76,7 @@ hr.socket{
   padding: 10px;
 }
 button.fa.rounded-pill {
-  background-color:transparent;
+  background-color: transparent;
   color: #ffffff;
   border: none;
   border-radius: 45px;
@@ -80,8 +86,8 @@ button.fa.rounded-pill {
   outline: none;
 }
 button.fa.rounded-pill:hover {
-background-color: #33CCFF;
-box-shadow: 0px 15px 20px ;
-color: #ffffff;
-transform: translateY(-7px);
+  background-color: #33ccff;
+  box-shadow: 0px 15px 20px;
+  color: #ffffff;
+  transform: translateY(-7px);
 }

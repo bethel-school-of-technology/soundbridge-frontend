@@ -10,6 +10,14 @@ height: 37em;
 width: 25em;
 padding: 25px;
 }  
+  
+  div.container {
+    padding: 1.5em;
+    padding-top: 5rem;
+  }
+  div.cardbody {
+    padding: 1.25em;
+  }
 
 div.container {
   padding: 1.5em;

@@ -13,6 +13,7 @@ import SignUp from './screens/SignUp';
 import editProfile from './screens/editProfile';
 import Profile from './screens/Profile';
 import SpotifyLoggedIn from './components/SpofityApiTest/SpotifyLoggedIn';
+import Footer from './components/Navbars/Footer';
 
 
 
@@ -49,6 +50,7 @@ export default class App extends Component {
           <Route path="/spotify-logged-in/:accessToken/:refreshToken" component={SpotifyLoggedIn} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/editProfile" component={editProfile} />
+        <Footer></Footer>
         </div>
       </Router>
 
