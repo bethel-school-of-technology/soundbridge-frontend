@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
-import CommentForm from './CommentForm';
+import Comment from './Comment';
 
 export default class Post extends Component {
 
     state = {
-        showCommentForm: false,
-        commentBtnText: 'Comment',
+        showComments: false,
+        viewCommentsText: 'View Comments',
+    }
+
+    viewComments = () => {
+        if (this.state.viewCommentsText === 'View Comments') {
+            this.setState({
+                viewCommentsText: 'Close',
+                showComments: !this.state.showComments,
+            });
+        } else {
+            this.setState({
+                viewCommentsText: 'View Comments',
+                showComments: !this.state.showComments,
+            });
+        }
     }
 
     getNewComment = commentInfo => {
@@ -15,32 +29,18 @@ export default class Post extends Component {
         });
     }
 
-    commentBtnClicked = () => {
-        if (this.state.commentBtnText === 'Comment') {
-            this.setState({
-                commentBtnText: 'Close',
-                showCommentForm: !this.state.showCommentForm
-            });
-        } else {
-            this.setState({
-                commentBtnText: 'Comment',
-                showCommentForm: !this.state.showCommentForm
-            });
-        }
-    }
-
     render() {
         return (
             <div>
                 <h1>{this.props.post.title}</h1>
                 <p>{this.props.post.body}</p>
-                <button onClick={this.commentBtnClicked}>
-                    {this.state.commentBtnText}
+                <button onClick={this.viewComments}>
+                    {this.state.viewCommentsText}
                 </button>
-                <div >
+                <div>
                     {
-                        this.state.showCommentForm ?
-                            <CommentForm
+                        this.state.showComments ?
+                            <Comment
                                 postId={this.props.post._id}
                                 userInfo={this.props.userInfo}
                                 getNewComment={this.getNewComment}
