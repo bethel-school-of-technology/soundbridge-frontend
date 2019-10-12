@@ -2,13 +2,41 @@
     width: 50%;
     min-width: 300px;
     margin-left: 0;
+    position: relative;
+    margin-top: -21px;
+    margin-bottom: -29px;
 }
 #formbtn-post{
     width: 25%;
     min-width: 100px;
-    background-color: transparent;
+    background-color: black;
+    text: white;
 }
 #formbtn-post:hover{
     background-color: #d4c81b;
 }
 
+.form-control: {
+    margin-top: -20px;
+    padding-top: 1px;
+    width: 100%;
+    background-color: white;
+}
+
+.h4 {
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.postform-container.body {
+    width: 100%;
+}
+
+.White-box {
+    padding-top: 20px;
+    height: 240px;
+}
+
+.input {
+    width: 100%;
+}
