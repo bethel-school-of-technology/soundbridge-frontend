@@ -30,16 +30,16 @@ export default class NavbarL extends React.Component {
     this.setState({ loggedIn });
   }
 
-componentWillMount() {
+  componentWillMount() {
     document.addEventListener('mousedown', this.handleClickOutside);
-}
-componentWillUnmount() {
+  }
+  componentWillUnmount() {
     document.removeEventListener('mousedown', this.handleClickOutside);
-}
+  }
 
-toggle() {
+  toggle() {
     this.setState({
-        isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen
     });
   }
 
@@ -50,17 +50,17 @@ toggle() {
   }
 
 
-closeNavbar() {
+  closeNavbar() {
     this.setState({
-        isOpen: false
+      isOpen: false
     });
-}
-handleClickOutside(event) {
+  }
+  handleClickOutside(event) {
     const t = event.target;
     if (this.state.isOpen && !t.classList.contains('navbar-toggler')) {
-        this.closeNavbar();
+      this.closeNavbar();
     }
-}
+  }
   render() {
     const userName = sessionStorage.getItem('name')
     return (
@@ -116,7 +116,7 @@ handleClickOutside(event) {
               </Navbar>
             </div>
         }
-        <div>
+        {/* <div>
           <Navbar className="navbar" color="light" dark expand="lg">
             <Link className="name" to="/">{<img className="logoicon" src={logo} alt="logo"></img>}</Link>
             <NavbarToggler className="light" onClick={this.toggle} />
@@ -141,6 +141,7 @@ handleClickOutside(event) {
             </Collapse>
           </Navbar>
         </div>
+      </div> */}
       </div>
     );
   }
