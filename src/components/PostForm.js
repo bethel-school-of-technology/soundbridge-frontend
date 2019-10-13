@@ -47,8 +47,9 @@ class PostForm extends Component {
     render() {
         console.log('post form props: ', this.props)
         return (
+            <div className="White-box">
             <Container className="postform-container">
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={this.onSubmit}><h4>Create Post</h4>
                     <Input
                     className="form-control"
                         type="text"
@@ -70,6 +71,7 @@ class PostForm extends Component {
                     <Button id="formbtn-post" type="submit" className="btn btn-outline-light btn-sm">Submit</Button>
                 </form>
             </Container>
+            </div>
         )
     }
 }

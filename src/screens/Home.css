@@ -2,6 +2,7 @@ div.home-page-content {
     /*   height: 100vh;
       width: 100vw;
       object-fit: cover; */
+      position: fixed;
       padding-top: 5rem;
       background-color: #B2AFAB;
       background-position: center center;
@@ -15,6 +16,23 @@ div.home-page-content {
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    .White-box{
+      height: 210px; 
+      width: 60vw;
+      background: rgba(255, 255, 255, 0.705);
+      margin: 6rem auto 0;
+      border-radius: 10px;
+     
+
+    }
+    .White-box1{
+      height: 210px;
+      width: 60vw;
+      background: rgba(255, 255, 255, 0.705);
+      margin: 1rem auto;
+      border-radius: 10px;
+      
     }
     
     div.filter {
@@ -42,4 +60,16 @@ div.home-page-content {
       z-index: 1;
       margin-top: 65px;
     }
+
+    h4 {
+      margin-bottom: 15px;
+      margin-top: -7px;
+    }
+    
+    .form-control {
+      margin-top: -20px;
+      padding-top: 1px;
+      width: 100%;
+      background-color: white;
+  }
     
