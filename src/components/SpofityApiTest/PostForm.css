@@ -1,14 +1,101 @@
-.postform-container{
-    width: 50%;
+.postform{
+    width: 90%;
     min-width: 300px;
-    margin-left: 0;
+    margin: 1rem;
+    position: relative;
 }
-#formbtn-post{
-    width: 25%;
-    min-width: 100px;
-    background-color: transparent;
-}
-#formbtn-post:hover{
-    background-color: #d4c81b;
+.formtitle{
+color: white;
+margin: 0 1rem;
+text-align: center;
 }
 
+#formbtn-post{
+    height: 2.3rem;
+    width: 30%;
+    min-width: 100px;
+    background-color: white;
+    color: black;
+}
+#formbtn-post:hover{
+    background-color: black;
+    color: white;
+}
+
+.form-control {
+    margin-top: -20px;
+    padding-top: 1px;
+    width: 100%;
+    background-color: white;
+}
+#posttitle{
+    margin: .5rem 0;
+    padding:0;
+    background-color: transparent;
+    border: none;
+}
+#postbody{
+    margin: .5rem 0;
+    padding:0;
+    background-color: transparent;
+    border: none;
+}
+#posttitle:focus{
+    border: none;
+}
+.h4 {
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.postform-container.body {
+    width: 100%;
+}
+.White-box{
+    padding-top: 5px;
+    height: 240px; 
+    width: 60vw;
+    background-color: rgba(66, 66, 66, 0.95);
+    margin: 0 auto 0;
+    border-radius: 10px;
+}
+
+
+.input {
+    width: 100%;
+}
+#commentbody{
+    margin: .5rem 0;
+    padding:0;
+    background-color: transparent;
+    border: none;
+}
+.post-profile-img-container {
+    height: 3rem;
+    width: 3rem;
+    min-width: 3rem;
+    max-width: 3rem;
+    background-color: #d4c81b1e;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-right: 0;
+    border-radius: 50%;
+    box-shadow: 3px 3px 4px 4px #313438b9;
+  }
+  
+  .post-profile-img img {
+    width: 3rem;
+    height: 3rem;
+  }
+  .title-and-img{
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+  }
+  .home-screen-margin{
+    margin: 6rem auto 0;
+  }

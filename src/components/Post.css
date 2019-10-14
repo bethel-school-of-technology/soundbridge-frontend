@@ -1,0 +1,32 @@
+.Post-White-box{
+    padding-top: 5px;
+    height: auto; 
+    width: 60vw;
+    background-color: rgba(66, 66, 66, 0.95);
+    margin: 1rem auto 0;
+    border-radius: 10px;
+}
+.postbox{
+    width: 50%;
+    min-width: 300px;
+    margin: 1rem;
+    position: relative;
+}
+.posttitle{
+    color: white;
+    margin: 0 1rem;
+    text-align: center;
+    }
+.commentbtn-post{
+    margin-bottom: 1rem;
+    height: 2.3rem;
+    width: auto;
+    min-width: 100px;
+    background-color: rgba(105, 105, 105, 0.767);
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+#formbtn-post{
+    margin-bottom: 1rem;
+}

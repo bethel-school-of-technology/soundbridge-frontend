@@ -27,7 +27,6 @@ class Playlists extends Component {
     }
     else {
       const playlists = this.state.playlists;
-      console.log('playlists: ', playlists);
       return (
         <Row>
           {

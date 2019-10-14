@@ -17,7 +17,6 @@ export default class Songs extends Component {
     }
 
     render() {
-        console.log('songs state: ', this.state.songs)
         return (
             <div>
                 {

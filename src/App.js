@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import './App.css';
 import Navbar from './components/Navbars/Navbar';
-
 import Home from './screens/Home';
 import About from './screens/About';
 import Contact from './screens/Contact';

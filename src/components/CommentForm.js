@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Button, Input, Container } from 'reactstrap';
+import { Button, Input } from 'reactstrap';
 import axios from 'axios';
 
-class PostForm extends Component {
+class CommentForm extends Component {
 
     state = {
         body: '',
@@ -18,7 +18,7 @@ class PostForm extends Component {
         e.preventDefault();
 
         const commentInfo = {
-            userId: this.props.userInfo._id,
+            userId: this.props.userInfo.userId,
             userName: this.props.userInfo.name,
             postId: this.props.postId,
             body: this.state.body,
@@ -37,21 +37,21 @@ class PostForm extends Component {
 
     render() {
         return (
-            <Container>
+            <div>
                 <form onSubmit={this.onSubmit}>
                     <Input
                         type="text"
                         name="body"
-                        id="body"
+                        id="commentbody"
                         placeholder="Write your comment here..."
                         value={this.state.body}
                         onChange={this.bodyChange}
                     />
-                    <Button id="formbtn" type="submit" className="btn btn-md">Submit</Button>
+                    <Button id="formbtn-post" type="submit" className="btn btn-md formbtn-post">Comment</Button>
                 </form>
-            </Container>
+            </div>
         )
     }
 }
 
-export default PostForm;
+export default CommentForm;
