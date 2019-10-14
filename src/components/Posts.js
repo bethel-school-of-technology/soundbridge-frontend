@@ -36,7 +36,6 @@ export default class componentName extends Component {
     }
 
     render() {
-        console.log('posts props: ', this.props)
         if (this.state.posts < 1) {
             return <PostForm userInfo={this.props.userInfo} getNewPost={this.getNewPost} />
         }

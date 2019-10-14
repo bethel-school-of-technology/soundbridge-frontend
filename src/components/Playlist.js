@@ -3,7 +3,6 @@ import { Col } from 'reactstrap';
 
 const Playlist = (props) => {
     const playlistInfo = props.playlistInfo;
-    console.log(playlistInfo);
     return (
         <Col sm="3">
             <div

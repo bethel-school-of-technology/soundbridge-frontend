@@ -36,7 +36,6 @@ class CommentForm extends Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <Container>
                 <form onSubmit={this.onSubmit}>

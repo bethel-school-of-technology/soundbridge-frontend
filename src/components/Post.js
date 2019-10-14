@@ -22,15 +22,7 @@ export default class Post extends Component {
         }
     }
 
-    getNewComment = commentInfo => {
-        this.setState({
-            commentBtnText: 'Comment',
-            showCommentForm: !this.state.showCommentForm
-        });
-    }
-
     render() {
-        console.log('post props: ', this.props)
         return (
             <div>
                 <h1>{this.props.post.title}</h1>
@@ -44,7 +36,6 @@ export default class Post extends Component {
                             <Comment
                                 postId={this.props.post._id}
                                 userInfo={this.props.userInfo}
-                                getNewComment={this.getNewComment}
                             /> : null
                     }
                 </div>
