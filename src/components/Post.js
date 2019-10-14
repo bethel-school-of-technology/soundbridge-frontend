@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import CommentForm from './CommentForm';
+import './Post.css';
+import Profileimg from '../assets/images/profile-img.jpg';
 
 export default class Post extends Component {
 
@@ -31,21 +33,30 @@ export default class Post extends Component {
 
     render() {
         return (
-            <div>
-                <h1>{this.props.post.title}</h1>
-                <p>{this.props.post.body}</p>
-                <button onClick={this.commentBtnClicked}>
-                    {this.state.commentBtnText}
-                </button>
-                <div >
-                    {
-                        this.state.showCommentForm ?
-                            <CommentForm
-                                postId={this.props.post._id}
-                                userInfo={this.props.userInfo}
-                                getNewComment={this.getNewComment}
-                            /> : null
-                    }
+            <div className="Post-White-box">
+                <div className="postbox">
+                <div className="title-and-img">
+                        <div className="post-profile-img-container ">
+                            <div className="post-profile-img">
+                                <img id="profile-image" src={Profileimg} alt="Profile Image" />
+                            </div>
+                        </div>
+                        <h4 className="posttitle">{this.props.post.title}</h4>
+                    </div>
+                    <p>{this.props.post.body}</p>
+                    <button className="commentbtn-post" onClick={this.commentBtnClicked}>
+                        {this.state.commentBtnText}
+                    </button>
+                    <div >
+                        {
+                            this.state.showCommentForm ?
+                                <CommentForm
+                                    postId={this.props.post._id}
+                                    userInfo={this.props.userInfo}
+                                    getNewComment={this.getNewComment}
+                                /> : null
+                        }
+                    </div>
                 </div>
             </div>
         )

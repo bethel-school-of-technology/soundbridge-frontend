@@ -26,8 +26,9 @@ class Home extends Component {
 
       <div className="home-page-content page-header section-dark" style={{ backgroundImage: "url(" + require("../assets/images/SoundBridge.jpg") + ")" }} >
         <div className="filter">
-
+        <div className="home-screen-margin">
           <PostForm></PostForm>
+          </div>
             
             
 

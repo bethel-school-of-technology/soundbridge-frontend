@@ -2,7 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 import './navProfile.css';
-import Darrin from '../assets/images/DarrinDeal.jpg';
+import Profileimg from '../assets/images/profile-img.jpg';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import Songs from '../components/Songs';
@@ -95,7 +95,7 @@ export default class Profile extends React.Component {
               <div className="profile-img-container ">
                 <div className="profile-img">
 
-                  <img id="profile-image" src={Darrin} alt="DarrinDeal" />
+                  <img id="profile-image" src={Profileimg} alt="Profile Image" />
                 </div>
                 <div className="change-profile-img">
                   <p>Change</p>
