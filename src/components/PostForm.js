@@ -76,7 +76,10 @@ class PostForm extends Component {
                             value={this.state.body}
                             onChange={this.bodyChange}
                         />
-                        <Button id="formbtn-post" type="submit" className="btn btn-outline-light btn-sm">Submit</Button>
+                        <Button id="formbtn-post" type="submit" 
+                        className="btn btn-outline-light btn-sm">
+                            Submit
+                        </Button>
                     </form>
                 </div>
             </div>

@@ -9,7 +9,7 @@ div.home-page-content {
       background-size: cover;
       min-height: 100vh;
       max-height: 999px;
-      overflow: hidden;
+      overflow: auto;
       position: relative;
       width: 100%;
       z-index: 1;
