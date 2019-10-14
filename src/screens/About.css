@@ -233,6 +233,7 @@ and (device-width: 768px)
     padding: 40px;
     margin-left: 1.5rem;
   }
+  
 }
 
 /* Devices under 576px (sm) */
@@ -316,5 +317,26 @@ and (orientation:landscape) {
   }
   div.about-img{
     height: 70%;
+  }
+}
+
+@media only screen 
+and (max-device-width: 823px)
+and (orientation:landscape) {
+  .navbar-footer {
+    padding: 3.5em;
+    color: transparent;
+    padding-bottom: 4em;
+  }
+  .signup-btn-group{
+    padding-top: 1.56em;
+  }
+}
+
+@media only screen 
+and (max-device-width: 568px)
+and (orientation:landscape){
+  .signup-btn-group{
+    padding: 0;
   }
 }
