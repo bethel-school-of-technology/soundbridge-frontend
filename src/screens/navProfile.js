@@ -95,7 +95,7 @@ export default class Profile extends React.Component {
               <div className="profile-img-container ">
                 <div className="profile-img">
 
-                  <img id="profile-image" src={Profileimg} alt="Profile Image" />
+                  <img id="profile-image" src={Profileimg} alt="Profile" />
                 </div>
                 <div className="change-profile-img">
                   <p>Change</p>

@@ -38,7 +38,7 @@ export default class Post extends Component {
                 <div className="title-and-img">
                         <div className="post-profile-img-container ">
                             <div className="post-profile-img">
-                                <img id="profile-image" src={Profileimg} alt="Profile Image" />
+                                <img id="profile-image" src={Profileimg} alt="Profile" />
                             </div>
                         </div>
                         <h4 className="posttitle">{this.props.post.title}</h4>

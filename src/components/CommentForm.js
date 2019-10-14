@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Input, Container } from 'reactstrap';
+import { Button, Input } from 'reactstrap';
 import axios from 'axios';
 
 class PostForm extends Component {

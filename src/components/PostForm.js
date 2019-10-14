@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Input, Container } from 'reactstrap';
+import { Button, Input } from 'reactstrap';
 import axios from 'axios';
 import './SpofityApiTest/PostForm.css';
 import Profileimg from '../assets/images/profile-img.jpg';
@@ -53,7 +53,7 @@ class PostForm extends Component {
                     <div className="title-and-img">
                         <div className="post-profile-img-container ">
                             <div className="post-profile-img">
-                                <img id="profile-image" src={Profileimg} alt="Profile Image" />
+                                <img id="profile-image" src={Profileimg} alt="Profile" />
                             </div>
                         </div>
                         <h4 className="formtitle">Create Post</h4>

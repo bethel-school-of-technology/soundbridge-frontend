@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 import './Home.css';
-import {
-  
-} from 'reactstrap';
-import { Z_FIXED } from 'zlib';
-import Post from '../components/Post';
 import PostForm from '../components/PostForm';
 
 class Home extends Component {
