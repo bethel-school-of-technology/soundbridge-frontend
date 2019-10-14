@@ -48,7 +48,7 @@ export default class componentName extends Component {
                     posts.reverse().map((post, i) => {
                         return (
                             <div key={i}>
-                                <Post post={post} />
+                                <Post post={post} userInfo={this.props.userInfo} />
                             </div>
                         )
                     })

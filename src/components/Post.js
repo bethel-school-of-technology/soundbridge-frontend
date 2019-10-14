@@ -30,6 +30,7 @@ export default class Post extends Component {
     }
 
     render() {
+        console.log('post props: ', this.props)
         return (
             <div>
                 <h1>{this.props.post.title}</h1>

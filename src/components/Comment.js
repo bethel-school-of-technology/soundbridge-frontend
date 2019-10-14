@@ -6,6 +6,14 @@ export default class Comment extends Component {
     state = {
         showCommentForm: false,
         commentBtnText: 'Comment',
+        comments: [],
+    }
+
+    async componentDidMount() {
+        // const res = await fetch(`https://soundbridge.herokuapp.com/api/posts/get-comments/${this.props.postId}`);
+        const res = await fetch(`http://localhost:4000/api/posts/get-comments/${this.props.postId}`);
+        const comments = await res.json();
+        this.setState({ comments });
     }
 
     commentBtnClicked = () => {
@@ -23,9 +31,20 @@ export default class Comment extends Component {
     }
 
     render() {
+        console.log('comments on this post: ', this.state.comments);
         return (
             <div>
-                <h2>Here's a comment</h2>
+                {
+                    this.state.comments.map((comment, i) => {
+                        return (
+                            <div key={i} >
+                                <h3>{comment.userName}</h3>
+                                <br></br>
+                                <p>{comment.body}</p>
+                            </div>
+                        )
+                    })
+                }
                 <button onClick={this.commentBtnClicked}>
                     {this.state.commentBtnText}
                 </button>
