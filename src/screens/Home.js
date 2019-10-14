@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import './Home.css';
+import {
+  
+} from 'reactstrap';
+import { Z_FIXED } from 'zlib';
+import Post from '../components/Post';
+import PostForm from '../components/PostForm';
 
 class Home extends Component {
 
@@ -17,18 +23,20 @@ class Home extends Component {
   render() {
     console.log('all posts: ', this.state.allPosts);
     return (
-      <div>
-        <div className="home-page-content page-header section-dark" style={{
-          backgroundImage:
-            "url(" + require("../assets/images/SoundBridge.jpg") + ")"
-        }} >
-          <div className="filter">
-            <div className="content-center"></div>
-          </div>
+
+      <div className="home-page-content page-header section-dark" style={{ backgroundImage: "url(" + require("../assets/images/SoundBridge.jpg") + ")" }} >
+        <div className="filter">
+
+          <PostForm></PostForm>
+            
+            
+
+          
         </div>
       </div>
-    )
-  }
-}
 
+        )
+      }
+    }
+    
 export default Home;
