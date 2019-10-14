@@ -30,7 +30,7 @@ div.home-page-content {
       background-color: rgba(0, 0, 0, 0.5);
       content: "";
       display: block;
-      height: 100%;
+      height: auto;
       left: 0;
       top: 0;
       position: absolute;

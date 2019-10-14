@@ -20,7 +20,7 @@
 .commentbtn-post{
     margin-bottom: 1rem;
     height: 2.3rem;
-    width: 30%;
+    width: auto;
     min-width: 100px;
     background-color: rgba(105, 105, 105, 0.767);
     border: none;
