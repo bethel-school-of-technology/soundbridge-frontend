@@ -14,10 +14,12 @@ text-align: center;
     height: 2.3rem;
     width: 30%;
     min-width: 100px;
-    background-color: black;
+    background-color: white;
+    color: black;
 }
 #formbtn-post:hover{
-    background-color: white;
+    background-color: black;
+    color: white;
 }
 
 .form-control {
