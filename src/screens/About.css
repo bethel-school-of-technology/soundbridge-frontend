@@ -1,3 +1,6 @@
+div.landing {
+  padding: 0;
+}
 .landing{
   padding-top: 5rem;
 }
@@ -142,8 +145,9 @@ a{
 
 /*============= MEDIA QUERIES =============*/
 
-/* Devices under 992px (lg) */
-@media (max-width: 991px) {
+@media only screen 
+and (device-width: 1024px) 
+{
   .caption h1 {
     font-size: 3.5rem;
     letter-spacing: 0.2rem;
@@ -163,6 +167,40 @@ a{
   }
   .about-text-container {
     padding: 65px;
+    height: 45%;
+  }
+  div.about-img{
+    height: 55%;
+  }
+}
+
+/* Devices above 768px (lg) */
+@media only screen 
+and (device-width: 768px) 
+{
+  .caption h1 {
+    font-size: 3.5rem;
+    letter-spacing: 0.2rem;
+    padding-bottom: 0.8rem;
+  }
+  .caption h3 {
+    font-size: 2.2rem;
+    padding-bottom: 1.7rem;
+  }
+  .btn-lg {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1rem;
+  }
+  .narrow h1 {
+    font-size: 2.1rem;
+  }
+  .about-text-container {
+    padding: 65px;
+    height: 55%;
+  }
+  div.about-img{
+    height: 70%;
   }
 }
 
@@ -218,6 +256,7 @@ a{
   }
   .about-text-container {
     padding: 20px;
+    height: 69%;
     width: 55%;
     margin-top: 4rem;
     margin-left: 0;
@@ -227,7 +266,7 @@ a{
     left: 20%;
   }
   .about-img {
-    height: 90vh;
+    height: 81%;
     width: 90%;
     float: right;
     position: absolute;
@@ -237,9 +276,43 @@ a{
   .portrait-section {
     margin-bottom: 3rem;
     padding-top: 3rem;
+    margin-bottom: 5em;
   
   }
   .home-inner{
     height: 70vh;
+  }
+}
+
+@media only screen 
+and (max-width: 823.99px)
+and (orientation: landscape) {
+  .about-text-container{
+    height: 145%;
+  }
+  .about-img{
+    height: 180%;
+  }
+}
+
+@media only screen 
+and (min-device-width: 1024px) 
+and (orientation:landscape) {
+  .about-text-container{
+    height: 70%;
+  }
+  div.about-img{
+    height: 90%;
+  }
+}
+
+@media only screen 
+and (min-device-width: 1366px) 
+and (orientation:landscape) {
+  .about-text-container{
+    height: 55%;
+  }
+  div.about-img{
+    height: 70%;
   }
 }

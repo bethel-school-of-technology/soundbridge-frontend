@@ -84,19 +84,35 @@ input#name {
   font-weight: 600;
   font-size: 13px;
 }
-.rounded-pill {
-  background-color: white;
-  color: #33CCFF;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
+
+
+ @media (max-width: 575.98px) {
+    div#signUpBody.mx-auto.card{ 
+        height: auto;
+        width: auto;
+    }
+    div.justify-content-center.container{
+      height: 100vh;
+    }
 }
-.rounded-pill:hover {
-  background-color: #33CCFF;
-  box-shadow: 0px 15px 20px ;
-  color: #ffffff;
-  transform: translateY(-7px);
+@media (min-width: 768px) {
+    div.justify-content-center.container{
+      height: 100vh;
+    }
 }
+@media only screen 
+and (max-width: 890px)
+and (orientation: landscape){
+  div.justify-content-center.container{
+    height: 100%;
+    width: auto;
+}
+}
+@media only screen 
+and (min-width: 1000px)
+and (orientation: landscape){
+  div.justify-content-center.container{
+    height: 100vh;
+    width: auto;
+  }
+} 

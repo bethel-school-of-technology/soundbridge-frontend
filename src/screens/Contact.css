@@ -91,3 +91,6 @@ button.fa.rounded-pill:hover {
   color: #ffffff;
   transform: translateY(-7px);
 }
+div#contact.offset{
+  padding: 0;
+}

@@ -1,10 +1,14 @@
 /* ----- Page Display Container ----*/
-
+div.main-display-container{
+  height: 100vh;
+}
+div.body {
+  height: 100%;
+}
 .main-display-container {
   padding-top: 5rem;
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 100%;
   
     background: rgb(0,0,0);
