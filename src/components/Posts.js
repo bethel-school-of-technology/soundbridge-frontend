@@ -36,7 +36,6 @@ export default class componentName extends Component {
     }
 
     render() {
-        console.log('posts props: ', this.props)
         if (this.state.posts < 1) {
             return <PostForm userInfo={this.props.userInfo} getNewPost={this.getNewPost} />
         }
@@ -48,7 +47,7 @@ export default class componentName extends Component {
                     posts.reverse().map((post, i) => {
                         return (
                             <div key={i}>
-                                <Post post={post} />
+                                <Post post={post} userInfo={this.props.userInfo} />
                             </div>
                         )
                     })

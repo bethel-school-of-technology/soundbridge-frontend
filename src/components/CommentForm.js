@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Input } from 'reactstrap';
 import axios from 'axios';
 
-class PostForm extends Component {
+class CommentForm extends Component {
 
     state = {
         body: '',
@@ -18,7 +18,7 @@ class PostForm extends Component {
         e.preventDefault();
 
         const commentInfo = {
-            userId: this.props.userInfo._id,
+            userId: this.props.userInfo.userId,
             userName: this.props.userInfo.name,
             postId: this.props.postId,
             body: this.state.body,
@@ -54,4 +54,4 @@ class PostForm extends Component {
     }
 }
 
-export default PostForm;
+export default CommentForm;

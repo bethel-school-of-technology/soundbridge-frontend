@@ -46,7 +46,6 @@ class PostForm extends Component {
     }
 
     render() {
-        console.log('post form props: ', this.props)
         return (
             <div className="White-box">
                 <div className="postform">

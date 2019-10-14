@@ -1,32 +1,25 @@
 import React, { Component } from 'react';
-import CommentForm from './CommentForm';
 import './Post.css';
 import Profileimg from '../assets/images/profile-img.jpg';
+import Comment from './Comment';
 
 export default class Post extends Component {
 
     state = {
-        showCommentForm: false,
-        commentBtnText: 'Comment',
+        showComments: false,
+        viewCommentsText: 'View Comments',
     }
 
-    getNewComment = commentInfo => {
-        this.setState({
-            commentBtnText: 'Comment',
-            showCommentForm: !this.state.showCommentForm
-        });
-    }
-
-    commentBtnClicked = () => {
-        if (this.state.commentBtnText === 'Comment') {
+    viewComments = () => {
+        if (this.state.viewCommentsText === 'View Comments') {
             this.setState({
-                commentBtnText: 'Close',
-                showCommentForm: !this.state.showCommentForm
+                viewCommentsText: 'Close',
+                showComments: !this.state.showComments,
             });
         } else {
             this.setState({
-                commentBtnText: 'Comment',
-                showCommentForm: !this.state.showCommentForm
+                viewCommentsText: 'View Comments',
+                showComments: !this.state.showComments,
             });
         }
     }
@@ -44,18 +37,17 @@ export default class Post extends Component {
                         <h4 className="posttitle">{this.props.post.title}</h4>
                     </div>
                     <p>{this.props.post.body}</p>
-                    <button className="commentbtn-post" onClick={this.commentBtnClicked}>
-                        {this.state.commentBtnText}
+                    <button className="commentbtn-post" onClick={this.viewComments}>
+                    {this.state.viewCommentsText}
                     </button>
                     <div >
-                        {
-                            this.state.showCommentForm ?
-                                <CommentForm
-                                    postId={this.props.post._id}
-                                    userInfo={this.props.userInfo}
-                                    getNewComment={this.getNewComment}
-                                /> : null
-                        }
+                    {
+                        this.state.showComments ?
+                            <Comment
+                                postId={this.props.post._id}
+                                userInfo={this.props.userInfo}
+                            /> : null
+                    }
                     </div>
                 </div>
             </div>
