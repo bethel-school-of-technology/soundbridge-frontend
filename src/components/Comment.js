@@ -12,8 +12,8 @@ export default class Comment extends Component {
     }
 
     async componentDidMount() {
-        // const res = await fetch(`https://soundbridge.herokuapp.com/api/posts/get-comments/${this.props.postId}`);
-        const res = await fetch(`http://localhost:4000/api/posts/get-comments/${this.props.postId}`);
+        const res = await fetch(`https://soundbridge.herokuapp.com/api/posts/get-comments/${this.props.postId}`);
+        // const res = await fetch(`http://localhost:4000/api/posts/get-comments/${this.props.postId}`);
         const comments = await res.json();
         this.setState({
             comments,

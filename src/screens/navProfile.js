@@ -36,8 +36,8 @@ export default class Profile extends React.Component {
       loggedIn: sessionStorage.getItem('loggedIn')
     }
     if (params.spotify === 'true') {
-      // axios.post('https://soundbridge.herokuapp.com/has-spotify/' + params.spotifyRefreshToken)
-        axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
+      axios.post('https://soundbridge.herokuapp.com/has-spotify/' + params.spotifyRefreshToken)
+        // axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
         .then(res => {
           this.setState({
             accessToken: res.data,

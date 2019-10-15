@@ -29,11 +29,11 @@ export default class LoginWithSpotify extends Component {
             spotifyRefreshToken: this.props.spotifyInfo.spotifyRefreshToken
         }
 
-        axios.post('http://localhost:4000/add-spotify', spotifyInfo)
-        // axios.post('https://soundbridge.herokuapp.com/add-spotify', spotifyInfo)
+        // axios.post('http://localhost:4000/add-spotify', spotifyInfo)
+        axios.post('https://soundbridge.herokuapp.com/add-spotify', spotifyInfo)
             .then(res => {
-                axios.post('http://localhost:4000/api/user/login', loginInfo)
-                // axios.post('https://soundbridge.herokuapp.com/api/user/login', loginInfo)
+                // axios.post('http://localhost:4000/api/user/login', loginInfo)
+                axios.post('https://soundbridge.herokuapp.com/api/user/login', loginInfo)
                     .then(res => {
                         const user = res.data;
                         if (!user) {
@@ -60,8 +60,8 @@ export default class LoginWithSpotify extends Component {
 
     render() {
         if (this.state.loggedIn) {
-            window.location.href = `http://localhost:3000/user/${this.state.user.name}`;
-            // window.location.href = `https://soundbridge.netlify.com/user/${this.state.user.name}`;
+            // window.location.href = `http://localhost:3000/user/${this.state.user.name}`;
+            window.location.href = `https://soundbridge.netlify.com/user/${this.state.user.name}`;
         }
         return (
             <Container className="justify-content-center">

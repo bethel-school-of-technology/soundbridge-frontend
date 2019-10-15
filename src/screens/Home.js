@@ -21,8 +21,8 @@ class Home extends Component {
   }
 
   async componentDidMount() {
-    const res = await fetch('http://localhost:4000/api/posts/get-posts');
-    // const res = await fetch('https://soundbridge.herokuapp.com/api/posts/get-posts');
+    // const res = await fetch('http://localhost:4000/api/posts/get-posts');
+    const res = await fetch('https://soundbridge.herokuapp.com/api/posts/get-posts');
     const allPosts = await res.json();
     this.setState({ allPosts });
   }
