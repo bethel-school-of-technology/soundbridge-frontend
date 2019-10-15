@@ -1,6 +1,6 @@
 /* ----- Page Display Container ----*/
 div.main-display-container{
-  height: 100vh;
+  height: 100%;
 }
 div.body {
   height: 100%;
@@ -237,7 +237,7 @@ div.body {
     font-size: 1.2rem;
     letter-spacing: 1.5px;
     margin-bottom: 2rem;
-    padding: 10px 25px;
+    padding: 10px 15px;
   }
   .profile-img-container {
     height: 7rem;
@@ -245,5 +245,26 @@ div.body {
     min-width: 7rem;
     max-width: 7rem;
     align-items: flex-start;
+  }
+  .main-display-container{
+    padding: 0;
+    height: 100%;
+  }
+  .nav-tabs {
+    border-bottom: 0;
+  }
+  .row{
+    flex-wrap: inherit;
+  }
+  .username-title{
+    margin-left: 1em;
+    font-size: 1rem;
+  }
+  .song{
+    padding: 0;
+  }
+  .songs{
+    padding: 0;
+    width: 9.6em;
   }
 }
