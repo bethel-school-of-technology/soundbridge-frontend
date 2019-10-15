@@ -49,7 +49,6 @@ export default class Comment extends Component {
                 <div></div>
             )
         }
-        console.log('comment props: ', this.props.userInfo);
         return (
             <div>
                 {
@@ -60,6 +59,7 @@ export default class Comment extends Component {
                                     <h3>{comment.userName}</h3>
                                     <br></br>
                                     <p>{comment.body}</p>
+                                    <hr></hr>
                                 </div>
                             )
                         }) :
@@ -68,7 +68,7 @@ export default class Comment extends Component {
                 {
                     this.props.userInfo.loggedIn === 'true' ?
                         <div>
-                            <button onClick={this.commentBtnClicked}>
+                            <button className="commentbtn-post" onClick={this.commentBtnClicked}>
                                 {this.state.commentBtnText}
                             </button>
                             <div>
@@ -83,7 +83,7 @@ export default class Comment extends Component {
                             </div>
                         </div>
                         :
-                        <Link to="/login"><button>Log in to comment</button></Link>
+                        <Link to="/login"><button className="commentbtn-post">Log in to comment</button></Link>
                 }
             </div>
         )

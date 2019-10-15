@@ -11,7 +11,6 @@ const Playlist = (props) => {
                     'backgroundImage': `url(${playlistInfo.images[0].url})`,
                     "backgroundSize": 'cover'
                 }}>
-                Playlist
             </div>
             <div className="playlist-title">{playlistInfo.name}</div>
         </Col>

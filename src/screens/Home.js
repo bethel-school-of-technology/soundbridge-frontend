@@ -4,6 +4,16 @@ import './Home.css';
 import Post from '../components/Post';
 import PostForm from '../components/PostForm';
 
+const loginToPostContStyle = {
+  "width": "100%",
+  "textAlign": "center"
+}
+
+const loginToPostStyle = {
+  "borderRadius": "15px",
+  "margin": "0 auto",
+}
+
 class Home extends Component {
 
   state = {
@@ -22,7 +32,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log('all posts: ', this.state.allPosts);
     const params = {
       userId: sessionStorage.getItem('userId'),
       name: sessionStorage.getItem('name'),
@@ -33,7 +42,6 @@ class Home extends Component {
       loggedIn: sessionStorage.getItem('loggedIn')
     }
     return (
-
       <div className="home-page-content page-header section-dark" style={{ backgroundImage: "url(" + require("../assets/images/SoundBridge.jpg") + ")" }} >
         <div className="filter">
           <div className="home-screen-margin">
@@ -41,12 +49,16 @@ class Home extends Component {
               params.loggedIn === 'true' ?
                 <PostForm getNewPost={this.state.getNewPost} ></PostForm>
                 :
-                <Link to="/login" ><button>Log in to post</button></Link>
+                <div style={loginToPostContStyle}>
+                  <Link to="/login" >
+                    <button style={loginToPostStyle}>Log in to post</button>
+                  </Link>
+                </div>
             }
 
             {
               this.state.allPosts.length > 0 ?
-                this.state.allPosts.map((post, i) => {
+                this.state.allPosts.reverse().map((post, i) => {
                   return (
                     <div key={i}>
                       <Post post={post} userInfo={params} />
@@ -55,11 +67,8 @@ class Home extends Component {
                 }) : <h1>I got nothing</h1>
             }
           </div>
-
-
-
         </div>
-      </div>
+      </div >
 
     )
   }
