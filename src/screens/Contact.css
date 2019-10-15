@@ -94,3 +94,29 @@ button.fa.rounded-pill:hover {
 div#contact.offset{
   padding: 0;
 }
+
+@media only screen 
+and (max-device-width: 823px)
+{
+  p{
+    font-size: .5em;
+  }
+  h1{
+    font-size: 1.2em;
+  }
+  footer h3{
+    font-size: 1em;
+  }
+  div.col-md-7{
+    padding: 0;
+  }
+  div.controls{
+    width: 8.1em;
+  }
+  div.col-md-7{
+    display: none;
+  }
+  hr.socket {
+    display: none;
+  }
+}

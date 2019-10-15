@@ -323,13 +323,9 @@ and (orientation:landscape) {
 @media only screen 
 and (max-device-width: 823px)
 and (orientation:landscape) {
-  .navbar-footer {
-    padding: 3.5em;
-    color: transparent;
-    padding-bottom: 4em;
-  }
-  .signup-btn-group{
-    padding-top: 1.56em;
+  .caption-btm h3{
+    padding-bottom: 0;
+    margin-top: 3rem;
   }
 }
 
