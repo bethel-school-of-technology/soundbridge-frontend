@@ -34,7 +34,7 @@ export default class Post extends Component {
                                 <img id="profile-image" src={Profileimg} alt="Profile" />
                             </div>
                         </div>
-                        <h4 className="posttitle">{this.props.post.title}</h4>
+                        <h4 className="posttitle">{this.props.post.userName}: {this.props.post.title}</h4>
                     </div>
                     <p>{this.props.post.body}</p>
                     <button className="commentbtn-post" onClick={this.viewComments}>
