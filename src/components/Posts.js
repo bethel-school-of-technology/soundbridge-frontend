@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import PostForm from './PostForm';
 import Post from './Post';
 
@@ -18,7 +19,17 @@ export default class componentName extends Component {
     }
 
     getNewPost = postInfo => {
-        this.setState({ posts: [...this.state.posts, postInfo] });
+        this.setState({ posts: [...this.state.posts.reverse(), postInfo] });
+    }
+
+    postDeleted = postId => {
+        axios.delete('http://localhost:4000/api/posts/delete-post', { params: { postId } })
+            .then(async () => {
+                const newRes = await fetch(`http://localhost:4000/api/posts/user-posts/${this.props.userInfo.userId}`);
+                const posts = await newRes.json();
+                this.setState({ posts });
+            })
+            .catch(err => console.log(err));
     }
 
     commentBtnClicked = () => {
@@ -47,7 +58,12 @@ export default class componentName extends Component {
                     posts.reverse().map((post, i) => {
                         return (
                             <div key={i}>
-                                <Post post={post} userInfo={this.props.userInfo} />
+                                <Post
+                                    post={post}
+                                    postDeleted={this.postDeleted}
+                                    postIndex={i}
+                                    userInfo={this.props.userInfo}
+                                />
                             </div>
                         )
                     })
