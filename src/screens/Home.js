@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import './Home.css';
 import Post from '../components/Post';
 import PostForm from '../components/PostForm';
@@ -28,7 +29,17 @@ class Home extends Component {
   }
 
   getNewPost = postInfo => {
-    this.setState({ allPosts: [...this.state.allPosts, postInfo] });
+    this.setState({ allPosts: [...this.state.allPosts.reverse(), postInfo] });
+  }
+
+  postDeleted = postId => {
+    axios.delete('https://soundbridge.herokuapp.com/api/posts/delete-post', { params: { postId } })
+      .then(async () => {
+        const newRes = await fetch(`https://soundbridge.herokuapp.com/api/posts/get-posts`);
+        const allPosts = await newRes.json();
+        this.setState({ allPosts });
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -47,7 +58,7 @@ class Home extends Component {
           <div className="home-screen-margin">
             {
               params.loggedIn === 'true' ?
-                <PostForm getNewPost={this.state.getNewPost} ></PostForm>
+                <PostForm getNewPost={this.getNewPost} userInfo={params} ></PostForm>
                 :
                 <div style={loginToPostContStyle}>
                   <Link to="/login" >
@@ -61,10 +72,14 @@ class Home extends Component {
                 this.state.allPosts.reverse().map((post, i) => {
                   return (
                     <div key={i}>
-                      <Post post={post} userInfo={params} />
+                      <Post
+                        post={post}
+                        postDeleted={this.postDeleted}
+                        userInfo={params}
+                      />
                     </div>
                   )
-                }) : <h1>I got nothing</h1>
+                }) : <h1>loading</h1>
             }
           </div>
         </div>

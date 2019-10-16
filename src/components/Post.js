@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './Post.css';
 import Profileimg from '../assets/images/profile-img.jpg';
-import Comment from './Comment';
+import Comments from './Comments';
 
 export default class Post extends Component {
 
     state = {
+        loading: true,
         showComments: false,
         viewCommentsText: 'View Comments',
     }
@@ -25,10 +26,11 @@ export default class Post extends Component {
     }
 
     render() {
+        console.log(this.props.post)
         return (
             <div className="Post-White-box">
                 <div className="postbox">
-                <div className="title-and-img">
+                    <div className="title-and-img">
                         <div className="post-profile-img-container ">
                             <div className="post-profile-img">
                                 <img id="profile-image" src={Profileimg} alt="Profile" />
@@ -38,16 +40,30 @@ export default class Post extends Component {
                     </div>
                     <p>{this.props.post.body}</p>
                     <button className="commentbtn-post" onClick={this.viewComments}>
-                    {this.state.viewCommentsText}
+                        {this.state.viewCommentsText}
                     </button>
-                    <div >
                     {
-                        this.state.showComments ?
-                            <Comment
-                                postId={this.props.post._id}
-                                userInfo={this.props.userInfo}
-                            /> : null
+                        this.props.post.userId === this.props.userInfo.userId ?
+                            <button
+                                className="commentbtn-post"
+                                style={{ "marginLeft": "10px" }}
+                                onClick={() => this.props.postDeleted(this.props.post._id, this.props.postIndex)}
+                            >
+                                Delete
+                            </button>
+                            : null
                     }
+                    <div >
+                        {
+                            this.state.showComments ?
+                                <Comments
+                                    comments={this.state.comments}
+                                    commentDeleted={this.commentDeleted}
+                                    postId={this.props.post._id}
+                                    posterId={this.props.post.userId}
+                                    userInfo={this.props.userInfo}
+                                /> : null
+                        }
                     </div>
                 </div>
             </div>
