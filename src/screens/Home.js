@@ -13,6 +13,7 @@ const loginToPostContStyle = {
 const loginToPostStyle = {
   "borderRadius": "15px",
   "margin": "0 auto",
+  "fontSize": "1.5em"
 }
 
 class Home extends Component {
@@ -33,8 +34,10 @@ class Home extends Component {
   }
 
   postDeleted = postId => {
+    // axios.delete('http://localhost:4000/api/posts/delete-post', { params: { postId } })
     axios.delete('https://soundbridge.herokuapp.com/api/posts/delete-post', { params: { postId } })
       .then(async () => {
+        // const newRes = await fetch(`http://localhost:4000/api/posts/get-posts`);
         const newRes = await fetch(`https://soundbridge.herokuapp.com/api/posts/get-posts`);
         const allPosts = await newRes.json();
         this.setState({ allPosts });
@@ -58,7 +61,10 @@ class Home extends Component {
           <div className="home-screen-margin">
             {
               params.loggedIn === 'true' ?
-                <PostForm getNewPost={this.getNewPost} userInfo={params} ></PostForm>
+                <PostForm
+                  getNewPost={this.getNewPost}
+                  userInfo={params}
+                />
                 :
                 <div style={loginToPostContStyle}>
                   <Link to="/login" >
@@ -79,7 +85,7 @@ class Home extends Component {
                       />
                     </div>
                   )
-                }) : <h1>loading</h1>
+                }) : <h1>loading...</h1>
             }
           </div>
         </div>

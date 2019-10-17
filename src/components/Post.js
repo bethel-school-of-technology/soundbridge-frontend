@@ -6,7 +6,6 @@ import Comments from './Comments';
 export default class Post extends Component {
 
     state = {
-        loading: true,
         showComments: false,
         viewCommentsText: 'View Comments',
     }
@@ -26,7 +25,6 @@ export default class Post extends Component {
     }
 
     render() {
-        console.log(this.props.post)
         return (
             <div className="Post-White-box">
                 <div className="postbox">
@@ -36,9 +34,13 @@ export default class Post extends Component {
                                 <img id="profile-image" src={Profileimg} alt="Profile" />
                             </div>
                         </div>
-                        <h4 className="posttitle">{this.props.post.userName}: {this.props.post.title}</h4>
+                        <h5 className="postAuthor">{this.props.post.userName}</h5>
+                        <br></br>
                     </div>
-                    <p>{this.props.post.body}</p>
+                    <div className="postBody">
+                        <h4 className="posttitle">{this.props.post.title}</h4>
+                        <p>{this.props.post.body}</p>
+                    </div>
                     <button className="commentbtn-post" onClick={this.viewComments}>
                         {this.state.viewCommentsText}
                     </button>
@@ -53,7 +55,7 @@ export default class Post extends Component {
                             </button>
                             : null
                     }
-                    <div >
+                    <div className="Comments">
                         {
                             this.state.showComments ?
                                 <Comments

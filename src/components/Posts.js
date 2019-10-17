@@ -19,12 +19,14 @@ export default class componentName extends Component {
     }
 
     getNewPost = postInfo => {
-        this.setState({ posts: [...this.state.posts.reverse(), postInfo] });
+        this.setState({ posts: [...this.state.posts, postInfo] });
     }
 
     postDeleted = postId => {
+        // axios.delete('http://localhost:4000/api/posts/delete-post', { params: { postId } })
         axios.delete('https://soundbridge.herokuapp.com/api/posts/delete-post', { params: { postId } })
             .then(async () => {
+                // const newRes = await fetch(`http://localhost:4000/api/posts/user-posts/${this.props.userInfo.userId}`);
                 const newRes = await fetch(`https://soundbridge.herokuapp.com/api/posts/user-posts/${this.props.userInfo.userId}`);
                 const posts = await newRes.json();
                 this.setState({ posts });

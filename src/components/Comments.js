@@ -38,12 +38,11 @@ export default class Comments extends Component {
     }
 
     getNewComment = commentInfo => {
-        console.log('commentInfo: ', commentInfo);
         this.setState({
             commentBtnText: 'Comment',
             showCommentForm: !this.state.showCommentForm,
             comments: [...this.state.comments.reverse(), commentInfo],
-        }, () => console.log('comments: ', this.state.comments));
+        });
     }
 
     commentDeleted = commentId => {
@@ -80,7 +79,7 @@ export default class Comments extends Component {
                                 />
                             )
                         }) :
-                        <h4>There aren't any comments yet</h4>
+                        <h4>No comments yet</h4>
                 }
                 {
                     this.props.userInfo.loggedIn === 'true' ?

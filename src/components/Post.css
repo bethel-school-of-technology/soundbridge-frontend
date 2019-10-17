@@ -1,32 +1,68 @@
-.Post-White-box{
-    padding-top: 5px;
-    height: auto; 
-    width: 60vw;
-    background-color: rgba(66, 66, 66, 0.95);
-    margin: 1rem auto 0;
-    border-radius: 10px;
+.Post-White-box {
+  padding-top: 5px;
+  height: auto;
+  width: 60vw;
+  background-color: rgba(66, 66, 66, 0.95);
+  margin: 1rem auto 0;
+  border-radius: 10px;
 }
-.postbox{
-    width: 50%;
-    min-width: 300px;
-    margin: 1rem;
-    position: relative;
+.postbox {
+  min-width: 200px;
+  margin: 1rem;
+  position: relative;
 }
-.posttitle{
-    color: white;
-    margin: 0 1rem;
-    text-align: center;
+.postbox p {
+  color: rgb(175, 175, 175);
+}
+.posttitle {
+  color: white;
+  text-align: center;
+}
+.postAuthor {
+  color: rgb(187, 187, 187);
+  text-align: center;
+  margin: 0.5rem;
+  padding: auto;
+}
+.postBody{
+    width: 100%;
+}
+.Comments h3{
+    color: rgb(255, 255, 255);
+}
+.commentbtn-post {
+  margin-bottom: 1rem;
+  height: 2.3rem;
+  width: auto;
+  min-width: 100px;
+  background-color: rgba(105, 105, 105, 0.767);
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+#formbtn-post {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 575px) {
+    .postAuthor{
+        font-size: 1rem;
     }
-.commentbtn-post{
-    margin-bottom: 1rem;
-    height: 2.3rem;
-    width: auto;
-    min-width: 100px;
-    background-color: rgba(105, 105, 105, 0.767);
-    border: none;
-    border-radius: 5px;
-    color: white;
-}
-#formbtn-post{
-    margin-bottom: 1rem;
+    .Post-White-box {
+        width: 80vw;
+    }
+    .posttitle{
+        font-size: 1rem;
+    }
+    .title-and-img{
+        margin-bottom: .5rem;
+    }
+    .Comments h4{
+        font-size: 1.2rem;
+        margin-bottom: 0;
+    }
+    .Comments h3{
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
 }
