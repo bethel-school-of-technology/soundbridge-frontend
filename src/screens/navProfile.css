@@ -124,6 +124,20 @@ div.body {
   color: #d4c81b;
 }
 
+.spotify-login-btn {
+  margin: 3em 0em 3em 3em;
+  border-radius: 25px;
+  padding: .5em 1em;
+  font-size: 1.25em;
+  background-color: #1DB954;
+  border: none;
+  transition: .15s;
+}
+
+.spotify-login-btn:hover {
+  background-color: rgba(29, 185, 84, 0.678)
+}
+
 .songs {
   padding: 1rem;
   color: white;

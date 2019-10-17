@@ -34,22 +34,6 @@ class Playlists extends Component {
               return <Playlist key={i} playlistInfo={playlist} />
             })
           }
-          {/* <Col sm="3">
-            <div className="playlist-img">Playlist</div>
-            <div className="playlist-title">Title</div>
-          </Col>
-          <Col sm="3">
-            <div className="playlist-img">Playlist</div>
-            <div className="playlist-title">Title</div>
-          </Col>
-          <Col sm="3">
-            <div className="playlist-img">Playlist</div>
-            <div className="playlist-title">Title</div>
-          </Col>
-          <Col sm="3">
-            <div className="playlist-img">Playlist</div>
-            <div className="playlist-title">Title</div>
-          </Col> */}
         </Row>
       )
     }
