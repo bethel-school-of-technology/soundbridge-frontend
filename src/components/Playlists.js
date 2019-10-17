@@ -28,7 +28,7 @@ class Playlists extends Component {
     else {
       const playlists = this.state.playlists;
       return (
-        <Row>
+        <Row id="playlist-row">
           {
             playlists.items.map((playlist, i) => {
               return <Playlist key={i} playlistInfo={playlist} />

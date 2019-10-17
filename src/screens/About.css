@@ -71,7 +71,7 @@ a{
 /*============= About Portrait Section =============*/
 
 .portrait-section {
-  height: 40em;
+  height: 100vh;
   padding: 100px 50px;
   margin-bottom: 15rem;
 }
@@ -293,6 +293,9 @@ and (orientation: landscape) {
   }
   .about-img{
     height: 180%;
+  }
+  .portrait-section {
+    height: 40em;
   }
 }
 
