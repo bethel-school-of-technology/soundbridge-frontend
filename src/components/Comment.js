@@ -1,56 +1,16 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import CommentForm from './CommentForm';
+import React, { Component } from 'react'
 
 export default class Comment extends Component {
 
-    state = {
-        loading: true,
-        showCommentForm: false,
-        commentBtnText: 'Comment',
-        comments: [],
-    }
-
-    async componentDidMount() {
-        // const res = await fetch(`https://soundbridge.herokuapp.com/api/posts/get-comments/${this.props.postId}`);
-        const res = await fetch(`http://localhost:4000/api/posts/get-comments/${this.props.postId}`);
-        const comments = await res.json();
-        this.setState({
-            comments,
-            loading: !this.state.loading
-        });
-    }
-
-    commentBtnClicked = () => {
-        if (this.state.commentBtnText === 'Comment') {
-            this.setState({
-                commentBtnText: 'Close',
-                showCommentForm: !this.state.showCommentForm
-            });
-        } else {
-            this.setState({
-                commentBtnText: 'Comment',
-                showCommentForm: !this.state.showCommentForm
-            });
-        }
-    }
-
-    getNewComment = commentInfo => {
-        this.setState({
-            commentBtnText: 'Comment',
-            showCommentForm: !this.state.showCommentForm,
-            comments: [...this.state.comments, commentInfo],
-        });
-    }
 
     render() {
-        if (this.state.loading) {
-            return (
-                <div></div>
-            )
-        }
+        const comment = this.props.comment;
+        console.log(this.props)
         return (
             <div>
+                <h3>{comment.userName}</h3>
+                <br></br>
+                <p>{comment.body}</p>
                 {
                     this.state.comments.length > 0 ?
                         this.state.comments.map((comment, i) => {
@@ -79,13 +39,29 @@ export default class Comment extends Component {
                                             userInfo={this.props.userInfo}
                                             getNewComment={this.getNewComment}
                                         /> : null
+
+                                        
+                                }
+                                {
+                                    this.props.userInfo.userId === comment.userId || this.props.posterId === this.props.userInfo.userId ?
+                                    <button
+                                        className="commentbtn-post"
+                                        style={{ "marginLeft": "10px" }}
+                                        onClick={() => this.props.commentDeleted(comment._id)}
+                                    >
+                                        Delete
+                                                        </button>
+                                    : null
                                 }
                             </div>
                         </div>
                         :
-                        <Link to="/login"><button className="commentbtn-post">Log in to comment</button></Link>
+                        <Link to="/login"><button className="commentbtn-post">Log in to comment</button></Link>    
                 }
+                
+                <hr></hr>
             </div>
         )
     }
 }
+
