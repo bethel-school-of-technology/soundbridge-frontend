@@ -26,12 +26,10 @@ class Playlists extends Component {
     }
 
     render() {
-        console.log(this.props.playlists);
         const tracks = this.state.tracks.items;
         if (tracks === undefined) {
             return <h1>loading</h1>
         }
-        console.log('tracks: ', tracks);
         return (
             <div style={listStyle}>
                 <h4>Title: {this.props.playlists.name}</h4>

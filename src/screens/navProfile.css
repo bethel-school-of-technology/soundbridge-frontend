@@ -10,7 +10,7 @@ div.body {
     display: flex;
     flex-direction: column;
     width: 100%;
-  
+  min-height: 100vh;
     background: rgb(0,0,0);
     background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(69,69,69,1) 100%);
   }
@@ -124,6 +124,20 @@ div.body {
   color: #d4c81b;
 }
 
+.spotify-login-btn {
+  margin: 3em 0em 3em 3em;
+  border-radius: 25px;
+  padding: .5em 1em;
+  font-size: 1.25em;
+  background-color: #1DB954;
+  border: none;
+  transition: .15s;
+}
+
+.spotify-login-btn:hover {
+  background-color: rgba(29, 185, 84, 0.678)
+}
+
 .songs {
   padding: 1rem;
   color: white;
@@ -149,13 +163,22 @@ div.body {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-
+#playlist-row{
+  flex-wrap: wrap;
+}
+#playlist-box-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .playlist-img {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #555;
-  height: 15vw;
+  margin: 1rem;
+  height: 200px;
+  width: 200px;
 }
 
 .playlist-title {
@@ -259,6 +282,9 @@ div.body {
   .username-title{
     margin-left: 1em;
     font-size: 1rem;
+  }
+  .username-title h1{
+    font-size: 1.2rem;
   }
   .song{
     padding: 0;

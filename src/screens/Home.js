@@ -12,7 +12,9 @@ const loginToPostContStyle = {
 
 const loginToPostStyle = {
   "borderRadius": "15px",
+  "border": "none",
   "margin": "0 auto",
+  "padding": ".1em .75em",
   "fontSize": "1.5em"
 }
 

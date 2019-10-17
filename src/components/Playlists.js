@@ -28,28 +28,12 @@ class Playlists extends Component {
     else {
       const playlists = this.state.playlists;
       return (
-        <Row>
+        <Row id="playlist-row">
           {
             playlists.items.map((playlist, i) => {
               return <Playlist key={i} playlistInfo={playlist} />
             })
           }
-          {/* <Col sm="3">
-            <div className="playlist-img">Playlist</div>
-            <div className="playlist-title">Title</div>
-          </Col>
-          <Col sm="3">
-            <div className="playlist-img">Playlist</div>
-            <div className="playlist-title">Title</div>
-          </Col>
-          <Col sm="3">
-            <div className="playlist-img">Playlist</div>
-            <div className="playlist-title">Title</div>
-          </Col>
-          <Col sm="3">
-            <div className="playlist-img">Playlist</div>
-            <div className="playlist-title">Title</div>
-          </Col> */}
         </Row>
       )
     }
