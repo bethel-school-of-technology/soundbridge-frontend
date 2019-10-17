@@ -33,10 +33,11 @@ class PostForm extends Component {
             body: this.state.body,
         }
 
-        // axios.post('https://soundbridge.herokuapp.com/api/posts', postInfo);
-        axios.post('http://localhost:4000/api/posts', postInfo);
-
-        this.props.getNewPost(postInfo);
+        // axios.post('https://soundbridge.herokuapp.com/api/posts', postInfo)
+        axios.post('http://localhost:4000/api/posts', postInfo)
+            .then(res => {
+                this.props.getNewPost(res.data);
+            });
 
         this.setState({
             title: '',
@@ -76,8 +77,8 @@ class PostForm extends Component {
                             value={this.state.body}
                             onChange={this.bodyChange}
                         />
-                        <Button id="formbtn-post" type="submit" 
-                        className="btn btn-outline-light btn-sm">
+                        <Button id="formbtn-post" type="submit"
+                            className="btn btn-outline-light btn-sm">
                             Submit
                         </Button>
                     </form>
