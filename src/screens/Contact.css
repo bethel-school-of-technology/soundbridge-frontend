@@ -99,7 +99,7 @@ div#contact.offset{
 and (max-device-width: 823px)
 {
   p{
-    font-size: .5em;
+    font-size: 1em;
   }
   h1{
     font-size: 1.2em;
