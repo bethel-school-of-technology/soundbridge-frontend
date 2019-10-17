@@ -79,6 +79,7 @@ text-align: center;
     border-radius: 50%;
     display: flex;
     position: relative;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -93,9 +94,22 @@ text-align: center;
   }
   .title-and-img{
       display: flex;
+      width: 100%;
       flex-direction: row;
       align-content: center;
+      margin-bottom: 1rem;
   }
   .home-screen-margin{
     margin: 6rem auto 0;
+  }
+  @media (max-width: 575px) {
+      .White-box{
+          width: 80vw;
+      }
+      #posttitle{
+          width: auto;
+      }
+      #postbody{
+          width: auto;
+      }
   }

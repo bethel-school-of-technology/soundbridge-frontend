@@ -63,7 +63,7 @@ export default class Comment extends Component {
                                 </div>
                             )
                         }) :
-                        <h4>There aren't any comments yet</h4>
+                        <h4>No comments yet</h4>
                 }
                 {
                     this.props.userInfo.loggedIn === 'true' ?
