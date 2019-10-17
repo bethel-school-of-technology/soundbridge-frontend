@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import './Post.css';
 import Profileimg from '../assets/images/profile-img.jpg';
-import Comments from './Comments';
+import Comment from './Comment';
 
 export default class Post extends Component {
 
     state = {
-        loading: true,
         showComments: false,
         viewCommentsText: 'View Comments',
     }
@@ -26,7 +25,6 @@ export default class Post extends Component {
     }
 
     render() {
-        console.log(this.props.post)
         return (
             <div className="Post-White-box">
                 <div className="postbox">
@@ -46,25 +44,11 @@ export default class Post extends Component {
                     <button className="commentbtn-post" onClick={this.viewComments}>
                         {this.state.viewCommentsText}
                     </button>
-                    {
-                        this.props.post.userId === this.props.userInfo.userId ?
-                            <button
-                                className="commentbtn-post"
-                                style={{ "marginLeft": "10px" }}
-                                onClick={() => this.props.postDeleted(this.props.post._id, this.props.postIndex)}
-                            >
-                                Delete
-                            </button>
-                            : null
-                    }
-                    <div >
+                    <div className="Comments">
                         {
                             this.state.showComments ?
-                                <Comments
-                                    comments={this.state.comments}
-                                    commentDeleted={this.commentDeleted}
+                                <Comment
                                     postId={this.props.post._id}
-                                    posterId={this.props.post.userId}
                                     userInfo={this.props.userInfo}
                                 /> : null
                         }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import './Home.css';
 import Post from '../components/Post';
 import PostForm from '../components/PostForm';
@@ -29,17 +28,7 @@ class Home extends Component {
   }
 
   getNewPost = postInfo => {
-    this.setState({ allPosts: [...this.state.allPosts.reverse(), postInfo] });
-  }
-
-  postDeleted = postId => {
-    axios.delete('http://localhost:4000/api/posts/delete-post', { params: { postId } })
-      .then(async () => {
-        const newRes = await fetch(`http://localhost:4000/api/posts/get-posts`);
-        const allPosts = await newRes.json();
-        this.setState({ allPosts });
-      })
-      .catch(err => console.log(err));
+    this.setState({ allPosts: [...this.state.allPosts, postInfo] });
   }
 
   render() {
@@ -58,7 +47,7 @@ class Home extends Component {
           <div className="home-screen-margin">
             {
               params.loggedIn === 'true' ?
-                <PostForm getNewPost={this.getNewPost} userInfo={params} ></PostForm>
+                <PostForm getNewPost={this.state.getNewPost} ></PostForm>
                 :
                 <div style={loginToPostContStyle}>
                   <Link to="/login" >
@@ -72,14 +61,10 @@ class Home extends Component {
                 this.state.allPosts.reverse().map((post, i) => {
                   return (
                     <div key={i}>
-                      <Post
-                        post={post}
-                        postDeleted={this.postDeleted}
-                        userInfo={params}
-                      />
+                      <Post post={post} userInfo={params} />
                     </div>
                   )
-                }) : <h1>loading</h1>
+                }) : <h1>I got nothing</h1>
             }
           </div>
         </div>
