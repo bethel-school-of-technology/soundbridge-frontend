@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PostForm from './PostForm';
 import Post from './Post';
+import backendUrl from '../services/backendUrl'
 
 export default class componentName extends Component {
 
@@ -12,8 +13,7 @@ export default class componentName extends Component {
     }
 
     async componentDidMount() {
-        const res = await fetch(`https://soundbridge.herokuapp.com/api/posts/user-posts/${this.props.userInfo.userId}`);
-        // const res = await fetch(`http://localhost:4000/api/posts/user-posts/${this.props.userInfo.userId}`);
+        const res = await fetch(backendUrl + `api/posts/user-posts/${this.props.userInfo.userId}`);
         const posts = await res.json();
         this.setState({ posts });
     }
@@ -23,11 +23,9 @@ export default class componentName extends Component {
     }
 
     postDeleted = postId => {
-        // axios.delete('http://localhost:4000/api/posts/delete-post', { params: { postId } })
-        axios.delete('https://soundbridge.herokuapp.com/api/posts/delete-post', { params: { postId } })
+        axios.delete(backendUrl + 'api/posts/delete-post', { params: { postId } })
             .then(async () => {
-                // const newRes = await fetch(`http://localhost:4000/api/posts/user-posts/${this.props.userInfo.userId}`);
-                const newRes = await fetch(`https://soundbridge.herokuapp.com/api/posts/user-posts/${this.props.userInfo.userId}`);
+                const newRes = await fetch(backendUrl + `api/posts/user-posts/${this.props.userInfo.userId}`);
                 const posts = await newRes.json();
                 this.setState({ posts });
             })

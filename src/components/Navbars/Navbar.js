@@ -2,6 +2,7 @@ import React from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/Branding/finalLogo2.svg';
+import frontendUrl from '../../services/frontendUrl'
 import {
   Collapse,
   Navbar,
@@ -45,8 +46,7 @@ export default class NavbarL extends React.Component {
 
   logout = () => {
     sessionStorage.clear();
-    // window.location.href = 'http://localhost:3000/';
-    window.location.href = 'https://soundbridge.netlify.com/';
+    window.location.href = frontendUrl;
   }
 
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Input } from 'reactstrap';
 import axios from 'axios';
+import backendUrl from '../services/backendUrl'
 
 class CommentForm extends Component {
 
@@ -24,8 +25,7 @@ class CommentForm extends Component {
             body: this.state.body,
         }
 
-        axios.post('https://soundbridge.herokuapp.com/api/posts/comment', commentInfo)
-        // axios.post('http://localhost:4000/api/posts/comment', commentInfo)
+        axios.post(backendUrl + 'api/posts/comment', commentInfo)
             .then(res => {
                 console.log(res)
                 this.props.getNewComment(res.data);

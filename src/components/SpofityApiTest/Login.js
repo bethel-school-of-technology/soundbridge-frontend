@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import backendUrl from '../../services/backendUrl'
 
 import './Login.css';
 
@@ -19,7 +20,7 @@ class Login extends Component {
             password: this.state.password
         };
 
-        axios.post('https://soundbridge.herokuapp.com/api/user/login', loginInfo)
+        axios.post(backendUrl + 'api/user/login', loginInfo)
             .then(res => {
                 const user = res.data;
                 if (!user) {

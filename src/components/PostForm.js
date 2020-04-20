@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Input } from 'reactstrap';
 import axios from 'axios';
+import backendUrl from '../services/backendUrl'
 import './SpofityApiTest/PostForm.css';
 import Profileimg from '../assets/images/profile-img.jpg';
 
@@ -33,8 +34,8 @@ class PostForm extends Component {
             body: this.state.body,
         }
 
-        axios.post('https://soundbridge.herokuapp.com/api/posts', postInfo)
-        // axios.post('http://localhost:4000/api/posts', postInfo)
+        axios.post(backendUrl + 'api/posts', postInfo)
+
             .then(res => {
                 this.props.getNewPost(res.data);
             });

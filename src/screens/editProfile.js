@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import axios from 'axios';
+import backendUrl from '../services/backendUrl'
 import './editProfile.css';
 
 
@@ -54,8 +55,7 @@ export default class editProfile extends React.Component {
         };
 
 
-        axios.put(`https://soundbridge.herokuapp.com/api/user/editProfile/${this.state.userId}`, user)
-        // axios.put(`http://localhost:4000/api/user/editProfile/${this.state.userId}`, user)
+        axios.put(backendUrl + `api/user/editProfile/${this.state.userId}`, user)
             .then(res => {
                 const user = res.data;
                 if (!user) {

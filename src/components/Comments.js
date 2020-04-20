@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import CommentForm from './CommentForm';
 import Comment from './Comment';
+import backendUrl from '../services/backendUrl'
 
 export default class Comments extends Component {
 
@@ -14,8 +15,7 @@ export default class Comments extends Component {
     }
 
     async componentDidMount() {
-        const res = await fetch(`https://soundbridge.herokuapp.com/api/posts/get-comments/${this.props.postId}`);
-        // const res = await fetch(`http://localhost:4000/api/posts/get-comments/${this.props.postId}`);
+        const res = await fetch(backendUrl + `api/posts/get-comments/${this.props.postId}`);
         const comments = await res.json();
         this.setState({
             comments,
@@ -46,11 +46,9 @@ export default class Comments extends Component {
     }
 
     commentDeleted = commentId => {
-        axios.delete('https://soundbridge.herokuapp.com/api/posts/delete-comment', { params: { commentId } })
-        // axios.delete('http://localhost:4000/api/posts/delete-comment', { params: { commentId } })
+        axios.delete(backendUrl + 'api/posts/delete-comment', { params: { commentId } })
             .then(async () => {
-                const newRes = await fetch(`https://soundbridge.herokuapp.com/api/posts/get-comments/${this.props.postId}`);
-                // const newRes = await fetch(`http://localhost:4000/api/posts/get-comments/${this.props.postId}`);
+                const newRes = await fetch(backendUrl + `api/posts/get-comments/${this.props.postId}`);
                 const comments = await newRes.json();
                 this.setState({ comments });
             })

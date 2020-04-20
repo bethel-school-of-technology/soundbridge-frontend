@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import backendUrl from '../services/backendUrl'
 import './Home.css';
 import Post from '../components/Post';
 import PostForm from '../components/PostForm';
@@ -25,8 +26,7 @@ class Home extends Component {
   }
 
   async componentDidMount() {
-    // const res = await fetch('http://localhost:4000/api/posts/get-posts');
-    const res = await fetch('https://soundbridge.herokuapp.com/api/posts/get-posts');
+    const res = await fetch(backendUrl + 'api/posts/get-posts');
     const allPosts = await res.json();
     this.setState({ allPosts });
   }
@@ -36,11 +36,9 @@ class Home extends Component {
   }
 
   postDeleted = postId => {
-    // axios.delete('http://localhost:4000/api/posts/delete-post', { params: { postId } })
-    axios.delete('https://soundbridge.herokuapp.com/api/posts/delete-post', { params: { postId } })
+    axios.delete(backendUrl + 'api/posts/delete-post', { params: { postId } })
       .then(async () => {
-        // const newRes = await fetch(`http://localhost:4000/api/posts/get-posts`);
-        const newRes = await fetch(`https://soundbridge.herokuapp.com/api/posts/get-posts`);
+        const newRes = await fetch(backendUrl + `api/posts/get-posts`);
         const allPosts = await newRes.json();
         this.setState({ allPosts });
       })

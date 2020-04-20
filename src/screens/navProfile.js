@@ -1,6 +1,7 @@
 
 import React from 'react';
 import axios from 'axios';
+import backendUrl from '../services/backendUrl'
 import './navProfile.css';
 import Profileimg from '../assets/images/profile-img.jpg';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Row, Col } from 'reactstrap';
@@ -36,8 +37,7 @@ export default class Profile extends React.Component {
       loggedIn: sessionStorage.getItem('loggedIn')
     }
     if (params.spotify === 'true') {
-      axios.post('https://soundbridge.herokuapp.com/has-spotify/' + params.spotifyRefreshToken)
-        // axios.post('http://localhost:4000/has-spotify/' + params.spotifyRefreshToken)
+      axios.post(backendUrl + 'has-spotify/' + params.spotifyRefreshToken)
         .then(res => {
           this.setState({
             accessToken: res.data,

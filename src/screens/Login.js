@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import backendUrl from '../services/backendUrl'
+import frontendUrl from '../services/frontendUrl'
 import './Login.css';
 import { Button, Input, Container, Form } from 'reactstrap';
 // import { Redirect } from 'react-router-dom';
@@ -40,8 +42,7 @@ class Login extends React.Component {
       password: this.state.password
     };
 
-    axios.post('https://soundbridge.herokuapp.com/api/user/login', user)
-      // axios.post('http://localhost:4000/api/user/login', user)
+    axios.post(backendUrl + 'api/user/login', user)
       .then(res => {
         const user = res.data;
         if (!user) {
@@ -69,8 +70,7 @@ class Login extends React.Component {
 
   render() {
     if (this.state.loggedIn) {
-      // window.location.href = `http://localhost:3000/user/${this.state.user.name}`;
-      window.location.href = `https://soundbridge.netlify.com/user/${this.state.user.name}`;
+      window.location.href = frontendUrl + `user/${this.state.user.name}`;
       // return <Redirect
       //   to={{
       //     pathname: `/user/${this.state.user.name}`,

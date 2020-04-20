@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import backendUrl from '../../services/backendUrl'
 
 export default class componentName extends Component {
 
@@ -6,8 +7,7 @@ export default class componentName extends Component {
         return (
             <div>
                 <button className="spotify-login-btn" onClick={() => {
-                    window.location.href = "https://soundbridge.herokuapp.com/spotify-login";
-                    // window.location.href = "http://localhost:4000/spotify-login";
+                    window.location.href = backendUrl + "spotify-login";
                 }}>LOGIN TO SPOTIFY</button>
             </div>
         )
